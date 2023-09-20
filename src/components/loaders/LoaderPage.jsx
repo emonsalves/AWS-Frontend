@@ -45,7 +45,7 @@ const LoaderPage = () => {
           </svg>
         </div>
         <div className="mt-3 text-gray-200 font-mono text-sm lg:text-lg ">
-          Cargando...
+          Loading...
         </div>
       </div>
     </div>

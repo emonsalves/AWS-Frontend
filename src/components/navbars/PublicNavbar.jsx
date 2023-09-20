@@ -7,14 +7,14 @@ const NavPublic = () => {
   const location = useLocation();
 
   // const menuItems = [{ text: "Ingresar", path: "/auth" }];
-  const menuItems = [{ text: "Ingresar", path: "/" }];
+  const menuItems = [{ text: "Login", path: "/" }];
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <nav className="bg-gray-800 p-2 fixed w-full z-10 top-0 shadow text-white">
+    <nav className="bg-black p-2 fixed w-full z-10 top-0 text-white shadow-custom-light">
       <div className="flex justify-between items-center">
         <div
           className="ml-5 flex items-center hover:text-white cursor-pointer hover:bg-gray-700  p-1 rounded-lg"
@@ -47,7 +47,7 @@ const NavPublic = () => {
       <div className={`${isMobileMenuOpen ? "" : "hidden"} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
           {menuItems.map((item, index) => (
-            <a
+            <span
               key={index}
               onClick={() => {
                 goTo(item.path);
@@ -60,7 +60,7 @@ const NavPublic = () => {
               }`}
             >
               {item.text}
-            </a>
+            </span>
           ))}
         </div>
       </div>
