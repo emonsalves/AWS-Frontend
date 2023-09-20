@@ -24,7 +24,7 @@ const NavPublic = () => {
         </div>
         <div className="hidden md:flex md:justify-end md:items-end">
           {menuItems.map((item, index) => (
-            <a
+            <span
               key={index}
               onClick={() => goTo(item.path)}
               className={`hover:text-white hover:bg-gray-700 flex items-center px-4 py-1 rounded-md text-xl font-medium ${
@@ -32,7 +32,7 @@ const NavPublic = () => {
               } cursor-pointer`}
             >
               {item.text}
-            </a>
+            </span>
           ))}
         </div>
         <div className="md:hidden flex items-center pt-1">
