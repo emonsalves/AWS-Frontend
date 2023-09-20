@@ -12,15 +12,16 @@ const NavPublic = () => {
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
   return (
-    <nav className="bg-black p-2 fixed w-full z-10 top-0 text-white shadow-custom-light">
+    <nav className="bg-green-600 p-2 fixed w-full z-10 top-0 text-white shadow-custom-light border border-gray-600">
       <div className="flex justify-between items-center">
         <div
           className="ml-5 flex items-center hover:text-white cursor-pointer hover:bg-gray-700  p-1 rounded-lg"
           onClick={() => goTo("/")}
         >
-          <span className="text-white text-xl">Mnslvs Solutions</span>
+          <span className="text-white text-xl font-medium text-center">
+            MNSLVS
+          </span>
         </div>
         <div className="hidden md:flex md:justify-end md:items-end">
           {menuItems.map((item, index) => (
@@ -37,10 +38,10 @@ const NavPublic = () => {
         </div>
         <div className="md:hidden flex items-center pt-1">
           <button
-            className="mobile-menu-button mr-3"
+            className="mobile-menu-button mr-3 text-xl font-medium"
             onClick={handleMobileMenuToggle}
           >
-            Menu
+            MENU
           </button>
         </div>
       </div>
