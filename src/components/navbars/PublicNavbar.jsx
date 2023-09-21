@@ -16,7 +16,7 @@ const NavPublic = () => {
     <nav className="bg-green-600 p-2 fixed w-full z-10 top-0 text-gray-800 shadow-custom-light border border-gray-600">
       <div className="flex justify-between items-center">
         <div
-          className="ml-5 flex items-center px-4 py-1 hover:text-white cursor-pointer hover:bg-gray-700  rounded-lg"
+          className="ml-5 flex items-center px-4 py-1 hover:text-white cursor-pointer hover:bg-gray-700  rounded-lg transition-all duration-300"
           onClick={() => goTo("/")}
         >
           <span className="text-gblack text-xl font-extrabold text-center">
@@ -28,7 +28,7 @@ const NavPublic = () => {
             <span
               key={index}
               onClick={() => goTo(item.path)}
-              className={`hover:text-white hover:bg-gray-700 flex items-center px-4 py-1 rounded-md text-xl font-extrabold ${
+              className={`hover:text-white hover:bg-gray-700 flex items-center px-4 py-1 rounded-md text-xl font-extrabold transition-all duration-300 ${
                 location.pathname === item.path ? "text-black" : "text-gray-300"
               } cursor-pointer`}
             >
@@ -45,7 +45,11 @@ const NavPublic = () => {
           </button>
         </div>
       </div>
-      <div className={`${isMobileMenuOpen ? "" : "hidden"} md:hidden`}>
+      <div
+        className={`transition-all duration-300 ${
+          isMobileMenuOpen ? "" : "hidden"
+        } md:hidden`}
+      >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
           {menuItems.map((item, index) => (
             <span
@@ -54,10 +58,10 @@ const NavPublic = () => {
                 goTo(item.path);
                 setIsMobileMenuOpen(false);
               }}
-              className={`${
+              className={`transition-all duration-300 ${
                 location.pathname === item.path
                   ? "text-black "
-                  : "text-black-300 hover:text-white"
+                  : "text-black-300 hover:text-white "
               }`}
             >
               {item.text}
