@@ -7,19 +7,19 @@ const NavPublic = () => {
   const location = useLocation();
 
   // const menuItems = [{ text: "Ingresar", path: "/auth" }];
-  const menuItems = [{ text: "Login", path: "/" }];
+  const menuItems = [{ text: "LOGIN", path: "/" }];
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   return (
-    <nav className="bg-green-600 p-2 fixed w-full z-10 top-0 text-white shadow-custom-light border border-gray-600">
+    <nav className="bg-green-600 p-2 fixed w-full z-10 top-0 text-gray-800 shadow-custom-light border border-gray-600">
       <div className="flex justify-between items-center">
         <div
-          className="ml-5 flex items-center hover:text-white cursor-pointer hover:bg-gray-700  p-1 rounded-lg"
+          className="ml-5 flex items-center px-4 py-1 hover:text-white cursor-pointer hover:bg-gray-700  rounded-lg"
           onClick={() => goTo("/")}
         >
-          <span className="text-white text-xl font-medium text-center">
+          <span className="text-gblack text-xl font-extrabold text-center">
             MNSLVS
           </span>
         </div>
@@ -28,17 +28,17 @@ const NavPublic = () => {
             <span
               key={index}
               onClick={() => goTo(item.path)}
-              className={`hover:text-white hover:bg-gray-700 flex items-center px-4 py-1 rounded-md text-xl font-medium ${
-                location.pathname === item.path ? "text-white" : "text-gray-300"
+              className={`hover:text-white hover:bg-gray-700 flex items-center px-4 py-1 rounded-md text-xl font-extrabold ${
+                location.pathname === item.path ? "text-black" : "text-gray-300"
               } cursor-pointer`}
             >
               {item.text}
             </span>
           ))}
         </div>
-        <div className="md:hidden flex items-center pt-1">
+        <div className="md:hidden flex items-center">
           <button
-            className="mobile-menu-button mr-3 text-xl font-medium"
+            className="mobile-menu-button mr-3 text-xl font-extrabold"
             onClick={handleMobileMenuToggle}
           >
             MENU
@@ -56,8 +56,8 @@ const NavPublic = () => {
               }}
               className={`${
                 location.pathname === item.path
-                  ? "text-white "
-                  : "text-gray-300 hover:text-white"
+                  ? "text-black "
+                  : "text-black-300 hover:text-white"
               }`}
             >
               {item.text}
