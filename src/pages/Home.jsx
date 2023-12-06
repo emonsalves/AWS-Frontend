@@ -1,6 +1,6 @@
 const Home = () => {
     return (
-        <div className="Test min-h-full bg-gray-900 flex flex-col items-center justify-center relative">
+        <div className="min-h-full bg-gray-900 flex flex-col items-center justify-center relative">
             <div className="firefly"></div>
             <div className="firefly"></div>
             <div className="firefly"></div>
