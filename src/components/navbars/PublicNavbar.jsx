@@ -6,17 +6,20 @@ const NavPublic = () => {
     const goTo = useNavigate();
     const location = useLocation();
 
-    // const menuItems = [{ text: "Ingresar", path: "/auth" }];
-    const menuItems = [{ text: "LOGIN", path: "/" }];
+    const menuItems = [
+        { text: "Home", path: "/" },
+        { text: "About", path: "/about" },
+        { text: "Login", path: "/login" },
+    ];
 
     const handleMobileMenuToggle = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
     return (
-        <nav className="bg-green-600 p-2 fixed w-full z-10 top-0 text-gray-800 shadow-custom-light border border-gray-600">
+        <nav className="bg-green-600 fixed w-full z-10 top-0 text-gray-800 shadow-custom-light border border-gray-600">
             <div className="flex justify-between items-center">
                 <div
-                    className="ml-5 flex items-center px-4 py-1 hover:text-white cursor-pointer hover:bg-gray-700  rounded-lg transition-all duration-300"
+                    className="ml-5 flex items-center px-4 py-1 hover:text-white cursor-pointer rounded-lg transition-all duration-300"
                     onClick={() => goTo("/")}
                 >
                     <span className="text-gblack text-xl font-extrabold text-center">MNSLVS</span>
@@ -26,8 +29,8 @@ const NavPublic = () => {
                         <span
                             key={index}
                             onClick={() => goTo(item.path)}
-                            className={`hover:text-white hover:bg-gray-700 flex items-center px-4 py-1 rounded-md text-xl font-extrabold transition-all duration-300 ${
-                                location.pathname === item.path ? "text-black" : "text-gray-300"
+                            className={`hover:text-white flex items-center px-4 py-1 rounded-md text-xl font-extrabold transition-all duration-300 ${
+                                location.pathname === item.path ? "text-gray-300" : "text-black"
                             } cursor-pointer`}
                         >
                             {item.text}
