@@ -2,12 +2,14 @@
 /* eslint-disable react/prop-types */
 import { createHashRouter } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
-import { NotFound } from "../pages/NotFound";
+import NotFound from "../pages/NotFound";
 import LoaderPage from "../components/loaders/LoaderPage";
 import { PublicLayout } from "../layout/PublicLayout";
+
 const createLazyComponent = (importPromise) => {
     return lazy(() => importPromise);
 };
+
 const SuspenseRouter = ({ element }) => {
     const [isReady, setIsReady] = useState(false);
 
@@ -25,6 +27,7 @@ const SuspenseRouter = ({ element }) => {
 };
 
 const Home = createLazyComponent(import("../pages/Home"));
+const About = createLazyComponent(import("../pages/About"));
 
 const router = createHashRouter([
     {
@@ -35,6 +38,10 @@ const router = createHashRouter([
             {
                 index: true,
                 element: <SuspenseRouter element={<Home />} />,
+            },
+            {
+                path: "About",
+                element: <SuspenseRouter element={<About />} />,
             },
         ],
     },
