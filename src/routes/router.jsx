@@ -2,46 +2,49 @@
 /* eslint-disable react/prop-types */
 import { createHashRouter } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
-import { NotFound } from "../pages/NotFound";
+import NotFound from "../pages/NotFound";
 import LoaderPage from "../components/loaders/LoaderPage";
 import { PublicLayout } from "../layout/PublicLayout";
+
 const createLazyComponent = (importPromise) => {
-  return lazy(() => importPromise);
+    return lazy(() => importPromise);
 };
+
 const SuspenseRouter = ({ element }) => {
-  const [isReady, setIsReady] = useState(false);
+    const [isReady, setIsReady] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsReady(true);
-    }, 1000); // 2 segundos de carga
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsReady(true);
+        }, 1000); // 2 segundos de carga
 
-    return () => {
-      clearTimeout(timer); // Limpia el temporizador si el componente se desmonta antes de que termine la carga.
-    };
-  }, []);
+        return () => {
+            clearTimeout(timer); // Limpia el temporizador si el componente se desmonta antes de que termine la carga.
+        };
+    }, []);
 
-  return (
-    <Suspense fallback={<LoaderPage />}>
-      {isReady ? element : <LoaderPage />}
-    </Suspense>
-  );
+    return <Suspense fallback={<LoaderPage />}>{isReady ? element : <LoaderPage />}</Suspense>;
 };
 
 const Home = createLazyComponent(import("../pages/Home"));
+const About = createLazyComponent(import("../pages/About"));
 
 const router = createHashRouter([
-  {
-    path: "/",
-    element: <PublicLayout />,
-    errorElement: <NotFound />,
-    children: [
-      {
-        index: true,
-        element: <SuspenseRouter element={<Home />} />,
-      },
-    ],
-  },
+    {
+        path: "/",
+        element: <PublicLayout />,
+        errorElement: <NotFound />,
+        children: [
+            {
+                index: true,
+                element: <SuspenseRouter element={<Home />} />,
+            },
+            {
+                path: "About",
+                element: <SuspenseRouter element={<About />} />,
+            },
+        ],
+    },
 ]);
 
 export default router;
