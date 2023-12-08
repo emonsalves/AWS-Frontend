@@ -19,7 +19,7 @@ const NavPublic = () => {
         <nav className="bg-green-600 fixed w-full z-10 top-0 text-gray-800 shadow-lg">
             <div className="flex justify-between items-center">
                 <div
-                    className="flex items-center px-4 py-1 hover:text-white cursor-pointer rounded-lg transition-all duration-300"
+                    className="flex items-center px-4 py-1 hover:text-gray-300 cursor-pointer rounded-lg transition-all duration-300"
                     onClick={() => goTo("/")}
                 >
                     <span className="text-gblack text-xl font-extrabold text-center">MNSLVS</span>
@@ -29,8 +29,8 @@ const NavPublic = () => {
                         <span
                             key={index}
                             onClick={() => goTo(item.path)}
-                            className={`hover:text-white flex items-center px-4 py-1 rounded-md text-xl font-extrabold transition-all duration-300 ${
-                                location.pathname === item.path ? "text-gray-300" : "text-black"
+                            className={`hover:text-gray-300 flex items-center px-4 py-1 rounded-md text-xl font-extrabold transition-all duration-300 ${
+                                location.pathname === item.path ? "text-white" : "text-black"
                             } cursor-pointer`}
                         >
                             {item.text}
@@ -53,7 +53,7 @@ const NavPublic = () => {
                                 setIsMobileMenuOpen(false);
                             }}
                             className={`transition-all duration-300 ${
-                                location.pathname === item.path ? "text-black " : "text-black-300 hover:text-white "
+                                location.pathname === item.path ? "text-black " : "text-white hover:text-gray-300 "
                             }`}
                         >
                             {item.text}
