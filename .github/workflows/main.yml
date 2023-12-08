@@ -33,4 +33,4 @@ jobs:
     steps:
     - name: Deploy to specified path
       run: |
-        rsync -avz --delete ./path/to/build/ /home/ubuntu/project/AWS-Frontend/public/
+       rsync -avz --delete ./dist/ /home/ubuntu/project/AWS-Frontend/public/
