@@ -8,8 +8,8 @@ const NavPublic = () => {
 
     const menuItems = [
         { text: "Home", path: "/" },
-        // { text: "About", path: "/about" },
-        // { text: "Login", path: "/login" },
+        { text: "About", path: "/about" },
+        { text: "Login", path: "/login" },
     ];
 
     console.log("first", location.pathname);
@@ -18,7 +18,7 @@ const NavPublic = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
     return (
-        <nav className="bg-green-600 fixed w-full z-10 top-0 text-gray-800 shadow-custom-light border border-gray-600">
+        <nav className="bg-green-600 fixed w-full z-10 top-0 text-gray-800 shadow-custom-light">
             <div className="flex justify-between items-center">
                 <div
                     className="ml-5 flex items-center px-4 py-1 hover:text-white cursor-pointer rounded-lg transition-all duration-300"
