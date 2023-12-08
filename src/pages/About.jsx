@@ -45,6 +45,7 @@ const About = () => {
             </h1>
             <MarqueeAbout direction={"left"} speed={25} dataLogos={logosMarque1} />
             <MarqueeAbout direction={"right"} speed={25} dataLogos={logosMarque2} />
+
         </div>
     );
 };
