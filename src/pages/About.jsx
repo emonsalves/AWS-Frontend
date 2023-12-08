@@ -45,6 +45,9 @@ const About = () => {
                 <strong> About Mnslvs Solutions</strong>
             </h1>
             <TabAbout colorNumber={"2"} />
+            <h1 className="text-black text-xl lg:text-3xl mt-10 animate-fade-up animate-once">
+                <strong>Tecnologias que utilizamos: </strong>
+            </h1>
             <MarqueeAbout direction={"left"} dataLogos={logosMarque1} />
             <MarqueeAbout direction={"right"} dataLogos={logosMarque2} />
         </div>
