@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 const Tabs = ({ color }) => {
     const [openTab, setOpenTab] = useState(1);
 
-    const test = color;
-
     let isTabOpen = `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal bg-red-600`;
     let isTabClosed = `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-red-600`;
 
