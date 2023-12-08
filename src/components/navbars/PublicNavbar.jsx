@@ -8,8 +8,8 @@ const NavPublic = () => {
 
     const menuItems = [
         { text: "Home", path: "/" },
-        { text: "About", path: "/about" },
-        { text: "Login", path: "/login" },
+        // { text: "About", path: "/about" },
+        // { text: "Login", path: "/login" },
     ];
 
     const handleMobileMenuToggle = () => {
