@@ -63,9 +63,9 @@ const TabAbout = ({ colorNumber }) => {
                     </ul>
                     <div className="relative flex flex-col break-words bg-gray-300 w-full shadow-lg rounded-b-lg text-black">
                         <div className="px-4 py-5 flex-auto">
-                            <div className="tab-content tab-space">
+                            <div className="tab-content tab-space animate-fade animate-ease-linear animate-normal animate-fill-forwards animate-duration-1000">
                                 <div className={openTab == 1 ? "block" : "hidden"} id="link1">
-                                    <p>
+                                    <p className="animate-fade animate-ease-linear animate-normal animate-fill-forwards">
                                         En <strong>Mnslvs Solutions</strong>, nos comprometemos a ser líderes en el desarrollo de aplicaciones web
                                         innovadoras y personalizadas que transformen las ideas en soluciones digitales efectivas.
                                         <br /> <br /> Con un enfoque centrado en el cliente, buscamos proporcionar productos de calidad que impulsen
@@ -74,7 +74,7 @@ const TabAbout = ({ colorNumber }) => {
                                     </p>
                                 </div>
                                 <div className={openTab == 2 ? "block" : "hidden"} id="link2">
-                                    <p>
+                                    <p className="animate-fade animate-ease-linear animate-normal animate-fill-forwards">
                                         Nos visualizamos como la principal elección para aquellas empresas y emprendedores que buscan soluciones
                                         tecnológicas avanzadas y personalizadas.
                                         <br /> <br /> Aspiramos a ser reconocidos por nuestra excelencia en el diseño, desarrollo y mantenimiento de

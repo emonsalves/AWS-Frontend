@@ -1,16 +1,15 @@
 import PropTypes from "prop-types";
 import Marquee from "react-fast-marquee";
 
-const MarqueeAbout = ({ dataLogos, direction }) => {
+const MarqueeAbout = ({ dataLogos, direction, speed }) => {
     return (
-        <Marquee direction={direction} pauseOnHover className="mt-4 md:mt-8 animate-fade-up animate-once">
+        <Marquee direction={direction} speed={speed} pauseOnHover className="animate-fade-up animate-once">
             {dataLogos.map((logo) => (
                 <img
                     key={logo.value}
                     src={logo.routeImg}
                     alt={logo.name}
-                    className="w-14 md:w-16 lg:w-20 xl:w-28 hover:scale-110 hover:shadow-custom-light transition-all duration-300 ease-in-out m-2 rounded-3xl shadow-lg"
-                />
+                    className="w-14 md:w-16 lg:w-20 xl:w-28 hover:scale-110 hover:shadow-custom-light transition-all duration-500 ease-in-out m-3 md:m-5 rounded-3xl shadow-lg"                />
             ))}
         </Marquee>
     );
@@ -25,6 +24,7 @@ MarqueeAbout.propTypes = {
         }),
     ).isRequired,
     direction: PropTypes.string,
+    speed: PropTypes.number,
 };
 
 export { MarqueeAbout };
