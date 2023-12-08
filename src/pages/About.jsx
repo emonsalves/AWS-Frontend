@@ -1,4 +1,4 @@
-import TabsRender from "../components/tabs/tabAbout";
+import TabsRender from "../components/tabs/TabAbout";
 
 const About = () => {
     return (
