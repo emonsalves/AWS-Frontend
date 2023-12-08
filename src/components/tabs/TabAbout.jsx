@@ -15,17 +15,17 @@ const TabAbout = ({ colorNumber }) => {
     ];
 
     const colorTabClosed = [
-        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-blue-600",
-        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-red-600",
-        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-green-600",
-        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-yellow-600",
-        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-purple-600",
-        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-pink-600",
-        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-gray-600",
+        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-blue-700",
+        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-red-700",
+        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-green-700",
+        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-yellow-700",
+        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-purple-700",
+        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-pink-700",
+        "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-gray-700",
     ];
 
-    let isTabOpen = colorTabOpen[colorNumber] || `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal bg-blue-500`;
-    let isTabClosed = colorTabClosed[colorNumber] || `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-blue-500`;
+    let isTabOpen = colorTabOpen[colorNumber] || `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal bg-blue-700`;
+    let isTabClosed = colorTabClosed[colorNumber] || `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-blue-700`;
 
     return (
         <>
