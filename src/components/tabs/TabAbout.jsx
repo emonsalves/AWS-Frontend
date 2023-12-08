@@ -5,7 +5,7 @@ const TabAbout = ({ colorNumber }) => {
     const [openTab, setOpenTab] = useState(1);
 
     const colorTabOpen = [
-        "text-lg font-bold uppercase px-5 py-3 shadow-lg border-gray-400 border rounded-lg block leading-normal bg-blue-600",
+        "text-lg font-bold uppercase px-5 py-3 shadow-lg border-gray-400 border rounded-lg block leading-normal bg-blue-600 text-white",
         "text-lg font-bold uppercase px-5 py-3 shadow-lg border-gray-400 border rounded-lg block leading-normal bg-red-600",
         "text-lg font-bold uppercase px-5 py-3 shadow-lg border-gray-400 border rounded-lg block leading-normal bg-green-600",
         "text-lg font-bold uppercase px-5 py-3 shadow-lg border-gray-400 border rounded-lg block leading-normal bg-yellow-600",
@@ -31,8 +31,8 @@ const TabAbout = ({ colorNumber }) => {
         <>
             <div className="flex flex-wrap shadow-custom-dark rounded-lg sm:flex-col bg-gray-300 w-[80%] animate-fade-up animate-once">
                 <div className="w-full mt-1">
-                    <ul className="flex flex-wrap p-4 flex-row rounded-lg justify-center items-center gap-2" role="tablist">
-                        <li className="flex-auto text-center">
+                    <ul className="flex flex-wrap p-4 flex-row rounded-lg justify-center items-center gap-2">
+                        <li className="flex-auto text-center hover:scale-[101%] hover:opacity-80 transition-all duration-300">
                             <a
                                 className={openTab === 1 ? `${isTabOpen}` : `${isTabClosed}`}
                                 onClick={(e) => {
@@ -41,12 +41,12 @@ const TabAbout = ({ colorNumber }) => {
                                 }}
                                 data-toggle="tab"
                                 href="#link1"
-                                role="tablist"
+                                name="mision"
                             >
                                 <i className="fas fa-space-shuttle text-base mr-1"></i> Mision:
                             </a>
                         </li>
-                        <li className="flex-auto text-center">
+                        <li className="flex-auto text-center hover:scale-[101%] hover:opacity-80 transition-all duration-300">
                             <a
                                 className={openTab == 2 ? `${isTabOpen}` : `${isTabClosed}`}
                                 onClick={(e) => {
@@ -55,7 +55,7 @@ const TabAbout = ({ colorNumber }) => {
                                 }}
                                 data-toggle="tab"
                                 href="#link2"
-                                role="tablist"
+                                name="vision"
                             >
                                 <i className="fas fa-cog text-base mr-1"></i> Visión:
                             </a>

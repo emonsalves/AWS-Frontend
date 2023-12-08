@@ -39,7 +39,7 @@ const About = () => {
             <h1 className="text-black my-5 text-xl lg:text-3xl animate-fade-up animate-once">
                 <strong> About Mnslvs Solutions</strong>
             </h1>
-            <TabAbout colorNumber={"2"} />
+            <TabAbout colorNumber={"6"} />
             <h1 className="text-black text-xl my-5 lg:text-3xl animate-fade-up animate-once">
                 <strong>Tecnologias que utilizamos: </strong>
             </h1>
