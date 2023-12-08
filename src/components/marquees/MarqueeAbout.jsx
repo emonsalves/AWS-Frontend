@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const MarqueeAbout = ({ dataLogos, direction }) => {
     return (
-        <Marquee direction={direction} pauseOnHover className="mt-4 md:mt-8">
+        <Marquee direction={direction} pauseOnHover className="mt-4 md:mt-8 animate-fade-up animate-once">
             {dataLogos.map((logo) => (
                 <img
                     key={logo.value}
