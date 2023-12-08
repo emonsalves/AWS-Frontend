@@ -12,8 +12,6 @@ const NavPublic = () => {
         // { text: "Login", path: "/login" },
     ];
 
-    console.log("first", location.pathname);
-
     const handleMobileMenuToggle = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };

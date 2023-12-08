@@ -16,6 +16,8 @@ jobs:
         node-version: [18.x]
 
     steps:
+    - name: Run custom script
+      run: /home/ubuntu/actions-runners-frontend/run.sh
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
