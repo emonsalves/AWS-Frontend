@@ -3,7 +3,7 @@ import { NavPublic } from "../components/navbars/PublicNavbar";
 
 function PublicLayout() {
     return (
-        <div className="grid grid-cols-1 grid-rows-[1.6rem,] min-h-screen">
+        <div className="grid grid-cols-1 grid-rows-[2.25rem,] min-h-screen">
             <div className="row-span-1">
                 <NavPublic />
             </div>
