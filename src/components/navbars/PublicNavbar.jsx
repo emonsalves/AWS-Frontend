@@ -8,20 +8,18 @@ const NavPublic = () => {
 
     const menuItems = [
         { text: "Home", path: "/" },
-        // { text: "About", path: "/about" },
+        { text: "About", path: "/about" },
         // { text: "Login", path: "/login" },
     ];
-
-    console.log("first", location.pathname);
 
     const handleMobileMenuToggle = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
     return (
-        <nav className="bg-green-600 fixed w-full z-10 top-0 text-gray-800 shadow-custom-light border border-gray-600">
+        <nav className="bg-green-600 fixed w-full z-10 top-0 text-gray-800 shadow-lg">
             <div className="flex justify-between items-center">
                 <div
-                    className="ml-5 flex items-center px-4 py-1 hover:text-white cursor-pointer rounded-lg transition-all duration-300"
+                    className="flex items-center px-4 py-1 hover:text-white cursor-pointer rounded-lg transition-all duration-300"
                     onClick={() => goTo("/")}
                 >
                     <span className="text-gblack text-xl font-extrabold text-center">MNSLVS</span>
@@ -46,7 +44,7 @@ const NavPublic = () => {
                 </div>
             </div>
             <div className={`transition-all duration-300 ${isMobileMenuOpen ? "" : "hidden"} md:hidden`}>
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <div className="pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
                     {menuItems.map((item, index) => (
                         <span
                             key={index}
