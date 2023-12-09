@@ -4,7 +4,7 @@ import { createHashRouter } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
 import NotFound from "../pages/NotFound";
 import LoaderPage from "../components/loaders/LoaderPage";
-import { PublicLayout } from "../layout/PublicLayout";
+import { LayoutPublic } from "../layout/LayoutPublic";
 
 const createLazyComponent = (importPromise) => {
     return lazy(() => importPromise);
@@ -32,7 +32,7 @@ const About = createLazyComponent(import("../pages/About"));
 const router = createHashRouter([
     {
         path: "/",
-        element: <PublicLayout />,
+        element: <LayoutPublic />,
         errorElement: <NotFound />,
         children: [
             {
