@@ -11,7 +11,7 @@ const MarqueeAbout = ({ dataLogos, direction, speed }) => {
                     alt={logo.name}
                     width="100"
                     height="100"
-                    className="w-14 md:w-16 lg:w-20 xl:w-28 hover:scale-110 hover:shadow-custom-light transition-all duration-500 ease-in-out m-3 md:m-5 rounded-3xl shadow-lg"                />
+                    className="w-10 md:w-12 lg:w-16 xl:w-20 hover:scale-110 hover:shadow-custom-light transition-all duration-500 ease-in-out m-3 md:mx-8 rounded-[25%] shadow-lg"                />
             ))}
         </Marquee>
     );
