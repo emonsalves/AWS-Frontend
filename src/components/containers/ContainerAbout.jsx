@@ -2,7 +2,9 @@ const ContainerAbout = () => {
     return (
         <>
             <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-lg flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
-                <h1 className="text-black my-5 font-bold text-3xl animate-fade animate-once text-center">Acerca de Nosotros</h1>
+                <h1 className="text-black my-5 font-bold text-3xl animate-fade animate-once text-center">
+                    <i className="fa-regular fa-address-card"></i> Acerca de Nosotros
+                </h1>
 
                 <hr />
 
@@ -35,7 +37,9 @@ const ContainerAbout = () => {
 
             <div className="flex flex-col md:flex-row border border-gray-400 shadow-custom-dark rounded-lg bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
                 <div className="flex flex-col md:w-1/2">
-                    <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">Nuestra Historia:</h2>
+                    <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
+                        <i className="fa-solid fa-landmark-dome"></i> Nuestra Historia:
+                    </h2>
 
                     <hr />
 
@@ -50,7 +54,9 @@ const ContainerAbout = () => {
                 </div>
 
                 <div className="flex flex-col md:w-1/2">
-                    <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">Nuestra Misión:</h2>
+                    <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
+                        <i className="fa-solid fa-bullseye"></i> Nuestra Misión:
+                    </h2>
                     <hr />
                     <p className="text-black text-md animate-fade-left animate-once m-10 text-justify">
                         En MNSLVS Solutions, nuestra misión es simple pero crucial: empoderar a las PYMES a través de la tecnología. <br /> <br />
@@ -62,7 +68,7 @@ const ContainerAbout = () => {
 
             <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-lg flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
                 <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
-                    Servicios Especializados para PYMES:
+                    <i className="fa-solid fa-users-gear"></i> Servicios Especializados para PYMES:
                 </h2>
 
                 <hr />
@@ -80,7 +86,7 @@ const ContainerAbout = () => {
 
             <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-lg flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
                 <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
-                    Compromiso con la Calidad y la Eficiencia:
+                    <i className="fa-solid fa-hand-holding-heart"></i> Compromiso con la Calidad y la Eficiencia:
                 </h2>
 
                 <hr />
