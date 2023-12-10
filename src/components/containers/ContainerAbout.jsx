@@ -49,7 +49,7 @@ const ContainerAbout = () => {
                         compartimos el mismo sueño: crear una empresa que pudiera ayudar a las PYMES a aprovechar al máximo la tecnología.
                         <br />
                         <br />
-                        En 2021, decidimos unir fuerzas y hacer realidad nuestro sueño. Así nació MNSLVS Solutions.
+                        En 2023, decidimos unir fuerzas y hacer realidad nuestro sueño. Así nació MNSLVS Solutions.
                     </p>
                 </div>
 
