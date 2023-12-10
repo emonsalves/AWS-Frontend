@@ -15,8 +15,8 @@ const ContainerAbout = () => {
                                 Impulsando el Éxito de las PYMES a través de la Tecnología
                             </h2>
                         </div>
-                        <div className="card-image overflow-hidden flex justify-center">
-                            <img className="m-5 rounded-lg drop-shadow-lg bg-cover" src="./imagenDev.png" alt="MNSLVS Solutions" />
+                        <div className="card-image flex justify-center">
+                            <img className="p-5 rounded-lg drop-shadow-lg" src="./imagenDev.png" alt="MNSLVS Solutions" />
                         </div>
                     </div>
 
