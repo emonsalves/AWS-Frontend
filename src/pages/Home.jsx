@@ -20,7 +20,7 @@ const Home = () => {
                 ¡Bienvenido a MNSLVS Solutions! <br />
             </h1>
             <p className="text-white text-xl md:text-2xl text-center animate-fade-up animate-once">
-                Impulsando el Éxito de las PYMES a través de soluciones tecnológicas
+                Impulsando el Éxito de las PYMES a través de Soluciones Tecnológicas
             </p>
         </div>
     );
