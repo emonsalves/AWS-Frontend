@@ -1,6 +1,5 @@
 import { ContainerAbout } from "../components/containers/ContainerAbout";
 import { MarqueeAbout } from "../components/marquees/MarqueeAbout";
-import TabAbout from "../components/tabs/TabAbout";
 
 var logosMarque1 = [
     { value: 0, name: "c#", routeImg: "https://skillicons.dev/icons?i=cs" },
@@ -36,13 +35,11 @@ var logosMarque2 = [
 
 const About = () => {
     return (
-        <div className="min-w-full min-h-full bg-gray-100 flex flex-col items-center text-white">
+        <div className="min-w-full min-h-full bg-gray-100 flex flex-col items-center text-white mb-5">
             <ContainerAbout />
-            {/* <TabAbout colorNumber={"6"} /> */}
-            <h1 className="text-black text-xl my-5 lg:text-3xl animate-fade-up animate-once">
-                <strong>Tecnologias que utilizamos: </strong>
+            <h1 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
+                Conoce las tecnologías que utilizamos:
             </h1>
-
             <MarqueeAbout direction={"left"} speed={25} dataLogos={logosMarque1} />
             <MarqueeAbout direction={"right"} speed={25} dataLogos={logosMarque2} />
         </div>
