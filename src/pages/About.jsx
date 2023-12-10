@@ -1,3 +1,4 @@
+import { ContainerAbout } from "../components/containers/ContainerAbout";
 import { MarqueeAbout } from "../components/marquees/MarqueeAbout";
 import TabAbout from "../components/tabs/TabAbout";
 
@@ -35,17 +36,15 @@ var logosMarque2 = [
 
 const About = () => {
     return (
-        <div className="min-w-full min-h-full bg-gray-200 flex flex-col items-center text-white">
-            <h1 className="text-black my-5 text-xl lg:text-3xl animate-fade-up animate-once">
-                <strong> About Mnslvs Solutions</strong>
-            </h1>
-            <TabAbout colorNumber={"6"} />
+        <div className="min-w-full min-h-full bg-gray-100 flex flex-col items-center text-white">
+            <ContainerAbout />
+            {/* <TabAbout colorNumber={"6"} /> */}
             <h1 className="text-black text-xl my-5 lg:text-3xl animate-fade-up animate-once">
                 <strong>Tecnologias que utilizamos: </strong>
             </h1>
+
             <MarqueeAbout direction={"left"} speed={25} dataLogos={logosMarque1} />
             <MarqueeAbout direction={"right"} speed={25} dataLogos={logosMarque2} />
-
         </div>
     );
 };

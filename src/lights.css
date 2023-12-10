@@ -19,12 +19,12 @@
 }
 .firefly::before {
     background: red;
-    opacity: 0.4;
+    opacity: 0.5;
     animation: drift ease alternate infinite;
 }
 .firefly::after {
     background: white;
-    opacity: 0;
+    opacity: 0.5;
     box-shadow: 0 0 0vw 0vw yellow;
     animation:
         drift ease alternate infinite,
@@ -1300,7 +1300,7 @@
     0%,
     30%,
     100% {
-        opacity: 0;
+        opacity: 0.5;
         box-shadow: 0 0 0vw 0vw yellow;
     }
     5% {

@@ -8,7 +8,7 @@ const NavPublic = () => {
 
     const menuItems = [
         { text: "Home", path: "/" },
-        { text: "About", path: "/about" },
+        // { text: "About", path: "/about" },
         // { text: "Login", path: "/login" },
     ];
 
