@@ -3,7 +3,9 @@ const ContainerAbout = () => {
         <>
             <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-lg flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
                 <h1 className="text-black my-5 font-bold text-3xl animate-fade animate-once text-center">Acerca de Nosotros</h1>
+
                 <hr />
+
                 <div className="flex flex-col lg:flex-row">
                     <div className="lg:w-1/2">
                         <div className="card-title">
@@ -15,6 +17,7 @@ const ContainerAbout = () => {
                             <img className="m-5 rounded-lg drop-shadow-lg" src="./imagenDev.png" alt="MNSLVS Solutions" width="85%" />
                         </div>
                     </div>
+
                     <div className="card-text lg:w-1/2">
                         <p className="text-black text-md animate-fade-left animate-once m-10 text-justify">
                             Somos tu aliado estratégico en Tecnología, especialmente diseñado para potenciar el éxito de las pequeñas y medianas
@@ -33,7 +36,9 @@ const ContainerAbout = () => {
             <div className="flex flex-col md:flex-row border border-gray-400 shadow-custom-dark rounded-lg bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
                 <div className="flex flex-col md:w-1/2">
                     <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">Nuestra Historia:</h2>
+
                     <hr />
+
                     <p className="text-black text-md animate-fade-left animate-once m-10 text-justify">
                         MNSLVS Solutions fue fundada en 2021 por un grupo de amigos y colegas que se conocieron en la universidad. Después de
                         graduarse, cada uno de nosotros se embarcó en diferentes caminos profesionales, pero siempre mantuvimos el contacto y
@@ -43,6 +48,7 @@ const ContainerAbout = () => {
                         En 2021, decidimos unir fuerzas y hacer realidad nuestro sueño. Así nació MNSLVS Solutions.
                     </p>
                 </div>
+
                 <div className="flex flex-col md:w-1/2">
                     <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">Nuestra Misión:</h2>
                     <hr />
@@ -59,6 +65,8 @@ const ContainerAbout = () => {
                     Servicios Especializados para PYMES:
                 </h2>
 
+                <hr />
+
                 <p className="text-black text-md animate-fade-left animate-once m-10 text-justify">
                     Desarrollo Web Personalizado: Creamos sitios web atractivos y funcionales que se adaptan a las necesidades específicas de tu PYME.
                     <br />
@@ -74,6 +82,8 @@ const ContainerAbout = () => {
                 <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
                     Compromiso con la Calidad y la Eficiencia:
                 </h2>
+
+                <hr />
 
                 <p className="text-black text-md animate-fade-left animate-once m-10 text-justify">
                     La calidad y la eficiencia son fundamentales en cada proyecto que emprendemos. Nos esforzamos por ofrecer soluciones que no solo
