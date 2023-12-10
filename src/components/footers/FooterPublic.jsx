@@ -7,11 +7,19 @@ const FooterPublic = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-gray-400 hover:scale-125"
-                    alt="facebook svg"
+                    alt="facebook"
+                    aria-label="facebook"
                 >
                     <i className="fab fa-facebook"></i>
                 </a>
-                <a href="https://www.twitter.com/" target="_blank" rel="noreferrer" className="hover:text-gray-400 hover:scale-125" alt="twitter svg">
+                <a
+                    href="https://www.twitter.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-gray-400 hover:scale-125"
+                    alt="twitter"
+                    aria-label="twitter"
+                >
                     <i className="fab fa-twitter"></i>
                 </a>
                 <a
@@ -19,7 +27,8 @@ const FooterPublic = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-gray-400 hover:scale-125"
-                    alt="instagram svg"
+                    alt="instagram"
+                    aria-label="instagram"
                 >
                     <i className="fab fa-instagram"></i>
                 </a>
