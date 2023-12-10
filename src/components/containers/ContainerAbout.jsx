@@ -14,7 +14,7 @@ const ContainerAbout = () => {
                             </h2>
                         </div>
                         <div className="card-image overflow-hidden flex justify-center">
-                            <img className="m-5 rounded-lg drop-shadow-lg" src="./imagenDev.png" alt="MNSLVS Solutions" width="85%" />
+                            <img className="m-5 rounded-lg drop-shadow-lg bg-cover" src="./imagenDev.png" alt="MNSLVS Solutions" />
                         </div>
                     </div>
 
