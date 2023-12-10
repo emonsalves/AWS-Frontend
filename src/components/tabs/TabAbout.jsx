@@ -29,7 +29,7 @@ const TabAbout = ({ colorNumber }) => {
 
     return (
         <>
-            <div className="flex flex-wrap shadow-custom-dark rounded-lg sm:flex-col bg-gray-300 w-[80%] animate-fade-up animate-once">
+            <div className="flex flex-wrap shadow-custom-dark border border-gray-400 rounded-lg sm:flex-col bg-gray-100 w-[80%] animate-fade-up animate-once">
                 <div className="w-full mt-1">
                     <ul className="flex flex-wrap p-4 flex-row rounded-lg justify-center items-center gap-2">
                         <li className="flex-auto text-center hover:scale-[101%] hover:opacity-80 transition-all duration-300">
@@ -61,16 +61,14 @@ const TabAbout = ({ colorNumber }) => {
                             </a>
                         </li>
                     </ul>
-                    <div className="relative flex flex-col break-words bg-gray-300 w-full shadow-lg rounded-b-lg text-black">
+                    <div className="relative flex flex-col break-words bg-gray-100 w-full shadow-lg rounded-b-lg text-black">
                         <div className="px-4 py-5 flex-auto">
                             <div className="tab-content tab-space animate-fade animate-ease-linear animate-normal animate-fill-forwards animate-duration-1000">
                                 <div className={openTab == 1 ? "block" : "hidden"} id="link1">
                                     <p className="animate-fade animate-ease-linear animate-normal animate-fill-forwards">
-                                        En <strong>Mnslvs Solutions</strong>, nos comprometemos a ser líderes en el desarrollo de aplicaciones web
-                                        innovadoras y personalizadas que transformen las ideas en soluciones digitales efectivas.
-                                        <br /> <br /> Con un enfoque centrado en el cliente, buscamos proporcionar productos de calidad que impulsen
-                                        el éxito de nuestros clientes, mejorando su presencia en línea y generando un impacto positivo en sus
-                                        objetivos empresariales.
+                                        En MNSLVS Solutions, nuestra misión es simple pero crucial: empoderar a las PYMES a través de la tecnología.
+                                        <br></br><br></br>Buscamos proporcionar soluciones que no solo mejoren la eficiencia operativa, sino que también impulsen el
+                                        crecimiento sostenible de nuestros clientes.
                                     </p>
                                 </div>
                                 <div className={openTab == 2 ? "block" : "hidden"} id="link2">
