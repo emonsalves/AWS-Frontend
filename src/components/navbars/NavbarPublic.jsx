@@ -16,7 +16,7 @@ const NavPublic = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
     return (
-        <nav className="bg-green-600 fixed w-full z-20 top-0 text-gray-800 shadow-lg">
+        <nav className="bg-green-600 fixed w-full z-20 top-0 text-gray-800 shadow-lg px-10">
             <div className="flex justify-between items-center">
                 <div
                     className="flex items-center px-4 py-1 hover:text-gray-300 cursor-pointer rounded-lg transition-all duration-300"
