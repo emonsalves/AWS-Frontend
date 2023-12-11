@@ -65,4 +65,4 @@ const NavPublic = () => {
     );
 };
 
-export default NavPublic;
+export { NavPublic };
