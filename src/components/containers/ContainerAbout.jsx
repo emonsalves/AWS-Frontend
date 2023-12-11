@@ -1,7 +1,7 @@
 const ContainerAbout = () => {
     return (
         <>
-            <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-lg flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
+            <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-2xl flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
                 <h1 className="text-black my-5 font-bold text-3xl animate-fade animate-once text-center">
                     <i className="fa-regular fa-address-card"></i> Acerca de Nosotros
                 </h1>
@@ -35,7 +35,7 @@ const ContainerAbout = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row border border-gray-400 shadow-custom-dark rounded-lg bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
+            <div className="flex flex-col md:flex-row border border-gray-400 shadow-custom-dark rounded-2xl bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
                 <div className="flex flex-col md:w-1/2">
                     <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
                         <i className="fa-solid fa-landmark-dome"></i> Nuestra Historia:
@@ -66,25 +66,51 @@ const ContainerAbout = () => {
                 </div>
             </div>
 
-            <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-lg flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
+            <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-2xl flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
                 <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
                     <i className="fa-solid fa-users-gear"></i> Servicios Especializados para PYMES:
                 </h2>
 
                 <hr />
 
-                <p className="text-black text-md animate-fade-left animate-once m-10 text-justify">
-                    Desarrollo Web Personalizado: Creamos sitios web atractivos y funcionales que se adaptan a las necesidades específicas de tu PYME.
-                    <br />
-                    <br />
-                    Automatización de Procesos: Implementamos soluciones que simplifican y automatizan tareas, liberando tiempo para que te concentres
-                    en hacer crecer tu negocio. <br />
-                    <br /> Asesoramiento Tecnológico: Ofrecemos orientación experta sobre las últimas tendencias tecnológicas y cómo pueden beneficiar
-                    a tu PYME.
-                </p>
+                <div className="flex flex-wrap justify-center mb-5">
+                    {/* Card 1 */}
+                    <div className="max-w-sm m-4 transition ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                        <div className="bg-white border border-gray-300 p-6 rounded-2xl shadow-md">
+                            <h3 className="text-lg text-black text-center font-semibold mb-2">Desarrollo Web Personalizado:</h3>
+                            <img src="https://source.unsplash.com/featured/?web" alt="Desarrollo Web" className="mb-2 rounded-md" />
+                            <p className="text-gray-700 text-md">
+                                Creamos sitios web atractivos y funcionales que se adaptan a las necesidades específicas de tu PYME.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Card 2 */}
+                    <div className="max-w-sm m-4 transition ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                        <div className="bg-white border border-gray-300 p-6 rounded-2xl shadow-md">
+                            <h3 className="text-lg text-black text-center font-semibold mb-2">Automatización de Procesos:</h3>
+                            <img src="https://source.unsplash.com/featured/?automation" alt="Automatización" className="mb-2 rounded-md" />
+                            <p className="text-gray-700 text-md">
+                                Implementamos soluciones que simplifican y automatizan tareas, liberando tiempo para que te concentres en hacer crecer
+                                tu negocio.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Card 3 */}
+                    <div className="max-w-sm m-4 transition ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                        <div className="bg-white border border-gray-300 p-6 rounded-2xl shadow-md">
+                            <h3 className="text-lg text-black text-center font-semibold mb-2">Asesoramiento Tecnológico:</h3>
+                            <img src="https://source.unsplash.com/featured/?technology" alt="Asesoramiento" className="mb-2 rounded-md" />
+                            <p className="text-gray-700 text-md">
+                                Ofrecemos orientación experta sobre las últimas tendencias tecnológicas y cómo pueden beneficiar a tu PYME.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-lg flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
+            <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-2xl flex-col bg-gray-100 w-[80%] animate-fade-up animate-once mt-4 mb-10">
                 <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
                     <i className="fa-solid fa-hand-holding-heart"></i> Compromiso con la Calidad y la Eficiencia:
                 </h2>
