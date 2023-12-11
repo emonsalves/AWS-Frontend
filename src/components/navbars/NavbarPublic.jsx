@@ -16,7 +16,7 @@ const NavPublic = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
     return (
-        <nav className="bg-green-600 fixed w-full z-10 top-0 text-gray-800 shadow-lg">
+        <nav className="bg-green-600 fixed w-full z-20 top-0 text-gray-800 shadow-lg">
             <div className="flex justify-between items-center">
                 <div
                     className="flex items-center px-4 py-1 hover:text-gray-300 cursor-pointer rounded-lg transition-all duration-300"
@@ -43,8 +43,8 @@ const NavPublic = () => {
                     </button>
                 </div>
             </div>
-            <div className={`transition-all duration-300 ${isMobileMenuOpen ? "" : "hidden"} md:hidden`}>
-                <div className="pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+            <div className={`transition-all duration-700 ${isMobileMenuOpen ? "h-screen" : "h-0 overflow-hidden"} md:hidden`}>
+                <div className="pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
                     {menuItems.map((item, index) => (
                         <span
                             key={index}
@@ -52,11 +52,11 @@ const NavPublic = () => {
                                 goTo(item.path);
                                 setIsMobileMenuOpen(false);
                             }}
-                            className={`transition-all duration-300 ${
-                                location.pathname === item.path ? "text-black " : "text-white hover:text-gray-300 "
-                            }`}
+                            className={`text-center opacity-0 transition-opacity duration-700 hover:text-gray-300 px-4 py-1 rounded-md text-xl font-extrabold cursor-pointer ${
+                                isMobileMenuOpen ? "opacity-100" : ""
+                            } ${location.pathname === item.path ? "text-white" : "text-black"}`}
                         >
-                            {item.text}
+                            <i className="fa-solid fa-arrow-right"></i> {item.text}
                         </span>
                     ))}
                 </div>
@@ -65,4 +65,4 @@ const NavPublic = () => {
     );
 };
 
-export { NavPublic };
+export default NavPublic;
