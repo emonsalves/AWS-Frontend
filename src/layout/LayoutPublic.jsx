@@ -4,7 +4,7 @@ import FooterPublic from "../components/footers/FooterPublic";
 
 function LayoutPublic() {
     return (
-        <div className="grid grid-cols-1 grid-rows-[2.25rem,auto,4.25rem] min-h-screen">
+        <div className="grid grid-cols-1 grid-rows-[2.25rem,auto,6.25rem] min-h-screen">
             <div className="row-span-1">
                 <HeaderPublic />
             </div>
