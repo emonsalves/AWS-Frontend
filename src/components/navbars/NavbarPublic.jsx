@@ -9,6 +9,8 @@ const NavPublic = () => {
     const menuItems = [
         { text: "Home", path: "/" },
         { text: "About", path: "/about" },
+        // { text: "Contact", path: "/contact" },
+        // { text: "Register", path: "/register" },
         // { text: "Login", path: "/login" },
     ];
 
@@ -24,6 +26,7 @@ const NavPublic = () => {
                 >
                     <span className="text-gblack text-xl font-extrabold text-center">MNSLVS</span>
                 </div>
+                
                 <div className="hidden md:flex md:justify-end md:items-end">
                     {menuItems.map((item, index) => (
                         <span

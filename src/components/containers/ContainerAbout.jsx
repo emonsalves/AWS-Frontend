@@ -29,10 +29,6 @@ const ContainerAbout = () => {
                         </p>
                     </div>
                 </div>
-
-                <div className="flex flex-col justify-center items-center">
-                    <div className="flex flex-col"></div>
-                </div>
             </div>
 
             <div className="flex flex-col md:flex-row border border-gray-400 shadow-custom-dark rounded-2xl bg-gray-100 w-[85%] animate-fade-up animate-once mt-4 mb-10">
@@ -110,6 +106,7 @@ const ContainerAbout = () => {
                 </div>
             </div>
 
+           
             <div className="flex flex-wrap border border-gray-400 shadow-custom-dark rounded-2xl flex-col bg-gray-100 w-[85%] animate-fade-up animate-once mt-4 mb-10">
                 <h2 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
                     <i className="fa-solid fa-hand-holding-heart"></i> Compromiso con la Calidad y la Eficiencia:
