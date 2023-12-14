@@ -44,10 +44,10 @@ const router = createHashRouter([
                 path: "About",
                 element: <SuspenseRouter element={<About />} />,
             },
-            // {
-            //     path: "Login",
-            //     element: <SuspenseRouter element={<Login />} />,
-            // },
+            {
+                path: "Login",
+                element: <SuspenseRouter element={<Login />} />,
+            },
         ],
     },
 ]);
