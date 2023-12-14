@@ -1,6 +1,6 @@
 const Login = () => {
     return (
-        <section className="h-full flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0 ">
+        <section className="h-full flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:mt-0 ">
             <div className="md:w-1/3 max-w-sm border-gray-400 shadow-custom-dark rounded-2xl">
                 <img src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" alt="Sample image" />
             </div>
