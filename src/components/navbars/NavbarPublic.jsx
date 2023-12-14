@@ -11,7 +11,7 @@ const NavPublic = () => {
         { text: "About", path: "/about" },
         // { text: "Contact", path: "/contact" },
         // { text: "Register", path: "/register" },
-        // { text: "Login", path: "/login" },
+        { text: "Login", path: "/login" },
     ];
 
     const handleMobileMenuToggle = () => {
