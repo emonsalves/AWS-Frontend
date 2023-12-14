@@ -28,6 +28,7 @@ const SuspenseRouter = ({ element }) => {
 
 const Home = createLazyComponent(import("../pages/Home"));
 const About = createLazyComponent(import("../pages/About"));
+const Login = createLazyComponent(import("../pages/Login"));
 
 const router = createHashRouter([
     {
@@ -42,6 +43,10 @@ const router = createHashRouter([
             {
                 path: "About",
                 element: <SuspenseRouter element={<About />} />,
+            },
+            {
+                path: "Login",
+                element: <SuspenseRouter element={<Login />} />,
             },
         ],
     },
