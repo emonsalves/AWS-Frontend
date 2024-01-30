@@ -21,7 +21,7 @@
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
     "tailwindcss-animated": "^1.0.1",
-    "vite": "^4.4.12"
+    "vite": "^4.5.2"
   },
   "name": "home-page",
   "private": true,
