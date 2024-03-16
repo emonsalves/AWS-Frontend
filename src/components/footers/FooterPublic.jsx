@@ -33,7 +33,7 @@ const FooterPublic = () => {
                     <i className="fab fa-instagram"></i>
                 </a>
             </div>
-            <p className="text-lg text-white">&copy; 2023 - All Rights Reserved</p>
+            <p className="text-lg text-white">&copy; {new Date().getFullYear()} - All Rights Reserved</p>
         </div>
     );
 };
