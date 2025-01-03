@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
 import { createHashRouter } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
