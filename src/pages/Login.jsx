@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
 const Login = () => {
@@ -46,9 +47,9 @@ const Login = () => {
                                 />
                                 <span>Recordarme</span>
                             </label>
-                            <a className="text-[#25D366] hover:text-[#128C7E] transition-colors" href="#">
+                            <Link to="/recover-password" className="text-[#25D366] hover:text-[#128C7E] transition-colors">
                                 ¿Olvidaste tu contraseña?
-                            </a>
+                            </Link>
                         </div>
                         <div className="text-center md:text-left mt-6">
                             <button
@@ -58,17 +59,17 @@ const Login = () => {
                                 Iniciar Sesión
                             </button>
                         </div>
-                        <div className={`mt-4 font-medium text-sm text-center md:text-left ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                        {/* <div className={`mt-4 font-medium text-sm text-center md:text-left ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                             ¿No tienes una cuenta?{" "}
                             <a className="text-[#25D366] hover:text-[#128C7E] transition-colors" href="#">
                                 Registrarme
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
         </div>
-    );
+    )
 };
 
 export default Login;
