@@ -1,27 +1,39 @@
+import { useTheme } from '../context/ThemeContext';
+
 const Home = () => {
+    const { darkMode } = useTheme();
+
     return (
-        <div className="min-h-full bg-gray-900 flex flex-col items-center justify-center relative">
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <div className="firefly"></div>
-            <h1 className="text-5xl md:text-7xl text-white font-bold mb-8 z-10 animate-fade-up animate-once text-center">
-                ¡Bienvenido a MNSLVS Solutions! <br />
-            </h1>
-            <p className="text-white text-xl md:text-2xl text-center animate-fade-up animate-once">
-                Impulsando el Éxito de las PYMES a través de Soluciones Tecnológicas
-            </p>
+        <div className="w-full flex flex-col items-center">
+            {/* Main content section with fireflies */}
+            <div className="w-full relative">
+                {/* Fireflies */}
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                <div className="firefly"></div>
+                
+                {/* Text content */}
+                <div className="relative z-10">
+                    <h1 className={`text-5xl md:text-7xl font-bold mb-8 text-center text-white`}>
+                        ¡Bienvenido a MNSLVS Solutions! <br />
+                    </h1>
+                    <p className={`text-xl md:text-2xl text-center text-gray-300`}>
+                        Impulsando el Éxito de las PYMES a través de Soluciones Tecnológicas
+                    </p>
+                </div>
+            </div>
         </div>
     );
 };

@@ -4,16 +4,12 @@ import FooterPublic from "../components/footers/FooterPublic";
 
 function LayoutPublic() {
     return (
-        <div className="grid grid-cols-1 grid-rows-[2.25rem,auto,6.25rem] min-h-screen">
-            <div className="row-span-1">
-                <HeaderPublic />
-            </div>
-            <div className="row-span-1">
+        <div className="flex flex-col min-h-screen w-full bg-gray-900">
+            <HeaderPublic />
+            <main className="flex-1 w-full flex items-center justify-center">
                 <Outlet />
-            </div>
-            <div className="row-span-1">
-                <FooterPublic />
-            </div>
+            </main>
+            <FooterPublic />
         </div>
     );
 }
