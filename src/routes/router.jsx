@@ -30,6 +30,8 @@ const Home = createLazyComponent(import("../pages/Home"));
 const About = createLazyComponent(import("../pages/About"));
 const Login = createLazyComponent(import("../pages/Login"));
 const Calculador = createLazyComponent(import("../pages/Calculador"));
+const RecoverPassword = createLazyComponent(import("../pages/RecoverPassword"));
+const Contact = createLazyComponent(import("../pages/Contact"));
 
 const router = createHashRouter([
     {
@@ -50,8 +52,16 @@ const router = createHashRouter([
                 element: <SuspenseRouter element={<Login />} />,
             },
             {
+                path: "recover-password",
+                element: <SuspenseRouter element={<RecoverPassword />} />,
+            },
+            {
                 path: "Calculador",
                 element: <SuspenseRouter element={<Calculador />} />,
+            },
+            {
+                path: "Contacto",
+                element: <SuspenseRouter element={<Contact />} />,
             },
         ],
     },
