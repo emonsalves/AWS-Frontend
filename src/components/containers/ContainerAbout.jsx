@@ -5,6 +5,7 @@ const ContainerAbout = () => {
     
     return (
         <>
+
             <div className={`flex flex-wrap border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl flex-col w-[85%] animate-fade-up animate-once mt-12 mb-10 backdrop-blur-sm`}>
                 <h1 className={`my-5 font-bold text-3xl animate-fade animate-once text-center ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                     <i className="fa-regular fa-address-card"></i> Acerca de Nosotros

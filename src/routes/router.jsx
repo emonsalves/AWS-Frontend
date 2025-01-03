@@ -1,5 +1,4 @@
 /* eslint-disable react-refresh/only-export-components */
-/* eslint-disable react/prop-types */
 import { createHashRouter } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
 import NotFound from "../pages/NotFound";
