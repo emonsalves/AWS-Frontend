@@ -1,3 +1,4 @@
+import { useTheme } from '../context/ThemeContext';
 import { ContainerAbout } from "../components/containers/ContainerAbout";
 import { MarqueeAbout } from "../components/marquees/MarqueeAbout";
 
@@ -34,12 +35,14 @@ var logosMarque2 = [
 ];
 
 const About = () => {
+    const { darkMode } = useTheme();
+
     return (
-        <div className="min-w-full min-h-full bg-gray-100 flex flex-col items-center text-white mb-5">
+        <div className={`min-h-screen w-full flex flex-col items-center ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
             <ContainerAbout />
-            <h1 className="text-black my-5 font-semibold text-2xl animate-fade animate-once text-center m-5">
+            <h2 className={`my-5 font-semibold text-2xl animate-fade animate-once text-center m-5 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                 <i className="fa-solid fa-toolbox"></i> Conoce algunas de las Tecnologías que utilizamos:
-            </h1>
+            </h2>
             <MarqueeAbout direction={"left"} speed={25} dataLogos={logosMarque1} />
             <MarqueeAbout direction={"right"} speed={25} dataLogos={logosMarque2} />
         </div>
