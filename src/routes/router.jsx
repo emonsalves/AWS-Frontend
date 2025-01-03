@@ -1,32 +1,37 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createHashRouter } from "react-router-dom";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
 import NotFound from "../pages/NotFound";
 import LoaderPage from "../components/loaders/LoaderPage";
 import { LayoutPublic } from "../layout/LayoutPublic";
 
 const createLazyComponent = (importPromise) => {
-    return lazy(() => importPromise);
+    return lazy(() => {
+        return Promise.all([
+            importPromise,
+            new Promise(resolve => setTimeout(resolve, 300)) // Minimum loading time
+        ]).then(([moduleExports]) => moduleExports);
+    });
 };
 
 const SuspenseRouter = ({ element }) => {
-    const [isReady, setIsReady] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsReady(true);
-        }, 1000); // 2 segundos de carga
-
-        return () => {
-            clearTimeout(timer); // Limpia el temporizador si el componente se desmonta antes de que termine la carga.
-        };
-    }, []);
-
-    return <Suspense fallback={<LoaderPage />}>{isReady ? element : <LoaderPage />}</Suspense>;
+    return (
+        <Suspense fallback={<LoaderPage />}>
+            {element}
+        </Suspense>
+    );
 };
 
+// Precarga de componentes críticos
 const Home = createLazyComponent(import("../pages/Home"));
+if (window.requestIdleCallback) {
+    requestIdleCallback(() => {
+        Home.preload?.();
+    });
+}
+
+// Componentes no críticos con lazy loading
 const About = createLazyComponent(import("../pages/About"));
 const Login = createLazyComponent(import("../pages/Login"));
 const Calculador = createLazyComponent(import("../pages/Calculador"));
