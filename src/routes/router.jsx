@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 import { createHashRouter } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
-import NotFound from "../pages/NotFound";
 import LoaderPage from "../components/loaders/LoaderPage";
 import { LayoutPublic } from "../layout/LayoutPublic";
 
@@ -32,6 +31,8 @@ const Login = createLazyComponent(import("../pages/Login"));
 const Calculador = createLazyComponent(import("../pages/Calculador"));
 const RecoverPassword = createLazyComponent(import("../pages/RecoverPassword"));
 const Contact = createLazyComponent(import("../pages/Contact"));
+const Followers = createLazyComponent(import("../pages/Followers"));
+const NotFound = createLazyComponent(import("../pages/NotFound"));
 
 const router = createHashRouter([
     {
@@ -63,6 +64,10 @@ const router = createHashRouter([
                 path: "Contacto",
                 element: <SuspenseRouter element={<Contact />} />,
             },
+            {
+                path: "Followers",
+                element: <SuspenseRouter element={<Followers />} />,
+            }
         ],
     },
 ]);
