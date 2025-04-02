@@ -184,114 +184,122 @@ const Followers = () => {
             )}
             {comunidad.length > 0 && (
                 <Accordion title={`Resultado General (${comunidad.length} perfiles)`} darkMode={darkMode}>
-                    <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
-                        <thead>
-                            <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
-                                <th className="px-4 py-2">#</th>
-                                <th className="px-4 py-2">Comunidad</th>
-                                <th className="px-4 py-2">Te sigue</th>
-                                <th className="px-4 py-2">Lo sigues</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {comunidad.map((item, index) => (
-                                <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
-                                    <td className="px-4 py-2 text-center"> {index + 1}</td>
-                                    <td className="px-4 py-2 text-center">
-                                        <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
-                                            {item.value}
-                                        </a>
-                                    </td>
-                                    <td className={`px-4 py-2 text-center ${item.foundInFollowers ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowers ? 'Sí' : 'No'}</td>
-                                    <td className={`px-4 py-2 text-center ${item.foundInFollowing ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowing ? 'Sí' : 'No'}</td>
+                    <div className="overflow-x-auto">
+                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                            <thead>
+                                <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
+                                    <th className="px-4 py-2">#</th>
+                                    <th className="px-4 py-2">Comunidad</th>
+                                    <th className="px-4 py-2">Te sigue</th>
+                                    <th className="px-4 py-2">Lo sigues</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {comunidad.map((item, index) => (
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                        <td className="px-4 py-2 text-center"> {index + 1}</td>
+                                        <td className="px-4 py-2 text-center">
+                                            <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
+                                                {item.value}
+                                            </a>
+                                        </td>
+                                        <td className={`px-4 py-2 text-center ${item.foundInFollowers ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowers ? 'Sí' : 'No'}</td>
+                                        <td className={`px-4 py-2 text-center ${item.foundInFollowing ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowing ? 'Sí' : 'No'}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </Accordion>
             )}
             {dontFollowYou.length > 0 && (
                 <Accordion title={`No te siguen (${dontFollowYou.length})`} darkMode={darkMode}>
-                    <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
-                        <thead>
-                            <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
-                                <th className="px-4 py-2">#</th>
-                                <th className="px-4 py-2">Comunidad</th>
-                                <th className="px-4 py-2">Te sigue</th>
-                                <th className="px-4 py-2">Lo sigues</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {dontFollowYou.map((item, index) => (
-                                <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
-                                    <td className="px-4 py-2 text-center"> {index + 1}</td>
-                                    <td className="px-4 py-2 text-center">
-                                        <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
-                                            {item.value}
-                                        </a>
-                                    </td>
-                                    <td className={`px-4 py-2 text-center ${item.foundInFollowers ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowers ? 'Sí' : 'No'}</td>
-                                    <td className={`px-4 py-2 text-center ${item.foundInFollowing ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowing ? 'Sí' : 'No'}</td>
+                    <div className="overflow-x-auto">
+                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                            <thead>
+                                <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
+                                    <th className="px-4 py-2">#</th>
+                                    <th className="px-4 py-2">Comunidad</th>
+                                    <th className="px-4 py-2">Te sigue</th>
+                                    <th className="px-4 py-2">Lo sigues</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {dontFollowYou.map((item, index) => (
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                        <td className="px-4 py-2 text-center"> {index + 1}</td>
+                                        <td className="px-4 py-2 text-center">
+                                            <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
+                                                {item.value}
+                                            </a>
+                                        </td>
+                                        <td className={`px-4 py-2 text-center ${item.foundInFollowers ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowers ? 'Sí' : 'No'}</td>
+                                        <td className={`px-4 py-2 text-center ${item.foundInFollowing ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowing ? 'Sí' : 'No'}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </Accordion>
             )}
             {youDontFollow.length > 0 && (
                 <Accordion title={`No los sigues (${youDontFollow.length})`} darkMode={darkMode}>
-                    <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
-                        <thead>
-                            <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
-                                <th className="px-4 py-2">#</th>
-                                <th className="px-4 py-2">Comunidad</th>
-                                <th className="px-4 py-2">Te sigue</th>
-                                <th className="px-4 py-2">Lo sigues</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {youDontFollow.map((item, index) => (
-                                <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
-                                    <td className="px-4 py-2 text-center"> {index + 1}</td>
-                                    <td className="px-4 py-2 text-center">
-                                        <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
-                                            {item.value}
-                                        </a>
-                                    </td>
-                                    <td className={`px-4 py-2 text-center ${item.foundInFollowers ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowers ? 'Sí' : 'No'}</td>
-                                    <td className={`px-4 py-2 text-center ${item.foundInFollowing ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowing ? 'Sí' : 'No'}</td>
+                    <div className="overflow-x-auto">
+                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                            <thead>
+                                <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
+                                    <th className="px-4 py-2">#</th>
+                                    <th className="px-4 py-2">Comunidad</th>
+                                    <th className="px-4 py-2">Te sigue</th>
+                                    <th className="px-4 py-2">Lo sigues</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {youDontFollow.map((item, index) => (
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                        <td className="px-4 py-2 text-center"> {index + 1}</td>
+                                        <td className="px-4 py-2 text-center">
+                                            <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
+                                                {item.value}
+                                            </a>
+                                        </td>
+                                        <td className={`px-4 py-2 text-center ${item.foundInFollowers ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowers ? 'Sí' : 'No'}</td>
+                                        <td className={`px-4 py-2 text-center ${item.foundInFollowing ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowing ? 'Sí' : 'No'}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </Accordion>
             )}
             {nothingFollow.length > 0 && (
                 <Accordion title={`No te siguen y no los sigues (${nothingFollow.length})`} darkMode={darkMode}>
-                    <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
-                        <thead>
-                            <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
-                                <th className="px-4 py-2">#</th>
-                                <th className="px-4 py-2">Comunidad</th>
-                                <th className="px-4 py-2">Te sigue</th>
-                                <th className="px-4 py-2">Lo sigues</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {nothingFollow.map((item, index) => (
-                                <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
-                                    <td className="px-4 py-2 text-center"> {index + 1}</td>
-                                    <td className="px-4 py-2 text-center">
-                                        <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
-                                            {item.value}
-                                        </a>
-                                    </td>
-                                    <td className={`px-4 py-2 text-center ${item.foundInFollowers ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowers ? 'Sí' : 'No'}</td>
-                                    <td className={`px-4 py-2 text-center ${item.foundInFollowing ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowing ? 'Sí' : 'No'}</td>
+                    <div className="overflow-x-auto">
+                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                            <thead>
+                                <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
+                                    <th className="px-4 py-2">#</th>
+                                    <th className="px-4 py-2">Comunidad</th>
+                                    <th className="px-4 py-2">Te sigue</th>
+                                    <th className="px-4 py-2">Lo sigues</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {nothingFollow.map((item, index) => (
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                        <td className="px-4 py-2 text-center"> {index + 1}</td>
+                                        <td className="px-4 py-2 text-center">
+                                            <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
+                                                {item.value}
+                                            </a>
+                                        </td>
+                                        <td className={`px-4 py-2 text-center ${item.foundInFollowers ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowers ? 'Sí' : 'No'}</td>
+                                        <td className={`px-4 py-2 text-center ${item.foundInFollowing ? 'text-green-500' : 'text-red-500'}`}>{item.foundInFollowing ? 'Sí' : 'No'}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </Accordion>
             )}
             <div className="mt-6 text-center">
