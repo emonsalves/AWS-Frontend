@@ -1,8 +1,4 @@
-import { useTheme } from '../context/ThemeContext';
-
 const Home = () => {
-    const { darkMode } = useTheme();
-
     return (
         <div className="w-full flex flex-col items-center">
             {/* Main content section with fireflies */}
