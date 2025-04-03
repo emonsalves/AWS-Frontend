@@ -2,8 +2,9 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const ThemeProvider = ({ children }) => {
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
 
     useEffect(() => {
         // Check for saved theme preference or system preference

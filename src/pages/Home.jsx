@@ -1,6 +1,6 @@
 const Home = () => {
     return (
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full min-h-full flex flex-col items-center">
             {/* Main content section with fireflies */}
             <div className="w-full relative">
                 {/* Fireflies */}

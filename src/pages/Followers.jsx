@@ -1,7 +1,7 @@
 import { useJsonFileUpload } from "../helpers/jsonFile";
 import { useTheme } from '../context/ThemeContext';
 import FileInput from "../components/inputs/FileInput";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Accordion from "../components/accordion/Accordion";
 
 const Followers = () => {
@@ -13,9 +13,6 @@ const Followers = () => {
     const [dontFollowYou, setDontFollowYou] = useState([]);
     const [youDontFollow, setYouDontFollow] = useState([]);
     const [nothingFollow, setNothingFollow] = useState([]);
-    const followersInputRef = useRef(null);
-    const followingInputRef = useRef(null);
-    const listInputRef = useRef(null);
     const [inputKeys, setInputKeys] = useState({
         followers: Date.now() + "-followers",
         following: Date.now() + "-following",
@@ -30,10 +27,6 @@ const Followers = () => {
         dataFollowers.clearJsonData();
         dataFollowing.clearJsonData();
         dataList.clearJsonData();
-
-        if (followersInputRef.current) followersInputRef.current.value = null;
-        if (followingInputRef.current) followingInputRef.current.value = null;
-        if (listInputRef.current) listInputRef.current.value = null;
 
         setInputKeys({
             followers: Date.now() + "-followers",
@@ -146,7 +139,6 @@ const Followers = () => {
                     handleFileUpload={dataFollowers.handleFileUpload}
                     error={dataFollowers.error}
                     jsonData={dataFollowers.jsonData}
-                    ref={followersInputRef}
                 />
                 <FileInput
                     key={inputKeys.following}
@@ -155,7 +147,6 @@ const Followers = () => {
                     handleFileUpload={dataFollowing.handleFileUpload}
                     error={dataFollowing.error}
                     jsonData={dataFollowing.jsonData}
-                    ref={followingInputRef}
                 />
                 <FileInput
                     key={inputKeys.list}
@@ -164,7 +155,6 @@ const Followers = () => {
                     handleFileUpload={dataList.handleFileUpload}
                     error={dataList.error}
                     jsonData={dataList.jsonData}
-                    ref={listInputRef}
                 />
             </div>
             <div className="text-center md:text-left mt-6">

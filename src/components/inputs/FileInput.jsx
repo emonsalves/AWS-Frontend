@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-const FileInput = ({ darkMode, title, handleFileUpload, error, jsonData, inputRef }) => {
+const FileInput = ({ darkMode, title, handleFileUpload, error, jsonData }) => {
     return (
         <div className={`flex flex-col items-center justify-center p-2 border rounded-lg shadow-md transition-colors ${darkMode
             ? 'bg-gray-800 border-gray-700 text-white'
@@ -15,7 +15,6 @@ const FileInput = ({ darkMode, title, handleFileUpload, error, jsonData, inputRe
                 accept=".json"
                 onChange={handleFileUpload}
                 id={title}
-                ref={inputRef}
             />
             {error && <p className={`text-md animate-fade-left animate-once text-center text-red-300`}>{error}</p>}
             {jsonData && <p className={`text-md animate-fade-left animate-once text-center text-green-600`}>Archivo JSON cargado correctamente.</p>}
