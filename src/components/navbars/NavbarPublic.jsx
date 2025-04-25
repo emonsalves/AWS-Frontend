@@ -12,6 +12,7 @@ const NavPublic = () => {
         { text: "Home", path: "/" },
         { text: "About", path: "/about" },
         { text: "Contacto", path: "/contacto" },
+        { text: "Followers", path: "/followers" },
         { text: "Login", path: "/login" },
     ];
 
