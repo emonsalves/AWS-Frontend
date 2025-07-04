@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # Servicio de desarrollo
+  dev:
+    build:
+      context: .
+      target: build
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./index.html:/app/index.html
+    ports:
+      - "3500:3500"
+    environment:
+      - NODE_ENV=development
+    command: npm run dev -- --host 0.0.0.0
+  
+  # Servicio de producción
+  prod:
+    build:
+      context: .
+      target: production
+    ports:
+      - "80:80"
+    restart: unless-stopped

@@ -7,5 +7,6 @@ export default defineConfig({
 
     server: {
         port: 3500, // Puerto de salida
+        host: '0.0.0.0', // Permitir conexiones desde cualquier IP (necesario para Docker)
     },
 });
