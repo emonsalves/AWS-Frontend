@@ -7,7 +7,7 @@ function LayoutPublic() {
     
     // Páginas que necesitan centrado vertical (contenido fijo)
     const centeredPages = ['/', '/login', '/contacto', '/recover-password'];
-    // Páginas que manejan su propio padding y espaciado
+    // Pages that manage their own padding and spacing
     const selfManagedPages = ['/about', '/followers'];
     
     const shouldCenter = centeredPages.includes(location.pathname.toLowerCase());
