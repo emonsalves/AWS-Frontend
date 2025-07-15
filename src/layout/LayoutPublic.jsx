@@ -1,13 +1,35 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import HeaderPublic from "../components/headers/HeaderPublic";
 import FooterPublic from "../components/footers/FooterPublic";
 
 function LayoutPublic() {
+    const location = useLocation();
+    
+    // Pages that need vertical centering (fixed content)
+    const centeredPages = ['/', '/login', '/contacto', '/recover-password'];
+    // Pages that manage their own padding and spacing
+    const selfManagedPages = ['/about', '/followers'];
+    
+    const shouldCenter = centeredPages.includes(location.pathname.toLowerCase());
+    const isSelfManaged = selfManagedPages.includes(location.pathname.toLowerCase());
+    
     return (
         <div className="flex flex-col min-h-screen w-full bg-gray-900">
             <HeaderPublic />
-            <main className="flex-1 w-full flex items-center justify-center">
-                <Outlet />
+            <main className={`flex-1 w-full ${
+                shouldCenter 
+                    ? 'flex items-center justify-center' 
+                    : 'flex flex-col'
+            }`}>
+                <div className={`${
+                    shouldCenter 
+                        ? 'w-full max-w-7xl mx-auto px-4' 
+                        : isSelfManaged
+                        ? 'w-full' // No padding for self-managed pages
+                        : 'w-full max-w-7xl mx-auto px-4 py-8'
+                }`}>
+                    <Outlet />
+                </div>
             </main>
             <FooterPublic />
         </div>

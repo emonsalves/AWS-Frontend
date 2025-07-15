@@ -183,10 +183,11 @@ const Followers = () => {
     }
 
     return (
-        <div className={`container ${darkMode ? 'dark-mode' : ''}`}>
-            <h1 className={`text-3xl font-semibold text-center mb-6 rounded-lg  ${darkMode
-                ? 'text-white'
-                : 'bg-white border-gray-300 text-gray-900'}`}>Sube tus archivos JSON</h1>
+        <div className={`min-h-screen w-full flex flex-col items-center ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
+            <div className={`container max-w-7xl mx-auto px-4 pt-16 pb-8 ${darkMode ? 'dark-mode' : ''}`}>
+                <h1 className={`text-3xl font-semibold text-center mb-6 rounded-lg  ${darkMode
+                    ? 'text-white'
+                    : 'bg-white border-gray-300 text-gray-900'}`}>Sube tus archivos JSON</h1>
             
             {/* Switch para alternar listado activo/inactivo */}
             <div className="flex justify-center mb-6">
@@ -546,6 +547,7 @@ const Followers = () => {
                 <p>Esta herramienta te permite analizar tus seguidores y seguidos en Instagram.</p>
                 <p>Asegúrate de subir archivos JSON válidos para obtener resultados precisos.</p>
                 <p>Si tienes alguna pregunta, no dudes en contactarnos.</p>
+            </div>
             </div>
         </div>
     );
