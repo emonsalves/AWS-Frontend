@@ -25,7 +25,7 @@ function LayoutPublic() {
                     shouldCenter 
                         ? 'w-full max-w-7xl mx-auto px-4' 
                         : isSelfManaged
-                        ? 'w-full' // Sin padding para páginas auto-gestionadas
+                        ? 'w-full' // No padding for self-managed pages
                         : 'w-full max-w-7xl mx-auto px-4 py-8'
                 }`}>
                     <Outlet />
