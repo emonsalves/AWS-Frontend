@@ -5,7 +5,7 @@ const Login = () => {
     const { darkMode } = useTheme();
 
     return (
-        <div className={`min-h-[calc(100vh-6rem)] w-full flex flex-col items-center justify-center ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+        <div className={`w-full h-full flex items-center justify-center ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
             <div className={`h-full flex items-center justify-center ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} border shadow-custom-dark rounded-2xl animate-fade-up transition-colors duration-300`}>
                 <section className={`w-full max-w-6xl flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center  ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} rounded-2xl px-8 py-10`}>
                     <div className="md:w-1/2 max-w-xl">
