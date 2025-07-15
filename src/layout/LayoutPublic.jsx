@@ -5,7 +5,7 @@ import FooterPublic from "../components/footers/FooterPublic";
 function LayoutPublic() {
     const location = useLocation();
     
-    // Páginas que necesitan centrado vertical (contenido fijo)
+    // Pages that need vertical centering (fixed content)
     const centeredPages = ['/', '/login', '/contacto', '/recover-password'];
     // Pages that manage their own padding and spacing
     const selfManagedPages = ['/about', '/followers'];
