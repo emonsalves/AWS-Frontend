@@ -44,7 +44,7 @@ const NavPublic = () => {
                     ))}
                     <button
                         onClick={toggleDarkMode}
-                        className={`p-2 rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-[#128C7E]'} transition-colors`}
+                        className={`w-10 h-10 flex items-center justify-center rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-[#128C7E]'} transition-colors`}
                         aria-label="Toggle dark mode"
                     >
                         {darkMode ? (
@@ -58,7 +58,7 @@ const NavPublic = () => {
                 <div className="md:hidden flex items-center space-x-2">
                     <button
                         onClick={toggleDarkMode}
-                        className={`p-2 rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-[#128C7E]'} transition-colors`}
+                        className={`w-10 h-10 flex items-center justify-center rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-[#128C7E]'} transition-colors`}
                         aria-label="Toggle dark mode"
                     >
                         {darkMode ? (

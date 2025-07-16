@@ -5,7 +5,7 @@ const RecoverPassword = () => {
     const { darkMode } = useTheme();
 
     return (
-        <div className={`w-full h-full flex items-center justify-center bg-gray-900 transition-colors duration-300`}>
+        <div className="w-full h-full flex items-center justify-center">
             <section className="w-full max-w-6xl flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center animate-fade-up animate-once">
                     <div className={`w-full max-w-4xl flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center shadow-2xl px-8 py-10 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
                         <div className="md:w-1/2 max-w-xl">
