@@ -18,7 +18,7 @@ const ContainerContact = () => {
 
     return (
         <>
-        <div className={`${containerBaseClasses} ${darkMode ? containerDarkModeClasses : containerLightModeClasses}`}>
+        <div className={`flex flex-wrap border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl flex-col w-full max-w-[95%] sm:max-w-[90%] md:max-w-6xl mx-auto animate-fade-up animate-once mt-16 sm:mt-18 md:mt-16 lg:mt-12 mb-2 backdrop-blur-sm`}>
             <h1 className={`my-2 sm:my-3 lg:my-5 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl animate-fade animate-once text-center px-1 sm:px-2 md:px-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                 <i className="fa-regular fa-envelope"></i> Contáctanos
             </h1>
