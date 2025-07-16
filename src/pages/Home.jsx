@@ -8,21 +8,12 @@ const Home = () => {
             {/* Main content section with fireflies */}
             <div className="w-full relative">
                 {/* Fireflies */}
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
-                <div className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}></div>
+                {Array.from({ length: 15 }).map((_, index) => (
+                    <div
+                        key={index}
+                        className={`firefly ${darkMode ? 'firefly-dark' : 'firefly-light'}`}
+                    ></div>
+                ))}
                 
                 {/* Text content */}
                 <div className="relative z-10">
