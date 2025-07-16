@@ -183,15 +183,15 @@ const Followers = () => {
     }
 
     return (
-        <div className={`min-h-screen w-full flex flex-col items-center ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
-            <div className={`container max-w-7xl mx-auto px-4 pt-16 pb-8 ${darkMode ? 'dark-mode' : ''}`}>
-                <h1 className={`text-3xl font-semibold text-center mb-6 rounded-lg  ${darkMode
+        <div className="w-full">
+            <div className={`container max-w-7xl mx-auto px-2 sm:px-4 pt-16 pb-8 ${darkMode ? 'dark-mode' : ''}`}>
+                <h1 className={`text-2xl sm:text-3xl font-semibold text-center mb-6 px-2 ${darkMode
                     ? 'text-white'
-                    : 'bg-white border-gray-300 text-gray-900'}`}>Sube tus archivos JSON</h1>
+                    : 'text-gray-900'}`}>Sube tus archivos JSON</h1>
             
             {/* Switch para alternar listado activo/inactivo */}
-            <div className="flex justify-center mb-6">
-                <div className={`p-4 rounded-lg border ${
+            <div className="flex justify-center mb-6 px-2 sm:px-0">
+                <div className={`p-3 sm:p-4 rounded-lg border w-full max-w-sm ${
                     darkMode 
                         ? 'border-gray-600 bg-gray-800' 
                         : 'border-gray-200 bg-gray-50'
@@ -214,7 +214,7 @@ const Followers = () => {
                 </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 px-2 sm:px-0">
                 <FileInput
                     key={inputKeys.followers}
                     darkMode={darkMode}
@@ -242,26 +242,29 @@ const Followers = () => {
                 />
                 )}
             </div>
-            <div className="text-center md:text-left mt-6">
-                <button className="w-full bg-[#25D366] hover:bg-[#128C7E] px-6 py-3 text-white font-medium rounded-lg transition-colors duration-200"
+            <div className="w-full mt-6 px-4 sm:px-0">
+                <button className="w-full bg-[#25D366] hover:bg-[#128C7E] px-6 py-3 text-white font-medium rounded-lg transition-colors duration-200 text-sm sm:text-base"
                     type="button"
                     onClick={action}
                 >
                     Realizar Análisis
                 </button>
             </div>
+            </div>
 
+            {/* Sección de resultados fuera del contenedor centrado */}
+            <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 pb-8">
             {comunidad.length > 0 && isListingActive && (
                 <div className="mt-6">
                     <h2 className={`text-xl font-semibold mb-4 text-center ${darkMode
                         ? 'text-white'
-                        : 'bg-white border-gray-300 text-gray-900'}`}>Resultados del Análisis</h2>
+                        : 'text-gray-900'}`}>Resultados del Análisis</h2>
                 </div>
             )}
             {comunidad.length > 0 && isListingActive && (
                 <Accordion title={`Resultado General (${comunidad.length} perfiles)`} darkMode={darkMode}>
-                    <div className="overflow-x-auto">
-                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                    <div className="table-container overflow-x-auto">
+                        <table className={`mobile-table min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
                             <thead>
                                 <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
                                     <th className="px-4 py-2">#</th>
@@ -272,7 +275,7 @@ const Followers = () => {
                             </thead>
                             <tbody>
                                 {comunidad.map((item, index) => (
-                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white hover:bg-gray-500' : 'bg-white text-gray-800 hover:bg-gray-50'}`}>
                                         <td className="px-4 py-2 text-center"> {index + 1}</td>
                                         <td className="px-4 py-2 text-center">
                                             <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
@@ -290,8 +293,8 @@ const Followers = () => {
             )}
             {comunidadDontFollowYou.length > 0 && isListingActive && (
                 <Accordion title={`No te siguen (${comunidadDontFollowYou.length})`} darkMode={darkMode}>
-                    <div className="overflow-x-auto">
-                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                    <div className="table-container overflow-x-auto">
+                        <table className={`mobile-table min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
                             <thead>
                                 <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
                                     <th className="px-4 py-2">#</th>
@@ -302,7 +305,7 @@ const Followers = () => {
                             </thead>
                             <tbody>
                                 {comunidadDontFollowYou.map((item, index) => (
-                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white hover:bg-gray-500' : 'bg-white text-gray-800 hover:bg-gray-50'}`}>
                                         <td className="px-4 py-2 text-center"> {index + 1}</td>
                                         <td className="px-4 py-2 text-center">
                                             <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
@@ -320,8 +323,8 @@ const Followers = () => {
             )}
             {comunidadYouDontFollow.length > 0 && isListingActive && (
                 <Accordion title={`No los sigues (${comunidadYouDontFollow.length})`} darkMode={darkMode}>
-                    <div className="overflow-x-auto">
-                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                    <div className="table-container overflow-x-auto">
+                        <table className={`mobile-table min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
                             <thead>
                                 <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
                                     <th className="px-4 py-2">#</th>
@@ -332,7 +335,7 @@ const Followers = () => {
                             </thead>
                             <tbody>
                                 {comunidadYouDontFollow.map((item, index) => (
-                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white hover:bg-gray-500' : 'bg-white text-gray-800 hover:bg-gray-50'}`}>
                                         <td className="px-4 py-2 text-center"> {index + 1}</td>
                                         <td className="px-4 py-2 text-center">
                                             <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
@@ -350,8 +353,8 @@ const Followers = () => {
             )}
             {comunidadNothingFollow.length > 0 && isListingActive && (
                 <Accordion title={`No te siguen y no los sigues (${comunidadNothingFollow.length})`} darkMode={darkMode}>
-                    <div className="overflow-x-auto">
-                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                    <div className="table-container overflow-x-auto">
+                        <table className={`mobile-table min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
                             <thead>
                                 <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
                                     <th className="px-4 py-2">#</th>
@@ -362,7 +365,7 @@ const Followers = () => {
                             </thead>
                             <tbody>
                                 {comunidadNothingFollow.map((item, index) => (
-                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white hover:bg-gray-500' : 'bg-white text-gray-800 hover:bg-gray-50'}`}>
                                         <td className="px-4 py-2 text-center"> {index + 1}</td>
                                         <td className="px-4 py-2 text-center">
                                             <a href={`https://www.instagram.com/${item.value}`} target="_blank" rel="noopener noreferrer" className={`text-blue-500 hover:underline ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
@@ -413,15 +416,15 @@ const Followers = () => {
                 <div className="mt-6">
                     <h2 className={`text-xl font-semibold mb-4 text-center ${darkMode
                         ? 'text-white'
-                        : 'bg-white border-gray-300 text-gray-900'}`}>Análisis de Seguidores y Seguidos</h2>
+                        : 'text-gray-900'}`}>Análisis de Seguidores y Seguidos</h2>
                 </div>
             )}
 
             {/* Mis seguidores */}
             {myFollowers.length > 0 && !isListingActive && (
                 <Accordion title={`Mis Seguidores (${myFollowers.length})`} darkMode={darkMode}>
-                    <div className="overflow-x-auto">
-                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                    <div className="table-container overflow-x-auto">
+                        <table className={`mobile-table min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
                             <thead>
                                 <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
                                     <th className="px-4 py-2">#</th>
@@ -431,7 +434,7 @@ const Followers = () => {
                             </thead>
                             <tbody>
                                 {myFollowers.map((item, index) => (
-                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white hover:bg-gray-500' : 'bg-white text-gray-800 hover:bg-gray-50'}`}>
                                         <td className="px-4 py-2 text-center">{index + 1}</td>
                                         <td className="px-4 py-2 text-center">{item.value}</td>
                                         <td className="px-4 py-2 text-center">
@@ -450,8 +453,8 @@ const Followers = () => {
             {/* Mis seguidos */}
             {myFollowing.length > 0 && !isListingActive && (
                 <Accordion title={`Mis Seguidos (${myFollowing.length})`} darkMode={darkMode}>
-                    <div className="overflow-x-auto">
-                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                    <div className="table-container overflow-x-auto">
+                        <table className={`mobile-table min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
                             <thead>
                                 <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
                                     <th className="px-4 py-2">#</th>
@@ -461,7 +464,7 @@ const Followers = () => {
                             </thead>
                             <tbody>
                                 {myFollowing.map((item, index) => (
-                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white hover:bg-gray-500' : 'bg-white text-gray-800 hover:bg-gray-50'}`}>
                                         <td className="px-4 py-2 text-center">{index + 1}</td>
                                         <td className="px-4 py-2 text-center">{item.value}</td>
                                         <td className="px-4 py-2 text-center">
@@ -480,8 +483,8 @@ const Followers = () => {
             {/* Los que sigo pero no me siguen */}
             {myDontFollowHim.length > 0 && !isListingActive && (
                 <Accordion title={`Los sigo pero no me siguen (${myDontFollowHim.length})`} darkMode={darkMode}>
-                    <div className="overflow-x-auto">
-                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                    <div className="table-container overflow-x-auto">
+                        <table className={`mobile-table min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
                             <thead>
                                 <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
                                     <th className="px-4 py-2">#</th>
@@ -491,7 +494,7 @@ const Followers = () => {
                             </thead>
                             <tbody>
                                 {myDontFollowHim.map((item, index) => (
-                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white hover:bg-gray-500' : 'bg-white text-gray-800 hover:bg-gray-50'}`}>
                                         <td className="px-4 py-2 text-center">{index + 1}</td>
                                         <td className="px-4 py-2 text-center">{item.value}</td>
                                         <td className="px-4 py-2 text-center">
@@ -510,8 +513,8 @@ const Followers = () => {
             {/* Los que me siguen pero no sigo */}
             {myDontFollowMe.length > 0 && !isListingActive && (
                 <Accordion title={`Me siguen pero no los sigo (${myDontFollowMe.length})`} darkMode={darkMode}>
-                    <div className="overflow-x-auto">
-                        <table className={`min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
+                    <div className="table-container overflow-x-auto">
+                        <table className={`mobile-table min-w-full bg-white border border-gray-300 rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : ''}`}>
                             <thead>
                                 <tr className={`${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}>
                                     <th className="px-4 py-2">#</th>
@@ -521,7 +524,7 @@ const Followers = () => {
                             </thead>
                             <tbody>
                                 {myDontFollowMe.map((item, index) => (
-                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'} hover:bg-gray-100`}>
+                                    <tr key={index} className={`${darkMode ? 'bg-gray-600 text-white hover:bg-gray-500' : 'bg-white text-gray-800 hover:bg-gray-50'}`}>
                                         <td className="px-4 py-2 text-center">{index + 1}</td>
                                         <td className="px-4 py-2 text-center">{item.value}</td>
                                         <td className="px-4 py-2 text-center">
@@ -537,13 +540,14 @@ const Followers = () => {
                 </Accordion>
             )}
             
-            <div className="mt-6 text-center">
-                <button className={`w-full bg-[#e91e1e] hover:bg-[#992929] px-6 py-3 text-white font-medium rounded-lg transition-colors duration-200}`} type="button"
+            <div className="mt-6 text-center px-4 sm:px-0">
+                <button className="w-full bg-[#e91e1e] hover:bg-[#992929] px-6 py-3 text-white font-medium rounded-lg transition-colors duration-200 text-sm sm:text-base" type="button"
                     onClick={clear}>
                     Limpiar Resultados
                 </button>
             </div>
-            <div className="mt-6 text-center text-white text-sm">
+            
+            <div className={`mt-6 text-center text-xs sm:text-sm px-4 sm:px-2 ${darkMode ? 'text-white' : 'text-gray-700'}`}>
                 <p>Esta herramienta te permite analizar tus seguidores y seguidos en Instagram.</p>
                 <p>Asegúrate de subir archivos JSON válidos para obtener resultados precisos.</p>
                 <p>Si tienes alguna pregunta, no dudes en contactarnos.</p>
