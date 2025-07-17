@@ -6,8 +6,9 @@ const Login = () => {
 
     return (
         <div className="w-full h-full flex items-center justify-center">
-            <div className={`h-full flex items-center justify-center ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} border shadow-custom-dark rounded-2xl animate-fade-up transition-colors duration-300`}>
-                <section className={`w-full max-w-6xl flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center  ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} rounded-2xl px-8 py-10`}>
+            <div className={`flex flex-wrap border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl flex-col w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] mx-auto animate-fade-up animate-once mt-16 sm:mt-18 md:mt-16 lg:mt-12 mb-6 sm:mb-8 lg:mb-10 backdrop-blur-sm px-2 sm:px-4 lg:px-0`}>
+
+                <section className="w-full max-w-6xl flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center rounded-2xl px-8 py-10">
                     <div className="md:w-1/2 max-w-xl">
                         <img
                             src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
