@@ -103,7 +103,7 @@ const Recovery = () => {
                                             type="email"
                                             placeholder="Correo Electrónico"
                                             className="w-full"
-                                            leftIcon={<i className="fas fa-envelope text-neutral-400"></i>}
+                                            leftIcon={<i className="fas fa-envelope text-neutral-600 dark:text-neutral-300"></i>}
                                             value={email}
                                             onChange={handleEmailChange}
                                             error={emailError}
@@ -147,12 +147,12 @@ const Recovery = () => {
                                                     setIsSuccess(false);
                                                     setSuccessMessage('');
                                                 }}
-                                                className={`${text.accent} hover:text-primary-500 transition-colors duration-200 font-medium underline`}
+                                                className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 font-medium underline"
                                             >
                                                 Enviar nuevamente
                                             </button>
                                             <span className="hidden sm:inline text-neutral-400">|</span>
-                                            <Link to="/Login" className={`${text.accent} hover:text-primary-500 transition-colors duration-200 font-medium`}>
+                                            <Link to="/Login" className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 font-medium">
                                                 Volver al login
                                             </Link>
                                         </div>
@@ -160,7 +160,7 @@ const Recovery = () => {
                                 ) : (
                                     <div className="space-y-2">
                                         <p>¿Recordaste tu contraseña?</p>
-                                        <Link to="/Login" className={`${text.accent} hover:text-primary-500 transition-colors duration-200 font-medium block`}>
+                                        <Link to="/Login" className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 font-medium block">
                                             Volver al login
                                         </Link>
                                     </div>

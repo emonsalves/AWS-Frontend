@@ -114,7 +114,7 @@ const Login = () => {
                                     type="email"
                                     placeholder="Correo Electrónico"
                                     className="w-full"
-                                    leftIcon={<i className="fas fa-envelope text-neutral-400"></i>}
+                                    leftIcon={<i className="fas fa-envelope text-neutral-600 dark:text-neutral-300"></i>}
                                     value={email}
                                     onChange={handleEmailChange}
                                     error={emailError}
@@ -130,7 +130,7 @@ const Login = () => {
                                     type="password"
                                     placeholder="Contraseña"
                                     className="w-full"
-                                    leftIcon={<i className="fas fa-lock text-neutral-400"></i>}
+                                    leftIcon={<i className="fas fa-lock text-neutral-600 dark:text-neutral-300"></i>}
                                     value={password}
                                     onChange={handlePasswordChange}
                                     error={passwordError}
@@ -155,7 +155,7 @@ const Login = () => {
                                 </label>
                                 <Link 
                                     to="/recovery" 
-                                    className={`${text.accent} hover:text-primary-500 transition-colors duration-200 font-medium`}
+                                    className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 font-medium"
                                 >
                                     ¿Olvidaste tu contraseña?
                                 </Link>

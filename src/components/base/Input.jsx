@@ -69,9 +69,9 @@ const Input = forwardRef(({
   
   // Color del mensaje
   const messageColor = error 
-    ? text.error 
+    ? 'text-red-600 dark:text-red-400' 
     : success 
-      ? text.success 
+      ? 'text-green-600 dark:text-green-400' 
       : text.secondary;
   
   return (
@@ -114,13 +114,13 @@ const Input = forwardRef(({
         {/* Icono de estado */}
         {currentState === 'error' && (
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-            <i className={`fas fa-exclamation-circle ${text.error}`} />
+            <i className="fas fa-exclamation-circle text-red-500 dark:text-red-400" />
           </div>
         )}
         
         {currentState === 'success' && (
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-            <i className={`fas fa-check-circle ${text.success}`} />
+            <i className="fas fa-check-circle text-green-500 dark:text-green-400" />
           </div>
         )}
       </div>
