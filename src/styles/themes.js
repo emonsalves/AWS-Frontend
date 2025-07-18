@@ -151,7 +151,7 @@ export const themes = {
  * @param {boolean} darkMode - Si está en modo oscuro
  * @param {string} category - Categoría (background, text, border, interactive)
  * @param {string} variant - Variante (primary, secondary, etc.)
- * @returns {string} - Clases CSS
+ * @returns {string} - Una cadena que representa clases CSS aplicables
  */
 export const getThemeClasses = (darkMode, category, variant = 'primary') => {
   const theme = darkMode ? themes.dark : themes.light;
