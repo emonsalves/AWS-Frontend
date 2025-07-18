@@ -106,9 +106,17 @@ const Button = forwardRef(({
       )}
       
       {/* Contenido */}
-      <span className={loading ? 'opacity-0' : ''}>
+      <span 
+        className={loading ? 'opacity-0' : ''} 
+        aria-hidden={loading ? 'true' : 'false'}
+      >
         {children}
       </span>
+      {loading && (
+        <span className="sr-only" aria-live="polite">
+          Loading...
+        </span>
+      )}
       
       {/* Icono derecho */}
       {rightIcon && !loading && (
