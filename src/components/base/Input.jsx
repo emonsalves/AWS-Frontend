@@ -102,27 +102,22 @@ const Input = forwardRef(({
           {...props}
         />
         
-        {/* Icono derecho */}
-        {rightIcon && (
+        {/* Icono derecho o de estado */}
+        {currentState === 'error' ? (
+          <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+            <i className="fas fa-exclamation-circle text-red-500 dark:text-red-400" />
+          </div>
+        ) : currentState === 'success' ? (
+          <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+            <i className="fas fa-check-circle text-green-500 dark:text-green-400" />
+          </div>
+        ) : rightIcon ? (
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
             <span className={`${text.muted}`}>
               {rightIcon}
             </span>
           </div>
-        )}
-        
-        {/* Icono de estado */}
-        {currentState === 'error' && (
-          <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-            <i className="fas fa-exclamation-circle text-red-500 dark:text-red-400" />
-          </div>
-        )}
-        
-        {currentState === 'success' && (
-          <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-            <i className="fas fa-check-circle text-green-500 dark:text-green-400" />
-          </div>
-        )}
+        ) : null}
       </div>
       
       {/* Mensaje de ayuda */}
