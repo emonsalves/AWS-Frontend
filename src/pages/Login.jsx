@@ -85,10 +85,10 @@ const Login = () => {
     const isFormValid = email && validateEmail(email) && password && password.length >= 6 && !isLoading;
 
     return (
-        <div className="w-full min-h-full flex items-center justify-center px-4 py-4 sm:py-8">
+        <div className="w-full min-h-full flex items-center justify-center px-4 py-4">
             <Card 
                 variant="elevated" 
-                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once mt-4 sm:mt-8 md:mt-12 lg:mt-12 mb-4 sm:mb-6 lg:mb-8 backdrop-blur-sm"
+                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-sm"
                 padding="none"
             >
                 <form onSubmit={handleSubmit} aria-label="Formulario de inicio de sesión">

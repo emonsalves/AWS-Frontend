@@ -20,13 +20,13 @@ const NavPublic = () => {
     };
 
     return (
-        <nav className={`${darkMode ? 'bg-gray-800' : 'bg-[#25D366]'} fixed w-full z-20 top-0 shadow-lg px-10 transition-colors duration-300`}>
-            <div className="flex justify-between items-center">
+        <nav className={`${darkMode ? 'bg-gray-800' : 'bg-[#25D366]'} fixed w-full z-20 top-0 shadow-lg px-4 sm:px-6 lg:px-10 transition-colors duration-300`}>
+            <div className="flex justify-between items-center h-16 sm:h-20">
                 <div
-                    className={`flex items-center px-4 py-1 ${darkMode ? 'hover:text-gray-300 text-white' : 'hover:text-gray-700 text-black'} cursor-pointer rounded-lg transition-all duration-300`}
+                    className={`flex items-center px-2 sm:px-4 py-2 ${darkMode ? 'hover:text-gray-300 text-white' : 'hover:text-gray-700 text-black'} cursor-pointer rounded-lg transition-all duration-300`}
                     onClick={() => goTo("/")}
                 >
-                    <span className="text-xl font-extrabold text-center">MNSLVS</span>
+                    <span className="text-lg sm:text-xl font-extrabold text-center">MNSLVS</span>
                 </div>
                 
                 <div className="hidden md:flex md:justify-end md:items-center space-x-4">
@@ -34,7 +34,7 @@ const NavPublic = () => {
                         <span
                             key={index}
                             onClick={() => goTo(item.path)}
-                            className={`flex items-center px-4 py-1 rounded-md text-xl font-extrabold transition-all duration-300 cursor-pointer
+                            className={`flex items-center px-3 py-2 rounded-md text-base sm:text-lg font-extrabold transition-all duration-300 cursor-pointer
                                 ${location.pathname === item.path 
                                     ? (darkMode ? 'text-[#25D366]' : 'text-white') 
                                     : (darkMode ? 'text-gray-300 hover:text-[#25D366]' : 'text-black hover:text-white')}`}
@@ -68,7 +68,7 @@ const NavPublic = () => {
                         )}
                     </button>
                     <button 
-                        className={`mobile-menu-button text-xl font-extrabold ${darkMode ? 'text-white' : 'text-black'}`} 
+                        className={`mobile-menu-button text-lg sm:text-xl font-extrabold px-2 py-1 ${darkMode ? 'text-white' : 'text-black'}`} 
                         onClick={handleMobileMenuToggle}
                     >
                         MENU
@@ -85,7 +85,7 @@ const NavPublic = () => {
                                 goTo(item.path);
                                 setIsMobileMenuOpen(false);
                             }}
-                            className={`text-center opacity-0 transition-opacity duration-700 px-4 py-1 rounded-md text-xl font-extrabold cursor-pointer ${
+                            className={`text-center opacity-0 transition-opacity duration-700 px-4 py-3 rounded-md text-lg sm:text-xl font-extrabold cursor-pointer ${
                                 isMobileMenuOpen ? "opacity-100" : ""
                             } ${
                                 location.pathname === item.path 
