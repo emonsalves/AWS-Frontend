@@ -10,7 +10,7 @@ function LayoutPublic() {
     return (
         <div className={`flex flex-col min-h-screen w-full ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
             <HeaderPublic />
-            <main className={`flex-1 w-full flex items-center justify-center`}>
+            <main className={`flex-1 w-full flex items-center justify-center pt-16 sm:pt-20`}>
                     <Outlet />
             </main>
             <FooterPublic />
