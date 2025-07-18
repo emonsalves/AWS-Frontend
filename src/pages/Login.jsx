@@ -85,7 +85,7 @@ const Login = () => {
     const isFormValid = email && validateEmail(email) && password && password.length >= 6 && !isLoading;
 
     return (
-        <div className="w-full min-h-full flex items-center justify-center px-4 py-4">
+        <div className="w-full min-h-full flex items-center justify-center">
             <Card 
                 variant="elevated" 
                 className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-sm"

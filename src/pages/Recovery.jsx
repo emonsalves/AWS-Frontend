@@ -63,10 +63,10 @@ const Recovery = () => {
     const isFormValid = email && validateEmail(email) && !isLoading;
 
     return (
-        <div className="w-full h-full flex items-center justify-center px-4 py-8">
+        <div className="w-full h-full flex items-center justify-center">
             <Card 
                 variant="elevated" 
-                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once mt-8 sm:mt-12 md:mt-16 lg:mt-12 mb-6 sm:mb-8 lg:mb-10 backdrop-blur-sm"
+                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-sm py-3"
                 padding="none"
             >
                 <form onSubmit={handleSubmit} aria-label="Formulario de recuperación de contraseña">
