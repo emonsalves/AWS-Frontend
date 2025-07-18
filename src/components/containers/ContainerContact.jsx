@@ -41,12 +41,39 @@ const ContainerContact = () => {
             [name]: value
         }));
 
-        // Limpiar errores al escribir
-        if (errors[name]) {
-            setErrors(prev => ({
-                ...prev,
-                [name]: ''
-            }));
+        // Validación en tiempo real
+        if (name === 'email' && value) {
+            if (!validateEmail(value)) {
+                setErrors(prev => ({
+                    ...prev,
+                    email: 'Por favor ingresa un email válido'
+                }));
+            } else {
+                setErrors(prev => ({
+                    ...prev,
+                    email: ''
+                }));
+            }
+        } else if (name === 'phone' && value) {
+            if (!validatePhone(value)) {
+                setErrors(prev => ({
+                    ...prev,
+                    phone: 'Formato de teléfono inválido (ej: +56912345678)'
+                }));
+            } else {
+                setErrors(prev => ({
+                    ...prev,
+                    phone: ''
+                }));
+            }
+        } else {
+            // Limpiar errores al escribir para otros campos
+            if (errors[name]) {
+                setErrors(prev => ({
+                    ...prev,
+                    [name]: ''
+                }));
+            }
         }
     };
 
@@ -130,79 +157,77 @@ const ContainerContact = () => {
                 className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-sm"
                 padding="none"
             >
-                {/* Header */}
-
-
                 <div className="flex flex-col lg:flex-row">
                     {/* Sección de información y contacto directo */}
-                    <div className="lg:w-1/2 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-neutral-700">
-                        <div className="space-y-6">
+                    <div className="lg:w-1/2 p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-neutral-700 flex flex-col justify-center items-center lg:items-start">
+                        <div className="space-y-4 text-center lg:text-left max-w-sm lg:max-w-none">
+                            {/* Imagen */}
+                            <div className="flex justify-center lg:justify-center mb-4">
+                                <img
+                                    src="./contact-support.svg"
+                                    alt="Soporte al Cliente"
+                                    className="w-24 h-24 sm:w-28 sm:h-28 object-contain animate-fade-up animate-once"
+                                />
+                            </div>
+                            
                             {/* Mensaje principal */}
-                            <div className="text-center lg:text-left">
-                                <h2 className={`text-xl sm:text-2xl font-semibold ${text.primary} mb-4`}>
+                            <div>
+                                <h2 className={`text-lg sm:text-xl font-semibold ${text.primary} mb-3`}>
                                     ¿Necesitas ayuda?
                                     <br />
                                     ¡Estamos aquí para ti!
                                 </h2>
-                                <p className={`text-sm sm:text-base ${text.secondary} leading-relaxed mb-6`}>
+                                <p className={`text-sm ${text.secondary} leading-relaxed`}>
                                     En MNSLVS, nos enorgullece ofrecer un servicio al cliente excepcional.
                                     Nuestro equipo está listo para responder tus preguntas y ayudarte
                                     a encontrar las soluciones tecnológicas perfectas para tu negocio.
                                 </p>
-                                <div className="flex justify-center lg:justify-start">
-                                    <img
-                                        src="./contact-support.svg"
-                                        alt="Soporte al Cliente"
-                                        className="w-32 h-32 sm:w-40 sm:h-40 object-contain animate-fade-up animate-once"
-                                    />
-                                </div>
                             </div>
-
                         </div>
                     </div>
 
                     {/* Formulario de contacto */}
-                    <div className="lg:w-1/2 p-6 sm:p-8">
+                    <div className="lg:w-1/2 p-4 sm:p-6 flex flex-col justify-center">
                         {isSuccess ? (
-                            <div className="text-center space-y-4">
+                            <div className="text-center space-y-3">
                                 <div className="flex justify-center">
-                                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                                        <i className="fas fa-check text-green-600 dark:text-green-400 text-2xl"></i>
+                                    <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                                        <i className="fas fa-check text-green-600 dark:text-green-400 text-sm"></i>
                                     </div>
                                 </div>
-                                <h3 className={`text-xl font-semibold ${text.primary}`}>
+                                <h3 className={`text-lg font-semibold ${text.primary}`}>
                                     ¡Mensaje Enviado!
                                 </h3>
-                                <p className={`text-base ${text.secondary} opacity-90`}>
+                                <p className={`text-sm ${text.secondary} opacity-90`}>
                                     {successMessage}
                                 </p>
-                                <p className={`text-sm ${text.secondary} opacity-75`}>
+                                <p className={`text-xs ${text.secondary} opacity-75`}>
                                     Nos pondremos en contacto contigo dentro de las próximas 24 horas.
                                 </p>
                                 <Button
                                     variant="ghost"
-                                    size="md"
+                                    size="sm"
                                     onClick={() => {
                                         setIsSuccess(false);
                                         setSuccessMessage('');
                                     }}
-                                    className="mt-4"
+                                    className="mt-2"
                                 >
                                     Enviar otro mensaje
                                 </Button>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="space-y-4" aria-label="Formulario de contacto">
-                                <div className="text-center lg:text-left mb-6">
-                                    <h2 className={`text-xl sm:text-2xl font-semibold ${text.primary} mb-2`}>
+                            <form onSubmit={handleSubmit} className="space-y-3" aria-label="Formulario de contacto">
+                                <div className="text-center lg:text-left mb-3">
+                                    <h2 className={`text-lg sm:text-xl font-semibold ${text.primary} mb-1`}>
                                         Envíanos un mensaje
                                     </h2>
-                                    <p className={`text-sm sm:text-base ${text.secondary} opacity-90`}>
+                                    <p className={`text-sm ${text.secondary} opacity-90`}>
                                         Completa el formulario y te responderemos a la brevedad
                                     </p>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <Input
                                         label="Nombre"
                                         name="name"
@@ -224,6 +249,7 @@ const ContainerContact = () => {
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         error={errors.email}
+                                        success={formData.email && validateEmail(formData.email) && !errors.email ? 'Email válido' : ''}
                                         state={errors.email ? 'error' : formData.email && validateEmail(formData.email) ? 'success' : 'default'}
                                         leftIcon={<i className="fas fa-envelope"></i>}
                                         required
@@ -231,7 +257,7 @@ const ContainerContact = () => {
                                     />
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <Input
                                         label="Teléfono (opcional)"
                                         name="phone"
@@ -240,9 +266,10 @@ const ContainerContact = () => {
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         error={errors.phone}
+                                        success={formData.phone && validatePhone(formData.phone) && !errors.phone ? 'Formato correcto' : ''}
                                         state={errors.phone ? 'error' : formData.phone && validatePhone(formData.phone) ? 'success' : 'default'}
                                         leftIcon={<i className="fas fa-phone"></i>}
-                                        helperText="Formato: +56912345678"
+                                        helperText={!formData.phone && !errors.phone ? "Formato: +56912345678" : ''}
                                         className="sm:col-span-1"
                                     />
 
@@ -269,7 +296,7 @@ const ContainerContact = () => {
                                         placeholder="Cuéntanos sobre tu proyecto o consulta..."
                                         value={formData.message}
                                         onChange={handleInputChange}
-                                        rows={5}
+                                        rows={3}
                                         required
                                         className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 placeholder-opacity-50 resize-none ${errors.message
                                                 ? 'border-red-500 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-100 focus:ring-2 focus:ring-red-500'
@@ -298,17 +325,17 @@ const ContainerContact = () => {
 
                                 <Button
                                     variant="primary"
-                                    size="lg"
+                                    size="md"
                                     fullWidth
                                     type="submit"
                                     disabled={!isFormValid}
                                     loading={isLoading}
-                                    className="mt-6"
+                                    className="mt-3"
                                 >
                                     {isLoading ? 'Enviando mensaje...' : 'Enviar Mensaje'}
                                 </Button>
 
-                                <p className={`text-xs ${text.secondary} opacity-75 text-center mt-3`}>
+                                <p className={`text-xs ${text.secondary} opacity-75 text-center mt-2`}>
                                     Al enviar este formulario, aceptas que nos pongamos en contacto contigo para responder tu consulta.
                                 </p>
                             </form>

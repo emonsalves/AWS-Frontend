@@ -38,7 +38,7 @@ const About = () => {
     const { darkMode } = useTheme();
 
     return (
-        <div className="min-h-screen w-full flex flex-col items-center">
+        <div className="min-h-screen w-full flex flex-col items-center lg:py-2">
             <ContainerAbout />
             <h2 className={`my-5 font-semibold text-2xl animate-fade animate-once text-center m-5 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                 <i className="fa-solid fa-toolbox"></i> Conoce algunas de las Tecnologías que utilizamos:
