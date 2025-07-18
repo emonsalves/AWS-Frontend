@@ -19,7 +19,7 @@ export const tokens = {
   colors: {
     // Color principal de la marca
     primary: {
-      DEFAULT: '#25D366',    // Verde WhatsApp principal
+      DEFAULT: '#25D366',    // Verde WhatsApp principal: Este color es el verde oficial de la marca WhatsApp. Se utiliza como color primario para reflejar la identidad visual de la marca y garantizar consistencia en la experiencia del usuario.
       50: '#f0fdf4',         // Muy claro
       100: '#dcfce7',        // Claro
       200: '#bbf7d0',        // Medio claro
