@@ -114,7 +114,7 @@ const Login = () => {
                                     type="email"
                                     placeholder="Correo Electrónico"
                                     className="w-full"
-                                    leftIcon={<i className="fas fa-envelope text-neutral-600 dark:text-neutral-300"></i>}
+                                    leftIcon={<i className={`fas fa-envelope ${text.icon}`}></i>}
                                     value={email}
                                     onChange={handleEmailChange}
                                     error={emailError}
