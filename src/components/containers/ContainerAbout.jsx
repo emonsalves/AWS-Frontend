@@ -6,7 +6,7 @@ const ContainerAbout = () => {
     return (
         <>
 
-            <div className={`flex flex-wrap border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl flex-col w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] mx-auto animate-fade-up animate-once mt-12 mb-6 backdrop-blur-sm px-2 sm:px-4 lg:px-0`}>
+            <div className={`flex flex-wrap border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl flex-col w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] mx-auto animate-fade-up animate-once mt-2 mb-6 backdrop-blur-sm px-2 sm:px-4 lg:px-0`}>
                 <h1 className={`my-3 sm:my-4 lg:my-5 font-bold text-xl sm:text-2xl lg:text-3xl animate-fade animate-once text-center px-2 sm:px-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                     <i className="fa-regular fa-address-card"></i> Acerca de Nosotros
                 </h1>
