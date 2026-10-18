@@ -4,6 +4,28 @@ import { lazy, Suspense } from "react";
 import PropTypes from "prop-types";
 import LoaderPage from "../components/loaders/LoaderPage";
 import { LayoutPublic } from "../layout/LayoutPublic";
+import NotFound from "../pages/NotFound";
+
+const RELOAD_FLAG = "chunk-reload";
+
+// Tras un despliegue, los chunks antiguos ya no existen en S3: si una pestaña abierta
+// falla al cargar una página, recarga una vez para obtener la versión nueva.
+const lazyPage = (importPage) =>
+    lazy(() =>
+        importPage()
+            .then((module) => {
+                sessionStorage.removeItem(RELOAD_FLAG);
+                return module;
+            })
+            .catch((error) => {
+                if (!sessionStorage.getItem(RELOAD_FLAG)) {
+                    sessionStorage.setItem(RELOAD_FLAG, "1");
+                    window.location.reload();
+                    return new Promise(() => {});
+                }
+                throw error;
+            }),
+    );
 
 const SuspenseRouter = ({ element }) => {
     return <Suspense fallback={<LoaderPage />}>{element}</Suspense>;
@@ -14,20 +36,19 @@ SuspenseRouter.propTypes = {
 };
 
 // Cada página se descarga solo cuando se visita
-const Home = lazy(() => import("../pages/Home"));
-const About = lazy(() => import("../pages/About"));
-const Login = lazy(() => import("../pages/Login"));
-const Calculador = lazy(() => import("../pages/Calculador"));
-const Recovery = lazy(() => import("../pages/Recovery"));
-const Contact = lazy(() => import("../pages/Contact"));
-const Followers = lazy(() => import("../pages/Followers"));
-const NotFound = lazy(() => import("../pages/NotFound"));
+const Home = lazyPage(() => import("../pages/Home"));
+const About = lazyPage(() => import("../pages/About"));
+const Login = lazyPage(() => import("../pages/Login"));
+const Calculador = lazyPage(() => import("../pages/Calculador"));
+const Recovery = lazyPage(() => import("../pages/Recovery"));
+const Contact = lazyPage(() => import("../pages/Contact"));
+const Followers = lazyPage(() => import("../pages/Followers"));
 
 const router = createHashRouter([
     {
         path: "/",
         element: <LayoutPublic />,
-        errorElement: <SuspenseRouter element={<NotFound />} />,
+        errorElement: <NotFound />,
         children: [
             {
                 index: true,
