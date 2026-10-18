@@ -29,7 +29,9 @@ description: Añade una página o ruta nueva al sitio (archivo en pages, ruta co
 3. **Menú**: si debe aparecer en la navegación, añádela donde se definan los enlaces (hoy
    `src/components/navbars/NavbarPublic.jsx`; el objetivo es moverlos a `src/config/`). Usa `NavLink`.
 
-4. **SEO y textos**: título y descripción en `src/config/site.js` si la página los necesita.
+4. **Título**: el sitio aún no cambia los metadatos por página (`index.html` tiene un título y una descripción
+   fijos). Si la página necesita título propio, guárdalo en `src/config/site.js` y aplícalo con
+   `useEffect(() => { document.title = ... }, [])` en la página; comprueba que cambia al navegar y al recargar.
 
 5. **Verifica**: `npm run lint`, `npm run build` y `npm run preview`; navega a la ruta, recarga la página y prueba
    que el enlace del menú la marca como activa. Comprueba móvil y modo oscuro.

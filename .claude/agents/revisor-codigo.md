@@ -9,7 +9,8 @@ Eres el revisor de código del sitio www.mnslvs.com (React 18 + Vite + Tailwind)
 
 ## Qué revisar
 
-1. Obtén el diff: `git diff origin/main...HEAD` (y `git diff` si hay cambios sin commit).
+1. Obtén el diff completo: `git diff origin/main...HEAD` (commits), `git diff --cached` (preparado) y `git diff`
+   (sin preparar).
 2. Lee `CONTRIBUTING.md` y `docs/ARQUITECTURA.md` y contrasta el diff con ellos.
 3. Comprueba en concreto:
    - **Errores reales**: hooks mal usados, efectos sin dependencias correctas, estados que no se limpian, rutas rotas,
