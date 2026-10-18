@@ -4,7 +4,7 @@ Contexto para agentes de IA (Claude Code y compatibles) que trabajan en este rep
 
 ## Qué es
 
-Sitio web de MNSLVS Solutions (www.mnslvs.com): SPA de React 18 + Vite 6 + Tailwind 3, con rutas de React Router 6
+Sitio web de MNSLVS Solutions (www.mnslvs.com): SPA de React 18 + Vite 6 + Tailwind 4, con rutas de React Router 7
 (`createHashRouter`). No hay backend ni pruebas automáticas todavía.
 
 **`main` es producción.** Cada push a `main` ejecuta `.github/workflows/deploy.yml` (build → `aws s3 sync` → invalidación
