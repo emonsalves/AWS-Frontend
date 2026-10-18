@@ -27,7 +27,7 @@ Antes de dar un cambio por terminado: `npm run lint` y `npm run build` en verde.
 - Flujo, ramas, commits y PR: @CONTRIBUTING.md
 - Estructura de carpetas y dependencias entre capas: @docs/ARQUITECTURA.md
 - Idioma: todo en español (textos del sitio, commits, PR, comentarios).
-- Commits con Conventional Commits; título del PR con el mismo formato (la CI lo valida). Fusión con *Squash and merge*.
+- Commits con Conventional Commits; título del PR con el mismo formato (la CI lo valida). Fusión con *Create a merge commit*: cada commit de la rama llega a `main`.
 - Los commits van solo a nombre de Enzo Monsalves: sin trailers `Co-Authored-By` ni enlaces de sesión.
 - Código nuevo en la estructura objetivo (`features/`, `components/ui`, `config/`...). No mezcles mover archivos con
   cambiar lógica.
