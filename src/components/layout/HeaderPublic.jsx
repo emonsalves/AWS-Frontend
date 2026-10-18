@@ -1,4 +1,4 @@
-import { NavPublic } from "../navbars/NavbarPublic";
+import { NavPublic } from "./NavbarPublic";
 
 const HeaderPublic = () => {
     return <NavPublic />;
