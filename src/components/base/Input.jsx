@@ -36,6 +36,7 @@ const Input = forwardRef(({
   className = '',
   type = 'text',
   id,
+  'aria-describedby': describedBy,
   ...props 
 }, ref) => {
   const { getInputClasses, text } = useTheme();
@@ -102,7 +103,7 @@ const Input = forwardRef(({
           id={id}
           type={type}
           aria-invalid={error ? true : undefined}
-          aria-describedby={helperMessage && id ? `${id}-help` : undefined}
+          aria-describedby={[describedBy, helperMessage && id ? `${id}-help` : null].filter(Boolean).join(' ') || undefined}
           className={inputClasses}
           {...props}
         />
@@ -150,6 +151,7 @@ Input.propTypes = {
   className: PropTypes.string,
   type: PropTypes.string,
   id: PropTypes.string,
+  'aria-describedby': PropTypes.string,
 };
 
 export default Input;
