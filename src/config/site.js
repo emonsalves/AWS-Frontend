@@ -10,16 +10,15 @@ export const site = {
     businessHours: "Lunes a Viernes: 9:00 AM - 6:00 PM",
 
     contact: {
-        // TODO: reemplazar por el número real (formato internacional sin "+": 569XXXXXXXX)
-        whatsapp: "56912345678",
-        // TODO: reemplazar por el correo real
-        email: "contacto@tuempresa.com",
+        // Formato internacional sin "+" ni espacios
+        whatsapp: "56966454756",
+        email: "ingeniero.monsalves@gmail.com",
     },
 
-    // TODO: reemplazar por los perfiles reales; un valor vacío oculta el icono
+    // Pon la URL del perfil para mostrar el icono; un valor vacío lo oculta
     social: [
-        { name: "Facebook", icon: "fab fa-facebook", url: "https://www.facebook.com/" },
-        { name: "Twitter", icon: "fab fa-twitter", url: "https://www.twitter.com/" },
-        { name: "Instagram", icon: "fab fa-instagram", url: "https://www.instagram.com/" },
+        { name: "Facebook", icon: "fab fa-facebook", url: "" },
+        { name: "Twitter", icon: "fab fa-twitter", url: "" },
+        { name: "Instagram", icon: "fab fa-instagram", url: "" },
     ],
 };
