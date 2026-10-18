@@ -1,19 +1,13 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
+import { menuItems } from "../../config/navigation";
 
 const NavPublic = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { darkMode, toggleDarkMode } = useTheme();
     const goTo = useNavigate();
     const location = useLocation();
-
-    const menuItems = [
-        { text: "Home", path: "/" },
-        { text: "About", path: "/about" },
-        { text: "Contacto", path: "/contacto" },
-        { text: "Login", path: "/login" },
-    ];
 
     const handleMobileMenuToggle = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
