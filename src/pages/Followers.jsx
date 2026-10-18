@@ -1,4 +1,4 @@
-import { useJsonFileUpload } from "../helpers/jsonFile";
+import { useJsonFileUpload } from "../hooks/useJsonFileUpload";
 import { useTheme } from '../context/ThemeContext';
 import FileInput from "../components/inputs/FileInput";
 import { useState } from "react";
