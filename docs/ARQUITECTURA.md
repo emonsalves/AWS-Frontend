@@ -8,8 +8,8 @@ Cómo está organizado el código y hacia dónde queremos llevarlo para que crez
 | --- | --- | --- |
 | UI | React 18 | Ecosistema y equipo |
 | Build | Vite 6 + SWC | Arranque y build rápidos |
-| Rutas | React Router 6 | Carga diferida por página |
-| Estilos | Tailwind 3 + tokens (`src/styles/tokens.js`) | Diseño consistente, modo oscuro con `dark:` |
+| Rutas | React Router 7 | Carga diferida por página |
+| Estilos | Tailwind 4 + tokens (`src/styles/tokens.js`, cargados con `@config`) | Diseño consistente, modo oscuro con `dark:` |
 | Calidad | ESLint + Prettier | Mismo estilo para todos |
 | Despliegue | GitHub Actions → S3 + CloudFront | `main` = producción |
 

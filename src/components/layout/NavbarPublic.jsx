@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router";
 import { useTheme } from "../../context/ThemeContext";
 import { menuItems } from "../../config/navigation";
 
@@ -38,7 +38,7 @@ const NavPublic = () => {
                     ))}
                     <button
                         onClick={toggleDarkMode}
-                        className={`w-10 h-10 flex items-center justify-center rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-[#128C7E]'} transition-colors`}
+                        className={`w-10 h-10 flex items-center justify-center rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-primary-muted'} transition-colors`}
                         aria-label="Toggle dark mode"
                     >
                         {darkMode ? (
@@ -52,7 +52,7 @@ const NavPublic = () => {
                 <div className="md:hidden flex items-center space-x-2">
                     <button
                         onClick={toggleDarkMode}
-                        className={`w-10 h-10 flex items-center justify-center rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-[#128C7E]'} transition-colors`}
+                        className={`w-10 h-10 flex items-center justify-center rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-primary-muted'} transition-colors`}
                         aria-label="Toggle dark mode"
                     >
                         {darkMode ? (

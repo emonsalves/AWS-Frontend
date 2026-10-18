@@ -12,7 +12,7 @@ const Accordion = ({ title, children, darkMode }) => {
         <div className={`border rounded-lg shadow-md m-2 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-300'}`}>
             <button
                 onClick={toggleAccordion}
-                className={`w-full text-left px-4 py-2 font-semibold focus:outline-none transition-colors ${darkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                className={`w-full text-left px-4 py-2 font-semibold focus:outline-hidden transition-colors ${darkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                     }`}
             >
                 {title}

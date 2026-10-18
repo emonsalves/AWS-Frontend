@@ -61,7 +61,7 @@ const Card = forwardRef(({
   // Configuración de sombras
   const shadowClasses = {
     none: '',
-    sm: 'shadow-sm',
+    sm: 'shadow-xs',
     md: 'shadow-md',
     lg: 'shadow-lg',
     xl: 'shadow-xl',

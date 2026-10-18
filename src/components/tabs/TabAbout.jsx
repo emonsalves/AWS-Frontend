@@ -24,8 +24,8 @@ const TabAbout = ({ colorNumber }) => {
         "text-md font-bold uppercase px-5 py-3 shadow-lg border-gray-400 bg-gray-300 opacity-70 border rounded-lg block leading-normal text-gray-900",
     ];
 
-    let isTabOpen = colorTabOpen[colorNumber] || `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal bg-blue-500`;
-    let isTabClosed = colorTabClosed[colorNumber] || `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-blue-500`;
+    let isTabOpen = colorTabOpen[colorNumber] || `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded-sm block leading-normal bg-blue-500`;
+    let isTabClosed = colorTabClosed[colorNumber] || `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded-sm block leading-normal text-blue-500`;
 
     return (
         <>
@@ -61,7 +61,7 @@ const TabAbout = ({ colorNumber }) => {
                             </a>
                         </li>
                     </ul>
-                    <div className="relative flex flex-col break-words bg-gray-100 w-full shadow-lg rounded-b-lg text-black">
+                    <div className="relative flex flex-col wrap-break-word bg-gray-100 w-full shadow-lg rounded-b-lg text-black">
                         <div className="px-4 py-5 flex-auto">
                             <div className="tab-content tab-space animate-fade animate-ease-linear animate-normal animate-fill-forwards animate-duration-1000">
                                 <div className={openTab == 1 ? "block" : "hidden"} id="link1">

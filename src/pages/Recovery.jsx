@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import Card from '../components/ui/Card';
@@ -66,7 +66,7 @@ const Recovery = () => {
         <div className="w-full h-full flex items-center justify-center px-4 py-8">
             <Card 
                 variant="elevated" 
-                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once mt-8 sm:mt-12 md:mt-16 lg:mt-12 mb-6 sm:mb-8 lg:mb-10 backdrop-blur-sm"
+                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once mt-8 sm:mt-12 md:mt-16 lg:mt-12 mb-6 sm:mb-8 lg:mb-10 backdrop-blur-xs"
                 padding="none"
             >
                 <form onSubmit={handleSubmit} aria-label="Formulario de recuperación de contraseña">

@@ -26,7 +26,7 @@ const Calculador = () => {
                 <div className="bg-[#25D366] p-6 relative animate-fade-down animate-once">
                     <button
                         onClick={() => {}}
-                        className="absolute right-6 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-[#128C7E] transition-colors"
+                        className="absolute right-6 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-primary-muted transition-colors"
                     >
                     </button>
                     <h1 className="text-white text-3xl font-bold text-center flex items-center justify-center gap-3">
@@ -43,7 +43,7 @@ const Calculador = () => {
                         </h2>
 
                         <div className="space-y-6">
-                            <div className={`p-4 rounded-lg shadow-sm ${darkMode ? 'bg-gray-800' : 'bg-white'} hover:scale-[1.02] transition-transform duration-300`}>
+                            <div className={`p-4 rounded-lg shadow-xs ${darkMode ? 'bg-gray-800' : 'bg-white'} hover:scale-[1.02] transition-transform duration-300`}>
                                 <p className={`font-semibold mb-3 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>¿Agrega propina?:</p>
                                 <div className="space-y-2">
                                     <label className="flex items-center space-x-3 cursor-pointer">
@@ -119,7 +119,7 @@ const Calculador = () => {
                         </h2>
 
                         <div className="space-y-6">
-                            <div className={`p-6 rounded-lg shadow-sm ${darkMode ? 'bg-gray-800' : 'bg-white'} hover:scale-[1.02] transition-transform duration-300`}>
+                            <div className={`p-6 rounded-lg shadow-xs ${darkMode ? 'bg-gray-800' : 'bg-white'} hover:scale-[1.02] transition-transform duration-300`}>
                                 <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
                                     Resumen de la cuenta
                                 </h3>

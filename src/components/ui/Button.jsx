@@ -56,7 +56,7 @@ const Button = forwardRef(({
     'inline-flex items-center justify-center',
     'font-medium rounded-lg',
     'transition-all duration-200',
-    'focus:outline-none focus:ring-2 focus:ring-offset-2',
+    'focus:outline-hidden focus:ring-2 focus:ring-offset-2',
     'disabled:opacity-50 disabled:cursor-not-allowed',
     sizeClasses[size],
     variantClasses,
@@ -75,14 +75,14 @@ const Button = forwardRef(({
     >
       {/* Icono izquierdo */}
       {leftIcon && !loading && (
-        <span className="mr-2 flex-shrink-0">
+        <span className="mr-2 shrink-0">
           {leftIcon}
         </span>
       )}
       
       {/* Spinner de carga */}
       {loading && (
-        <span className="mr-2 flex-shrink-0">
+        <span className="mr-2 shrink-0">
           <svg 
             className="animate-spin h-4 w-4" 
             xmlns="http://www.w3.org/2000/svg" 
@@ -121,7 +121,7 @@ const Button = forwardRef(({
       
       {/* Icono derecho */}
       {rightIcon && !loading && (
-        <span className="ml-2 flex-shrink-0">
+        <span className="ml-2 shrink-0">
           {rightIcon}
         </span>
       )}

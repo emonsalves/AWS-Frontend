@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createHashRouter } from "react-router-dom";
+import { createHashRouter } from "react-router";
 import { lazy, Suspense } from "react";
 import PropTypes from "prop-types";
 import LoaderPage from "../components/loaders/LoaderPage";
