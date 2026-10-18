@@ -101,13 +101,13 @@ Los **Componentes Base** han sido implementados exitosamente. Ahora tienes un ar
 ### Importación
 ```jsx
 // Importar componentes individuales
-import Card from '../components/base/Card';
-import Button from '../components/base/Button';
-import Input from '../components/base/Input';
-import Container from '../components/base/Container';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
+import Input from '../components/ui/Input';
+import Container from '../components/ui/Container';
 
 // O importar todo desde el índice
-import { Card, Button, Input, Container } from '../components/base';
+import { Card, Button, Input, Container } from '../components/ui';
 ```
 
 ### Ejemplos de Uso

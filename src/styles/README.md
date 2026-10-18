@@ -90,10 +90,10 @@ return (
 ## 🎯 Próximos Pasos
 
 ### Tarea 2: Crear Componentes Base
-- `src/components/base/Card.jsx`
-- `src/components/base/Button.jsx`
-- `src/components/base/Input.jsx`
-- `src/components/base/Container.jsx`
+- `src/components/ui/Card.jsx`
+- `src/components/ui/Button.jsx`
+- `src/components/ui/Input.jsx`
+- `src/components/ui/Container.jsx`
 
 ### Tarea 3: Migrar Componentes Existentes
 - `src/pages/Login.jsx`
