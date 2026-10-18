@@ -1,19 +1,16 @@
 import { useTheme } from '../../context/ThemeContext';
+import { site } from '../../config/site';
 
 const ContainerContact = () => {
     const { darkMode } = useTheme();
 
     const handleWhatsAppClick = () => {
-        // Replace with your actual WhatsApp number
-        const phoneNumber = '56912345678';
-        const whatsappUrl = `https://wa.me/${phoneNumber}`;
-        window.open(whatsappUrl, '_blank');
+        const whatsappUrl = `https://wa.me/${site.contact.whatsapp}`;
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     };
 
     const handleEmailClick = () => {
-        // Replace with your actual email
-        const email = 'contacto@tuempresa.com';
-        window.location.href = `mailto:${email}`;
+        window.location.href = `mailto:${site.contact.email}`;
     };
 
     return (
@@ -56,7 +53,7 @@ const ContainerContact = () => {
                                 <i className="far fa-clock"></i> Horario de Atención
                             </h3>
                             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} mb-3 sm:mb-4 lg:mb-5 text-sm sm:text-base lg:text-lg`}>
-                                Lunes a Viernes: 9:00 AM - 6:00 PM
+                                {site.businessHours}
                             </p>
                             <div className="space-y-2 sm:space-y-3">
                                 <button
@@ -90,7 +87,7 @@ const ContainerContact = () => {
                                 <i className="fas fa-map-marker-alt"></i> Ubicación
                             </h3>
                             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} text-sm sm:text-base lg:text-lg`}>
-                                Santiago, Chile
+                                {site.location}
                             </p>
                         </div>
                     </div>
