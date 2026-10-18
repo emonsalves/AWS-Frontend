@@ -3,7 +3,7 @@ import { createHashRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import PropTypes from "prop-types";
 import LoaderPage from "../components/loaders/LoaderPage";
-import { LayoutPublic } from "../layout/LayoutPublic";
+import { LayoutPublic } from "../components/layout/LayoutPublic";
 import NotFound from "../pages/NotFound";
 
 const RELOAD_FLAG = "chunk-reload";

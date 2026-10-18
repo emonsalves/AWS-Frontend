@@ -98,8 +98,8 @@ return (
 ### Tarea 3: Migrar Componentes Existentes
 - `src/pages/Login.jsx`
 - `src/components/containers/ContainerAbout.jsx`
-- `src/layout/LayoutPublic.jsx`
-- `src/components/navbars/NavbarPublic.jsx`
+- `src/components/layout/LayoutPublic.jsx`
+- `src/components/layout/NavbarPublic.jsx`
 
 ## 🔧 Comandos Útiles
 

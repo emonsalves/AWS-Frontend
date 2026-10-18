@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import HeaderPublic from "../components/headers/HeaderPublic";
-import FooterPublic from "../components/footers/FooterPublic";
-import { useTheme } from '../context/ThemeContext';
+import HeaderPublic from "./HeaderPublic";
+import FooterPublic from "./FooterPublic";
+import { useTheme } from '../../context/ThemeContext';
 
 function LayoutPublic() {
     const { darkMode } = useTheme();
