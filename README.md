@@ -31,3 +31,4 @@ CloudFront. Por eso todo cambio entra por pull request con CI en verde.
 ## Datos del sitio
 
 Contacto, redes sociales y textos generales se editan en `src/config/site.js`.
+- [CLAUDE.md](CLAUDE.md): contexto para agentes de IA; subagentes, skills y hooks en `.claude/`.
