@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import Card from '../components/ui/Card';

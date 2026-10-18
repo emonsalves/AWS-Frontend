@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 import HeaderPublic from "./HeaderPublic";
 import FooterPublic from "./FooterPublic";
 import { useTheme } from '../../context/ThemeContext';
