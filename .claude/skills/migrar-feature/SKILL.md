@@ -26,5 +26,5 @@ Objetivo: mover archivos de `components/<tipo>/`, `helpers/`, `layout/` y `route
 
 ## Orden sugerido
 
-`config` y `lib` → `components/ui` (desde `components/base`) → `components/layout` → `contact` → `about` → `tools`
-(solo si Login, Calculador y Followers siguen en el sitio) → `app/` (App, router, providers).
+`components/ui` (hecho) → `config` y `lib` → `components/layout` → `contact` → `about` → `tools` (Calculador y
+Followers) → `app/` (App, router, providers). Login no se migra todavía: aún no está implementado.

@@ -20,7 +20,7 @@ Un feature no importa otro feature.
 
 ## 2. Antes de escribir
 
-- Revisa `src/components/base/` (`Button`, `Card`, `Input`, `Container`): compón con ellos en vez de repetir clases.
+- Revisa `src/components/ui/` (`Button`, `Card`, `Input`, `Container`): compón con ellos en vez de repetir clases.
 - Textos fijos, contacto o enlaces: léelos de `src/config/site.js` o añádelos ahí.
 
 ## 3. Plantilla

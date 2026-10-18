@@ -32,7 +32,7 @@ Antes de dar un cambio por terminado: `npm run lint` y `npm run build` en verde.
 - Código nuevo en la estructura objetivo (`features/`, `components/ui`, `config/`...). No mezcles mover archivos con
   cambiar lógica.
 - Tema: `useTheme` (`src/hooks/useTheme.js`) + clases `dark:`. Nada de `darkMode ? 'a' : 'b'` en componentes nuevos.
-- Componentes con `PropTypes`. Reutiliza `src/components/base` (`Button`, `Card`, `Input`, `Container`).
+- Componentes con `PropTypes`. Reutiliza `src/components/ui` (`Button`, `Card`, `Input`, `Container`).
 - Textos, contacto y redes en `src/config/site.js`, no repartidos por los componentes.
 - Páginas nuevas con `lazyPage(() => import(...))` en `src/routes/router.jsx`.
 - Accesibilidad: `<Link>`/`<NavLink>` para navegar, `label` en cada campo, foco visible.
