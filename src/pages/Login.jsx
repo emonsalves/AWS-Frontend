@@ -122,7 +122,6 @@ const Login = () => {
                                     name="email"
                                     autoComplete="email"
                                     required
-                                    aria-describedby={emailError ? 'email-error' : undefined}
                                 />
                                 <Input
                                     type="password"
@@ -138,7 +137,6 @@ const Login = () => {
                                     name="password"
                                     autoComplete="current-password"
                                     required
-                                    aria-describedby={passwordError ? 'password-error' : undefined}
                                 />
                             </div>
                             <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-2 font-semibold text-sm">

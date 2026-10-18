@@ -97,16 +97,15 @@ const ContainerContact = () => {
         const params = `subject=${encodeURIComponent(formData.subject.trim())}&body=${encodeURIComponent(body)}`;
         window.location.href = `mailto:${site.contact.email}?${params}`;
 
+        // Se conserva el borrador por si la aplicación de correo no se abrió
         setIsSent(true);
-        setFormData(emptyForm);
-        setErrors({});
     };
 
-    const isFormValid =
-        formData.name.trim() &&
-        validateEmail(formData.email) &&
-        formData.subject.trim() &&
-        formData.message.trim().length >= MIN_MESSAGE_LENGTH;
+    const handleNewMessage = () => {
+        setFormData(emptyForm);
+        setErrors({});
+        setIsSent(false);
+    };
 
     return (
         <Card
@@ -188,9 +187,14 @@ const ContainerContact = () => {
                             <p className={`text-xs ${text.secondary} opacity-75`}>
                                 ¿No se abrió? Escríbenos a {site.contact.email} o usa WhatsApp.
                             </p>
-                            <Button variant="ghost" size="sm" onClick={() => setIsSent(false)} className="mt-2">
-                                Escribir otro mensaje
-                            </Button>
+                            <div className="flex flex-col sm:flex-row justify-center gap-2 mt-2">
+                                <Button variant="ghost" size="sm" onClick={() => setIsSent(false)}>
+                                    Volver a mi mensaje
+                                </Button>
+                                <Button variant="ghost" size="sm" onClick={handleNewMessage}>
+                                    Escribir otro mensaje
+                                </Button>
+                            </div>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-3" aria-label="Formulario de contacto" noValidate>
@@ -213,7 +217,7 @@ const ContainerContact = () => {
                                     value={formData.name}
                                     onChange={handleInputChange}
                                     error={errors.name}
-                                    state={formData.name ? 'success' : 'default'}
+                                    state={formData.name.trim() ? 'success' : 'default'}
                                     leftIcon={<i className="fas fa-user"></i>}
                                     required
                                 />
@@ -257,7 +261,7 @@ const ContainerContact = () => {
                                     value={formData.subject}
                                     onChange={handleInputChange}
                                     error={errors.subject}
-                                    state={formData.subject ? 'success' : 'default'}
+                                    state={formData.subject.trim() ? 'success' : 'default'}
                                     leftIcon={<i className="fas fa-tag"></i>}
                                     required
                                 />
@@ -276,6 +280,7 @@ const ContainerContact = () => {
                                     rows={3}
                                     required
                                     aria-invalid={Boolean(errors.message)}
+                                    aria-describedby={errors.message ? 'contact-message-error' : undefined}
                                     className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 placeholder-opacity-50 resize-none ${
                                         errors.message
                                             ? 'border-red-500 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-100 focus:ring-2 focus:ring-red-500'
@@ -285,7 +290,9 @@ const ContainerContact = () => {
                                     }`}
                                 />
                                 {errors.message && (
-                                    <p className="text-sm text-red-600 dark:text-red-400 mt-1">{errors.message}</p>
+                                    <p id="contact-message-error" className="text-sm text-red-600 dark:text-red-400 mt-1">
+                                        {errors.message}
+                                    </p>
                                 )}
                                 <p className={`text-xs ${text.secondary} opacity-75`}>
                                     Mínimo {MIN_MESSAGE_LENGTH} caracteres ({formData.message.trim().length}/
@@ -293,7 +300,7 @@ const ContainerContact = () => {
                                 </p>
                             </div>
 
-                            <Button variant="primary" size="md" fullWidth type="submit" disabled={!isFormValid} className="mt-3">
+                            <Button variant="primary" size="md" fullWidth type="submit" className="mt-3">
                                 Enviar mensaje
                             </Button>
 
