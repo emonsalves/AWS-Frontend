@@ -1,44 +1,33 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
 import { createHashRouter } from "react-router-dom";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
+import PropTypes from "prop-types";
 import LoaderPage from "../components/loaders/LoaderPage";
 import { LayoutPublic } from "../layout/LayoutPublic";
 
-const createLazyComponent = (importPromise) => {
-    return lazy(() => importPromise);
-};
-
 const SuspenseRouter = ({ element }) => {
-    const [isReady, setIsReady] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsReady(true);
-        }, 1000); // 2 segundos de carga
-
-        return () => {
-            clearTimeout(timer); // Limpia el temporizador si el componente se desmonta antes de que termine la carga.
-        };
-    }, []);
-
-    return <Suspense fallback={<LoaderPage />}>{isReady ? element : <LoaderPage />}</Suspense>;
+    return <Suspense fallback={<LoaderPage />}>{element}</Suspense>;
 };
 
-const Home = createLazyComponent(import("../pages/Home"));
-const About = createLazyComponent(import("../pages/About"));
-const Login = createLazyComponent(import("../pages/Login"));
-const Calculador = createLazyComponent(import("../pages/Calculador"));
-const Recovery = createLazyComponent(import("../pages/Recovery"));
-const Contact = createLazyComponent(import("../pages/Contact"));
-const Followers = createLazyComponent(import("../pages/Followers"));
-const NotFound = createLazyComponent(import("../pages/NotFound"));
+SuspenseRouter.propTypes = {
+    element: PropTypes.node.isRequired,
+};
+
+// Cada página se descarga solo cuando se visita
+const Home = lazy(() => import("../pages/Home"));
+const About = lazy(() => import("../pages/About"));
+const Login = lazy(() => import("../pages/Login"));
+const Calculador = lazy(() => import("../pages/Calculador"));
+const Recovery = lazy(() => import("../pages/Recovery"));
+const Contact = lazy(() => import("../pages/Contact"));
+const Followers = lazy(() => import("../pages/Followers"));
+const NotFound = lazy(() => import("../pages/NotFound"));
 
 const router = createHashRouter([
     {
         path: "/",
         element: <LayoutPublic />,
-        errorElement: <NotFound />,
+        errorElement: <SuspenseRouter element={<NotFound />} />,
         children: [
             {
                 index: true,
