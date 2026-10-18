@@ -4,7 +4,7 @@
  * Exporta todos los componentes base para fácil importación
  * 
  * Uso:
- * import { Card, Button, Input, Container } from '../components/base';
+ * import { Card, Button, Input, Container } from '../components/ui';
  */
 
 export { default as Card } from './Card';

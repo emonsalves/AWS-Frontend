@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 import { site } from '../../config/site';
-import Card from '../base/Card';
-import Button from '../base/Button';
-import Input from '../base/Input';
+import Card from '../ui/Card';
+import Button from '../ui/Button';
+import Input from '../ui/Input';
 
 const emptyForm = {
     name: '',

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
-import Card from '../components/base/Card';
-import Button from '../components/base/Button';
-import Input from '../components/base/Input';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
+import Input from '../components/ui/Input';
 
 const Login = () => {
     const { text } = useTheme();
