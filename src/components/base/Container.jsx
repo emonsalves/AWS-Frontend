@@ -19,8 +19,8 @@
  * - screen: min-h-screen
  */
 
-import { useTheme } from '../../hooks/useTheme';
 import { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 
 const Container = forwardRef(({ 
   children,
@@ -31,7 +31,6 @@ const Container = forwardRef(({
   as = 'div',
   ...props 
 }, ref) => {
-  const { bg } = useTheme();
   
   // Configuración de tamaños
   const sizeClasses = {
@@ -77,5 +76,14 @@ const Container = forwardRef(({
 });
 
 Container.displayName = 'Container';
+
+Container.propTypes = {
+  children: PropTypes.node,
+  size: PropTypes.string,
+  padding: PropTypes.string,
+  center: PropTypes.bool,
+  className: PropTypes.string,
+  as: PropTypes.elementType,
+};
 
 export default Container;

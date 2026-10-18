@@ -16,8 +16,6 @@
  * - Valores hardcoded
  */
 
-import { tokens } from './tokens.js';
-
 export const themes = {
   light: {
     // 🌅 FONDOS SEMÁNTICOS
