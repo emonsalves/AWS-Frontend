@@ -35,6 +35,7 @@ const Input = forwardRef(({
   success,
   className = '',
   type = 'text',
+  id,
   ...props 
 }, ref) => {
   const { getInputClasses, text } = useTheme();
@@ -79,7 +80,7 @@ const Input = forwardRef(({
     <div className={fullWidth ? 'w-full' : ''}>
       {/* Label */}
       {label && (
-        <label htmlFor={props.id} className={`block text-sm font-medium ${text.primary} mb-2`}>
+        <label htmlFor={id} className={`block text-sm font-medium ${text.primary} mb-2`}>
           {label}
         </label>
       )}
@@ -98,7 +99,10 @@ const Input = forwardRef(({
         {/* Input */}
         <input
           ref={ref}
+          id={id}
           type={type}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={helperMessage && id ? `${id}-help` : undefined}
           className={inputClasses}
           {...props}
         />
@@ -123,7 +127,7 @@ const Input = forwardRef(({
       
       {/* Mensaje de ayuda */}
       {helperMessage && (
-        <p className={`mt-2 text-sm ${messageColor}`}>
+        <p id={id ? `${id}-help` : undefined} className={`mt-2 text-sm ${messageColor}`}>
           {helperMessage}
         </p>
       )}
