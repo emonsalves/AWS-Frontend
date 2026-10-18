@@ -22,4 +22,4 @@ Recuerda: fusionar en `main` publica el sitio en www.mnslvs.com. Nada entra sin 
    - Título con el mismo formato que un commit; la CI (`pr-title`) lo valida.
    - Cuerpo con la plantilla `.github/pull_request_template.md`: qué cambia, por qué, cómo probarlo, capturas si hay
      cambios visuales y el checklist marcado con lo que realmente se comprobó.
-7. **Fusión**: la hace una persona, con *Squash and merge*, cuando `lint-build` y `pr-title` estén en verde.
+7. **Fusión**: la hace una persona, con *Create a merge commit*, cuando `lint-build` y `pr-title` estén en verde.

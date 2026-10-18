@@ -76,7 +76,7 @@ Buenas prácticas:
 - **Título:** mismo formato que un commit (`feat(home): nueva sección de servicios`). La CI lo valida.
 - **Descripción:** completa la plantilla (qué cambia, por qué, cómo probarlo, capturas si hay cambios visuales).
 - **Tamaño:** idealmente menos de 400 líneas cambiadas. Si es más grande, explica por qué o divídelo.
-- **Fusión:** usa *Squash and merge*; el título del PR queda como mensaje del commit en `main`.
+- **Fusión:** usa *Create a merge commit*; cada commit de la rama llega a `main`, así que todos deben seguir Conventional Commits.
 - **Rama:** se borra después de fusionar.
 
 ### Requisitos para fusionar
@@ -101,4 +101,4 @@ Para que estas reglas se cumplan solas, en *Settings → Branches* conviene prot
 
 - Requerir pull request antes de fusionar.
 - Requerir que pasen los checks `lint-build` y `pr-title`.
-- Permitir solo *Squash merge* y borrar ramas automáticamente al fusionar.
+- Permitir solo *Merge commits* y borrar ramas automáticamente al fusionar.
