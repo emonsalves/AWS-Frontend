@@ -35,6 +35,8 @@ const Input = forwardRef(({
   success,
   className = '',
   type = 'text',
+  id,
+  'aria-describedby': describedBy,
   ...props 
 }, ref) => {
   const { getInputClasses, text } = useTheme();
@@ -79,7 +81,7 @@ const Input = forwardRef(({
     <div className={fullWidth ? 'w-full' : ''}>
       {/* Label */}
       {label && (
-        <label htmlFor={props.id} className={`block text-sm font-medium ${text.primary} mb-2`}>
+        <label htmlFor={id} className={`block text-sm font-medium ${text.primary} mb-2`}>
           {label}
         </label>
       )}
@@ -98,7 +100,10 @@ const Input = forwardRef(({
         {/* Input */}
         <input
           ref={ref}
+          id={id}
           type={type}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={[describedBy, helperMessage && id ? `${id}-help` : null].filter(Boolean).join(' ') || undefined}
           className={inputClasses}
           {...props}
         />
@@ -123,7 +128,7 @@ const Input = forwardRef(({
       
       {/* Mensaje de ayuda */}
       {helperMessage && (
-        <p className={`mt-2 text-sm ${messageColor}`}>
+        <p id={id ? `${id}-help` : undefined} className={`mt-2 text-sm ${messageColor}`}>
           {helperMessage}
         </p>
       )}
@@ -146,6 +151,7 @@ Input.propTypes = {
   className: PropTypes.string,
   type: PropTypes.string,
   id: PropTypes.string,
+  'aria-describedby': PropTypes.string,
 };
 
 export default Input;

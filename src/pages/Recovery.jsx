@@ -113,7 +113,6 @@ const Recovery = () => {
                                             name="email"
                                             autoComplete="email"
                                             required
-                                            aria-describedby={emailError ? 'email-error' : undefined}
                                         />
                                     </div>
                                     <div className="text-center md:text-left mt-6">
