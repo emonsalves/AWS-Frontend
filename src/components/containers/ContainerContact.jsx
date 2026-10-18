@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 import { site } from '../../config/site';
+import { validateEmail, validatePhone } from '../../lib/validation';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
@@ -14,10 +15,6 @@ const emptyForm = {
 };
 
 const MIN_MESSAGE_LENGTH = 10;
-
-const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-const validatePhone = (phone) => /^(\+?56|0)?[1-9]\d{8}$/.test(phone.replace(/\s/g, ''));
 
 const ContainerContact = () => {
     const { text } = useTheme();
