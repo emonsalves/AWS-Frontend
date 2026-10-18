@@ -79,7 +79,7 @@ const Input = forwardRef(({
     <div className={fullWidth ? 'w-full' : ''}>
       {/* Label */}
       {label && (
-        <label className={`block text-sm font-medium ${text.primary} mb-2`}>
+        <label htmlFor={props.id} className={`block text-sm font-medium ${text.primary} mb-2`}>
           {label}
         </label>
       )}
@@ -145,6 +145,7 @@ Input.propTypes = {
   success: PropTypes.string,
   className: PropTypes.string,
   type: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default Input;
