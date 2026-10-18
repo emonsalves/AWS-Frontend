@@ -22,6 +22,7 @@
 
 import { useTheme } from '../../hooks/useTheme';
 import { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 
 const Card = forwardRef(({ 
   children, 
@@ -96,5 +97,16 @@ const Card = forwardRef(({
 });
 
 Card.displayName = 'Card';
+
+Card.propTypes = {
+  children: PropTypes.node,
+  variant: PropTypes.oneOf(['default', 'elevated', 'accent', 'success', 'warning', 'error', 'ghost']),
+  padding: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl']),
+  shadow: PropTypes.bool,
+  border: PropTypes.bool,
+  rounded: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', 'full']),
+  className: PropTypes.string,
+  as: PropTypes.elementType,
+};
 
 export default Card;

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import { tokens } from './src/styles/tokens.js';
+import animated from 'tailwindcss-animated';
 
 export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -76,5 +77,5 @@ export default {
             }
         },
     },
-    plugins: [],
+    plugins: [animated],
 };

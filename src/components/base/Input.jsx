@@ -21,6 +21,7 @@
 
 import { useTheme } from '../../hooks/useTheme';
 import { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 
 const Input = forwardRef(({ 
   state = 'default',
@@ -131,5 +132,19 @@ const Input = forwardRef(({
 });
 
 Input.displayName = 'Input';
+
+Input.propTypes = {
+  state: PropTypes.oneOf(['default', 'error', 'success', 'warning', 'disabled']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  fullWidth: PropTypes.bool,
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+  label: PropTypes.string,
+  helperText: PropTypes.string,
+  error: PropTypes.string,
+  success: PropTypes.string,
+  className: PropTypes.string,
+  type: PropTypes.string,
+};
 
 export default Input;

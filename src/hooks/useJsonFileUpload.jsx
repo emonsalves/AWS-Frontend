@@ -6,7 +6,6 @@ export const useJsonFileUpload = () => {
 
     const handleFileUpload = (event) => {
         const file = event.target.files[0];
-        console.log("file", file);
         if (file && file.type === "application/json") {
             const reader = new FileReader();
             reader.onload = (e) => {

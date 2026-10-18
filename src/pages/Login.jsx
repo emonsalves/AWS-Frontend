@@ -72,9 +72,7 @@ const Login = () => {
             // Simular llamada API de login
             await new Promise(resolve => setTimeout(resolve, 2000));
             
-            // Simular éxito (aquí iría la lógica real de autenticación)
-            console.log('Login exitoso:', { email, password, rememberMe });
-            
+            // TODO: conectar con la autenticación real
         } catch (error) {
             setEmailError('Error al iniciar sesión. Verifica tus credenciales.');
         } finally {

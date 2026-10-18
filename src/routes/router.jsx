@@ -1,38 +1,48 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
 import { createHashRouter } from "react-router-dom";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
+import PropTypes from "prop-types";
 import LoaderPage from "../components/loaders/LoaderPage";
 import { LayoutPublic } from "../layout/LayoutPublic";
+import NotFound from "../pages/NotFound";
 
-const createLazyComponent = (importPromise) => {
-    return lazy(() => importPromise);
-};
+const RELOAD_FLAG = "chunk-reload";
+
+// Tras un despliegue, los chunks antiguos ya no existen en S3: si una pestaña abierta
+// falla al cargar una página, recarga una vez para obtener la versión nueva.
+const lazyPage = (importPage) =>
+    lazy(() =>
+        importPage()
+            .then((module) => {
+                sessionStorage.removeItem(RELOAD_FLAG);
+                return module;
+            })
+            .catch((error) => {
+                if (!sessionStorage.getItem(RELOAD_FLAG)) {
+                    sessionStorage.setItem(RELOAD_FLAG, "1");
+                    window.location.reload();
+                    return new Promise(() => {});
+                }
+                throw error;
+            }),
+    );
 
 const SuspenseRouter = ({ element }) => {
-    const [isReady, setIsReady] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsReady(true);
-        }, 1000); // 2 segundos de carga
-
-        return () => {
-            clearTimeout(timer); // Limpia el temporizador si el componente se desmonta antes de que termine la carga.
-        };
-    }, []);
-
-    return <Suspense fallback={<LoaderPage />}>{isReady ? element : <LoaderPage />}</Suspense>;
+    return <Suspense fallback={<LoaderPage />}>{element}</Suspense>;
 };
 
-const Home = createLazyComponent(import("../pages/Home"));
-const About = createLazyComponent(import("../pages/About"));
-const Login = createLazyComponent(import("../pages/Login"));
-const Calculador = createLazyComponent(import("../pages/Calculador"));
-const Recovery = createLazyComponent(import("../pages/Recovery"));
-const Contact = createLazyComponent(import("../pages/Contact"));
-const Followers = createLazyComponent(import("../pages/Followers"));
-const NotFound = createLazyComponent(import("../pages/NotFound"));
+SuspenseRouter.propTypes = {
+    element: PropTypes.node.isRequired,
+};
+
+// Cada página se descarga solo cuando se visita
+const Home = lazyPage(() => import("../pages/Home"));
+const About = lazyPage(() => import("../pages/About"));
+const Login = lazyPage(() => import("../pages/Login"));
+const Calculador = lazyPage(() => import("../pages/Calculador"));
+const Recovery = lazyPage(() => import("../pages/Recovery"));
+const Contact = lazyPage(() => import("../pages/Contact"));
+const Followers = lazyPage(() => import("../pages/Followers"));
 
 const router = createHashRouter([
     {

@@ -22,6 +22,7 @@
 
 import { useTheme } from '../../hooks/useTheme';
 import { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 
 const Button = forwardRef(({ 
   children, 
@@ -129,5 +130,18 @@ const Button = forwardRef(({
 });
 
 Button.displayName = 'Button';
+
+Button.propTypes = {
+  children: PropTypes.node,
+  variant: PropTypes.string,
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  fullWidth: PropTypes.bool,
+  loading: PropTypes.bool,
+  disabled: PropTypes.bool,
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+  className: PropTypes.string,
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+};
 
 export default Button;
