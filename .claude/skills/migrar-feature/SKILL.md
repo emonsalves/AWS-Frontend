@@ -1,6 +1,7 @@
 ---
 name: migrar-feature
 description: Migra una parte del código existente a la estructura objetivo de docs/ARQUITECTURA.md (fase 3), un feature por PR y sin cambiar comportamiento. Úsalo cuando se pida reorganizar carpetas o mover componentes a features.
+model: opus
 ---
 
 # Migrar un feature a la estructura objetivo

@@ -1,6 +1,7 @@
 ---
 name: nuevo-componente
 description: Crea un componente React nuevo siguiendo las convenciones del repo (ubicación por feature, PropTypes, tema con dark:, componentes base). Úsalo cuando se pida un componente, sección o bloque de UI nuevo.
+model: sonnet
 ---
 
 # Crear un componente nuevo

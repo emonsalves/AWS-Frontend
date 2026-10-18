@@ -1,6 +1,7 @@
 ---
 name: nueva-pagina
 description: Añade una página o ruta nueva al sitio (archivo en pages, ruta con carga diferida en el router, enlace en el menú y datos en config). Úsalo cuando se pida una página, sección con URL propia o ruta.
+model: sonnet
 ---
 
 # Añadir una página nueva

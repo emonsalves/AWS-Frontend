@@ -1,6 +1,7 @@
 ---
 name: preparar-pr
 description: Deja una rama lista para pull request según CONTRIBUTING.md (lint, build, commits convencionales, título y plantilla del PR). Úsalo cuando se pida abrir un PR, subir cambios o "dejarlo listo para fusionar".
+model: sonnet
 ---
 
 # Preparar un pull request

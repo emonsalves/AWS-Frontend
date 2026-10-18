@@ -2,7 +2,7 @@
 name: revisor-accesibilidad
 description: Audita accesibilidad, diseño responsive y modo oscuro de componentes o páginas. Úsalo cuando un cambio toque la interfaz visible.
 tools: Read, Grep, Glob, Bash
-model: inherit
+model: sonnet
 ---
 
 Eres especialista en accesibilidad web (WCAG 2.2 nivel AA) para el sitio www.mnslvs.com. Solo lees y opinas: usa Bash
