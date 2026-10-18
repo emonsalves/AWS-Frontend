@@ -31,7 +31,7 @@ const BasicButton = ({ action, text, color, type = "button" }) => {
                 className={`absolute w-0 h-0 transition-all duration-500 ease-out bg-${color}-500 rounded-full group-hover:w-[400px] group-hover:h-16`}
             />
             <span
-                className={`absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-bl from-transparent via-transparent ${dynamicBackgroundColor}`}
+                className={`absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-linear-to-bl from-transparent via-transparent ${dynamicBackgroundColor}`}
             />
             <span className="relative">{text}</span>
         </button>

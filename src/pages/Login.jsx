@@ -86,7 +86,7 @@ const Login = () => {
         <div className="w-full min-h-full flex items-center justify-center px-4 py-4">
             <Card 
                 variant="elevated" 
-                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-sm"
+                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-xs"
                 padding="none"
             >
                 <form onSubmit={handleSubmit} aria-label="Formulario de inicio de sesión">
@@ -143,7 +143,7 @@ const Login = () => {
                                 <label className={`flex items-center cursor-pointer ${text.secondary} hover:${text.primary} transition-colors duration-200`}>
                                     <input
                                         type="checkbox"
-                                        className="mr-3 w-4 h-4 rounded border-2 border-neutral-300 text-primary-600 focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 transition-all duration-200"
+                                        className="mr-3 w-4 h-4 rounded-sm border-2 border-neutral-300 text-primary-600 focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 transition-all duration-200"
                                         checked={rememberMe}
                                         onChange={(e) => setRememberMe(e.target.checked)}
                                     />

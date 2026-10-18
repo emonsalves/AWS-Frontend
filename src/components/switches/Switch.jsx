@@ -50,7 +50,7 @@ const Switch = ({
                 className={`
                     relative inline-flex items-center ${sizeClasses.container} 
                     rounded-full transition-colors duration-200 ease-in-out 
-                    focus:outline-none focus:ring-2 focus:ring-offset-2 
+                    focus:outline-hidden focus:ring-2 focus:ring-offset-2 
                     ${darkMode ? 'focus:ring-offset-gray-800' : 'focus:ring-offset-white'}
                     ${isOn 
                         ? 'bg-green-500 hover:bg-green-600 focus:ring-green-500' 

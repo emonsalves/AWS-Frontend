@@ -33,7 +33,10 @@ export default {
             
             // Tipografía usando tokens
             fontFamily: tokens.typography.fontFamily,
-            fontSize: tokens.typography.fontSize,
+            // Sin interlineado propio, como en Tailwind 3 (Tailwind 4 añade el suyo por defecto)
+            fontSize: Object.fromEntries(
+                Object.entries(tokens.typography.fontSize).map(([name, size]) => [name, [size, { lineHeight: "inherit" }]]),
+            ),
             fontWeight: tokens.typography.fontWeight,
             
             // Transiciones usando tokens

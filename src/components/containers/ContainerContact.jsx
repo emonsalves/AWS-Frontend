@@ -107,7 +107,7 @@ const ContainerContact = () => {
     return (
         <Card
             variant="elevated"
-            className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-sm"
+            className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-xs"
             padding="none"
         >
             <div className="flex flex-col lg:flex-row">

@@ -11,7 +11,7 @@ const NotFound = () => {
             <button className="mt-8">
                 <Link
                     to="/"
-                    className="relative inline-block text-sm font-medium text-[#25D366] group active:text-[#128C7E] focus:outline-none focus:ring"
+                    className="relative inline-block text-sm font-medium text-[#25D366] group active:text-primary-muted focus:outline-hidden focus:ring-3 focus:ring-blue-500/50"
                 >
                     <span className="absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-[#25D366] group-hover:translate-y-0 group-hover:translate-x-0"></span>
                     <span className={`relative block px-8 py-3 border border-current ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
