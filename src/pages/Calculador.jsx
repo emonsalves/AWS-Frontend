@@ -21,7 +21,7 @@ const Calculador = () => {
     };
 
     return (
-        <div className={`w-full flex items-center justify-center py-8 bg-gray-900 transition-colors duration-200`}>
+        <div className="w-full flex items-center justify-center py-8">
             <div className={`w-full max-w-7xl rounded-xl shadow-2xl overflow-hidden mx-4 ${darkMode ? 'bg-gray-800' : 'bg-white'} animate-fade-up animate-once`}>
                 <div className="bg-[#25D366] p-6 relative animate-fade-down animate-once">
                     <button
