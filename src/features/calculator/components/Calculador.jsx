@@ -24,13 +24,8 @@ const Calculador = () => {
         <div className="w-full flex items-center justify-center py-8">
             <div className={`w-full max-w-7xl rounded-xl shadow-2xl overflow-hidden mx-4 ${darkMode ? 'bg-gray-800' : 'bg-white'} animate-fade-up animate-once`}>
                 <div className="bg-[#25D366] p-6 relative animate-fade-down animate-once">
-                    <button
-                        onClick={() => {}}
-                        className="absolute right-6 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-primary-muted transition-colors"
-                    >
-                    </button>
                     <h1 className="text-white text-3xl font-bold text-center flex items-center justify-center gap-3">
-                        <i className="fa-regular fa-address-card animate-bounce animate-infinite"></i> 
+                        <i className="fa-regular fa-address-card animate-bounce animate-infinite" aria-hidden="true"></i> 
                         Calculador de Cuentas
                     </h1>
                 </div>
@@ -43,9 +38,9 @@ const Calculador = () => {
                         </h2>
 
                         <div className="space-y-6">
-                            <div className={`p-4 rounded-lg shadow-xs ${darkMode ? 'bg-gray-800' : 'bg-white'} hover:scale-[1.02] transition-transform duration-300`}>
-                                <p className={`font-semibold mb-3 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>¿Agrega propina?:</p>
-                                <div className="space-y-2">
+                            <fieldset className={`p-4 rounded-lg shadow-xs ${darkMode ? 'bg-gray-800' : 'bg-white'} hover:scale-[1.02] transition-transform duration-300`}>
+                                <legend className={`float-left w-full font-semibold mb-3 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>¿Agrega propina?:</legend>
+                                <div className="clear-both space-y-2">
                                     <label className="flex items-center space-x-3 cursor-pointer">
                                         <input 
                                             type="radio" 
@@ -67,16 +62,18 @@ const Calculador = () => {
                                         <span className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>No</span>
                                     </label>
                                 </div>
-                            </div>
+                            </fieldset>
 
                             <div className="space-y-4">
                                 <div>
-                                    <label className={`block font-semibold mb-2 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+                                    <label htmlFor="cuenta-total" className={`block font-semibold mb-2 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
                                         Total de la cuenta cliente:
                                     </label>
                                     <div className="relative">
                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                                        <input 
+                                        <input
+                                            id="cuenta-total"
+                                            inputMode="numeric"
                                             type="text" 
                                             value={cuenta ? parseInt(cuenta).toLocaleString('es-CL') : ''}
                                             onChange={(e) => setCuenta(e.target.value.replace(/\D/g, ''))}
@@ -90,12 +87,14 @@ const Calculador = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className={`block font-semibold mb-2 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+                                    <label htmlFor="dinero-cliente" className={`block font-semibold mb-2 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
                                         Dinero con el que paga cliente:
                                     </label>
                                     <div className="relative">
                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                                        <input 
+                                        <input
+                                            id="dinero-cliente"
+                                            inputMode="numeric"
                                             type="text" 
                                             value={dineroCliente ? parseInt(dineroCliente).toLocaleString('es-CL') : ''}
                                             onChange={(e) => setDineroCliente(e.target.value.replace(/\D/g, ''))}
