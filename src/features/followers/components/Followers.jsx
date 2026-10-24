@@ -243,7 +243,7 @@ const Followers = () => {
                 )}
             </div>
             <div className="w-full mt-6 px-4 sm:px-0">
-                <button className="w-full bg-[#25D366] hover:bg-primary-muted px-6 py-3 text-white font-medium rounded-lg transition-colors duration-200 text-sm sm:text-base"
+                <button className="w-full bg-[#25D366] hover:bg-green-400 px-6 py-3 text-gray-900 font-medium rounded-lg transition-colors duration-200 text-sm sm:text-base"
                     type="button"
                     onClick={action}
                 >

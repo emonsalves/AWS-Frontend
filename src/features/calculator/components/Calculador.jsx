@@ -25,7 +25,7 @@ const Calculador = () => {
         <div className="w-full flex items-center justify-center py-8">
             <div className={`w-full max-w-7xl rounded-xl shadow-2xl overflow-hidden mx-4 ${darkMode ? 'bg-gray-800' : 'bg-white'} animate-fade-up animate-once`}>
                 <div className="bg-[#25D366] p-6 relative animate-fade-down animate-once">
-                    <h1 className="text-white text-3xl font-bold text-center flex items-center justify-center gap-3">
+                    <h1 className="text-gray-900 text-3xl font-bold text-center flex items-center justify-center gap-3">
                         <Icon name="address-card-regular" className="animate-bounce animate-infinite" /> 
                         Calculador de Cuentas
                     </h1>
@@ -34,7 +34,7 @@ const Calculador = () => {
                 <div className="flex flex-col lg:flex-row p-6 gap-6">
                     {/* Sección Cliente */}
                     <div className={`lg:w-1/2 rounded-lg p-6 shadow-md ${darkMode ? 'bg-gray-700' : 'bg-gray-50'} animate-fade-right animate-once animate-delay-100`}>
-                        <h2 className="text-[#25D366] font-bold text-2xl mb-6 text-center">
+                        <h2 className={`${darkMode ? 'text-[#25D366]' : 'text-green-700'} font-bold text-2xl mb-6 text-center`}>
                             Datos del Cliente
                         </h2>
 
@@ -114,7 +114,7 @@ const Calculador = () => {
 
                     {/* Sección Resultados */}
                     <div className={`lg:w-1/2 rounded-lg p-6 shadow-md ${darkMode ? 'bg-gray-700' : 'bg-gray-50'} animate-fade-left animate-once animate-delay-200`}>
-                        <h2 className="text-[#25D366] font-bold text-2xl mb-6 text-center">
+                        <h2 className={`${darkMode ? 'text-[#25D366]' : 'text-green-700'} font-bold text-2xl mb-6 text-center`}>
                             Resultados
                         </h2>
 
@@ -150,8 +150,8 @@ const Calculador = () => {
                                     
                                     <div className="pt-3 border-t border-gray-200">
                                         <div className="flex justify-between text-lg font-bold animate-pulse animate-infinite">
-                                            <span className="text-[#25D366]">Vuelto:</span>
-                                            <span className="text-[#25D366]">${calcularVuelto()}</span>
+                                            <span className={darkMode ? 'text-[#25D366]' : 'text-green-700'}>Vuelto:</span>
+                                            <span className={darkMode ? 'text-[#25D366]' : 'text-green-700'}>${calcularVuelto()}</span>
                                         </div>
                                     </div>
                                 </div>

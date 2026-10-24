@@ -30,8 +30,8 @@ const NavPublic = () => {
                             end
                             className={({ isActive }) => `flex items-center px-3 py-2 rounded-md text-base sm:text-lg font-extrabold transition-all duration-300 cursor-pointer
                                 ${isActive
-                                    ? (darkMode ? 'text-[#25D366]' : 'text-white') 
-                                    : (darkMode ? 'text-gray-300 hover:text-[#25D366]' : 'text-black hover:text-white')}`}
+                                    ? (darkMode ? 'text-[#25D366]' : 'text-gray-900 underline decoration-2 underline-offset-8') 
+                                    : (darkMode ? 'text-gray-300 hover:text-[#25D366]' : 'text-black hover:underline decoration-2 underline-offset-8')}`}
                         >
                             {item.text}
                         </NavLink>
@@ -44,7 +44,7 @@ const NavPublic = () => {
                         {darkMode ? (
                             <Icon name="sun" className="text-[#25D366] text-xl" />
                         ) : (
-                            <Icon name="moon" className="text-white text-xl" />
+                            <Icon name="moon" className="text-gray-900 text-xl" />
                         )}
                     </button>
                 </div>
@@ -58,7 +58,7 @@ const NavPublic = () => {
                         {darkMode ? (
                             <Icon name="sun" className="text-[#25D366] text-xl" />
                         ) : (
-                            <Icon name="moon" className="text-white text-xl" />
+                            <Icon name="moon" className="text-gray-900 text-xl" />
                         )}
                     </button>
                     <button 
@@ -89,8 +89,8 @@ const NavPublic = () => {
                                 isMobileMenuOpen ? "opacity-100" : ""
                             } ${
                                 isActive
-                                    ? (darkMode ? 'text-[#25D366]' : 'text-white') 
-                                    : (darkMode ? 'text-gray-300 hover:text-[#25D366]' : 'text-black hover:text-white')
+                                    ? (darkMode ? 'text-[#25D366]' : 'text-gray-900 underline decoration-2 underline-offset-8') 
+                                    : (darkMode ? 'text-gray-300 hover:text-[#25D366]' : 'text-black hover:underline decoration-2 underline-offset-8')
                             }`}
                         >
                             <Icon name="arrow-right" /> {item.text}

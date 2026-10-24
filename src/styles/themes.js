@@ -73,7 +73,7 @@ export const themes = {
       disabled: 'disabled:opacity-50 disabled:cursor-not-allowed',
       
       // Botones específicos
-      buttonPrimary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500/20',
+      buttonPrimary: 'bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-500/20',
       buttonSecondary: 'bg-neutral-100 text-neutral-900 hover:bg-neutral-200 focus:ring-neutral-500/20',
       buttonGhost: 'bg-transparent text-neutral-700 hover:bg-neutral-100 focus:ring-neutral-500/20',
       buttonDanger: 'bg-error-600 text-white hover:bg-error-700 focus:ring-error-500/20'
@@ -136,7 +136,7 @@ export const themes = {
       disabled: 'disabled:opacity-50 disabled:cursor-not-allowed',
       
       // Botones específicos
-      buttonPrimary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500/30',
+      buttonPrimary: 'bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-500/30',
       buttonSecondary: 'bg-neutral-700 text-neutral-100 hover:bg-neutral-600 focus:ring-neutral-500/30',
       buttonGhost: 'bg-transparent text-neutral-300 hover:bg-neutral-700 focus:ring-neutral-500/30',
       buttonDanger: 'bg-error-600 text-white hover:bg-error-700 focus:ring-error-500/30'
