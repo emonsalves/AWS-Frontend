@@ -72,6 +72,10 @@ pages → features → components/ui, hooks, lib, config
   condicionales `darkMode ? 'a' : 'b'` en componentes nuevos.
 - **Datos del sitio en `src/config/site.js`.** Contacto, redes y textos de SEO se editan en un solo lugar.
 - **Carga diferida por ruta** con `lazy(() => import(...))`. Nunca retrasos artificiales.
+- **Prerender al compilar.** `npm run build` genera el HTML de las páginas de `src/config/seo.js` con
+  `src/entry-server.jsx` y `scripts/prerender.mjs` (`dist/<ruta>/index.html`), y el navegador lo hidrata. Una
+  función de CloudFront sirve `/about` desde `/about/index.html`; las rutas sin prerender usan `dist/app.html`.
+  Todo lo que se renderiza debe funcionar en Node: `window`, `document` y `localStorage` solo dentro de efectos o eventos.
 - **Sin dependencias que no se usan.** Antes de añadir una librería, comprobar si el navegador o React ya lo resuelven.
 - **Accesibilidad por defecto:** navegación con `<Link>`/`<NavLink>`, `label` asociado a cada campo, `lang="es"`.
 

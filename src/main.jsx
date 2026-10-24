@@ -5,8 +5,16 @@ import "./index.css";
 import "./styles/lights.css";
 import "./styles/mobile-tables.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const root = document.getElementById("root");
+const app = (
     <React.StrictMode>
         <App />
-    </React.StrictMode>,
+    </React.StrictMode>
 );
+
+// Las páginas prerenderizadas ya traen el HTML: React lo reutiliza (hydrate) en vez de volver a dibujarlo
+if (root.hasChildNodes()) {
+    ReactDOM.hydrateRoot(root, app);
+} else {
+    ReactDOM.createRoot(root).render(app);
+}

@@ -125,14 +125,14 @@ const ContainerContact = () => {
 
                         <div>
                             <h1 className={`text-lg sm:text-xl font-semibold ${text.primary} mb-3`}>
-                                ¿Necesitas ayuda?
+                                Cotiza tu sitio web o automatización
                                 <br />
-                                ¡Estamos aquí para ti!
+                                ¡Estamos aquí para ayudarte!
                             </h1>
                             <p className={`text-sm ${text.secondary} leading-relaxed`}>
-                                En MNSLVS, nos enorgullece ofrecer un servicio al cliente excepcional. Nuestro equipo
-                                está listo para responder tus preguntas y ayudarte a encontrar las soluciones
-                                tecnológicas perfectas para tu negocio.
+                                Cuéntanos qué necesita tu PYME: desarrollo web, automatización de procesos o asesoría
+                                tecnológica. Te respondemos con una propuesta clara. Atendemos en Santiago,
+                                Chile.
                             </p>
                         </div>
 

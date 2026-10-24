@@ -1,8 +1,9 @@
 import { Calculador } from "../features/calculator";
-import { usePageTitle } from "../hooks/usePageTitle";
+import { usePageSeo } from "../hooks/usePageSeo";
+import { seo } from "../config/seo";
 
 const CalculadorPage = () => {
-    usePageTitle("Calculador de cuentas");
+    usePageSeo(seo.calculator);
     return <Calculador />;
 };
 

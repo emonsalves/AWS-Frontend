@@ -1,8 +1,9 @@
 import { ContainerContact } from "../components/containers/ContainerContact";
-import { usePageTitle } from "../hooks/usePageTitle";
+import { usePageSeo } from "../hooks/usePageSeo";
+import { seo } from "../config/seo";
 
 const Contact = () => {
-    usePageTitle("Contacto");
+    usePageSeo(seo.contact);
     return (
         <div className="w-full min-h-full flex items-center justify-center py-2">
             <ContainerContact />
