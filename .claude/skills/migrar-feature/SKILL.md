@@ -27,5 +27,5 @@ Objetivo: mover archivos de `components/<tipo>/`, `helpers/`, `layout/` y `route
 
 ## Orden sugerido
 
-`components/ui` (PR #123) → `config` y `lib` → `components/layout` → `contact` → `about` → `tools` (Calculador y
-Followers) → `app/` (App, router, providers). Login no se migra todavía: aún no está implementado.
+`components/ui` (PR #123) → `config` y `lib` → `components/layout` → `contact` → `about` → `calculator` y
+`followers` (un feature por herramienta, para que no compartan chunk) → `app/` (App, router, providers). Login no se migra todavía: aún no está implementado.

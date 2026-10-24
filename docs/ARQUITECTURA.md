@@ -33,7 +33,8 @@ src/
 │   │   ├── hooks/
 │   │   └── index.js     # API pública del feature
 │   ├── about/
-│   └── tools/           # Calculador, Followers (si siguen en el sitio)
+│   ├── calculator/      # Calculador de vuelto y propina
+│   └── followers/       # Análisis de seguidores y seguidos
 ├── components/
 │   ├── ui/              # Button, Input, Card, Container: sin lógica de negocio
 │   └── layout/          # Header, Footer, LayoutPublic
