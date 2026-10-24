@@ -1,4 +1,4 @@
-import { Calculador } from "../features/tools";
+import { Calculador } from "../features/calculator";
 
 const CalculadorPage = () => {
     return <Calculador />;
