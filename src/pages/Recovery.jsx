@@ -171,7 +171,7 @@ const Recovery = () => {
                         </div>
                         <div className="w-full md:w-1/2 max-w-md lg:max-w-xl">
                             <img
-                                src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                                src="/images/login.webp"
                                 alt="Ilustración de recuperación de contraseña"
                                 className="w-full h-auto rounded-2xl filter drop-shadow-xl"
                             />
