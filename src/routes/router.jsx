@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createHashRouter } from "react-router";
+import { createBrowserRouter } from "react-router";
 import { lazy, Suspense } from "react";
 import PropTypes from "prop-types";
 import LoaderPage from "../components/loaders/LoaderPage";
@@ -44,7 +44,12 @@ const Recovery = lazyPage(() => import("../pages/Recovery"));
 const Contact = lazyPage(() => import("../pages/Contact"));
 const Followers = lazyPage(() => import("../pages/Followers"));
 
-const router = createHashRouter([
+// Enlaces antiguos con # (por ejemplo /#/about) pasan a su ruta limpia (/about)
+if (window.location.hash.startsWith("#/")) {
+    window.history.replaceState(null, "", window.location.hash.slice(1));
+}
+
+const router = createBrowserRouter([
     {
         path: "/",
         element: <LayoutPublic />,
