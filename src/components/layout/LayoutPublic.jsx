@@ -2,9 +2,11 @@ import { Outlet } from "react-router";
 import HeaderPublic from "./HeaderPublic";
 import FooterPublic from "./FooterPublic";
 import { useTheme } from '../../context/ThemeContext';
+import { useCanonical } from '../../hooks/useCanonical';
 
 function LayoutPublic() {
     const { darkMode } = useTheme();
+    useCanonical();
     
     
     return (
