@@ -25,8 +25,12 @@ const NavPublic = () => {
             className={iconButtonClasses}
             aria-label={darkMode ? "Activar modo claro" : "Activar modo oscuro"}
         >
-            <Icon name="moon" className="dark:hidden" />
-            <Icon name="sun" className="hidden dark:inline-block" />
+            <span className="dark:hidden">
+                <Icon name="moon" />
+            </span>
+            <span className="hidden dark:inline">
+                <Icon name="sun" />
+            </span>
         </button>
     );
 
