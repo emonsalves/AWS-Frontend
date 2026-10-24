@@ -1,7 +1,9 @@
 import { Link } from "react-router";
 import { useTheme } from '../context/ThemeContext';
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const NotFound = () => {
+    usePageTitle("Página no encontrada");
     const { darkMode } = useTheme();
 
     return (

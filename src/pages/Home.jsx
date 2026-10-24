@@ -1,6 +1,8 @@
 import { useTheme } from '../context/ThemeContext';
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const Home = () => {
+    usePageTitle();
     const { darkMode } = useTheme();
     
     return (

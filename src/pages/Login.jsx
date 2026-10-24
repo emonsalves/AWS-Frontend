@@ -4,8 +4,10 @@ import { useTheme } from '../hooks/useTheme';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
+import { usePageTitle } from '../hooks/usePageTitle';
 
 const Login = () => {
+    usePageTitle("Iniciar sesión");
     const { text } = useTheme();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
