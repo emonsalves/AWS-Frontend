@@ -11,9 +11,21 @@ export const home = {
         primaryAction: "Escríbenos por WhatsApp",
         secondaryAction: "Ver servicios",
         trustLine: "Desde 2021 ayudando a PYMES en Santiago, Chile.",
+        highlight: "PYMES",
+        // Ejemplo de automatización que acompaña al título
+        example: {
+            title: "Automatización · Pedidos",
+            status: "Activa",
+            steps: [
+                { title: "Llega un pedido por WhatsApp", text: "Se registra solo, sin copiar datos" },
+                { title: "Se actualiza el inventario", text: "Adiós a la planilla compartida" },
+                { title: "El cliente recibe su confirmación", text: "Tu equipo solo revisa" },
+            ],
+        },
     },
 
     services: {
+        eyebrow: "Servicios",
         title: "Qué hacemos por tu empresa",
         items: [
             {
@@ -41,6 +53,7 @@ export const home = {
     },
 
     audience: {
+        eyebrow: "Para quién",
         title: "Pensado para PYMES que quieren crecer sin complicarse",
         intro: "Nuestra misión es empoderar a las PYMES a través de la tecnología. Tenemos más experiencia en comercio, servicios y salud.",
         listTitle: "Esto es para ti si:",
@@ -53,6 +66,7 @@ export const home = {
     },
 
     process: {
+        eyebrow: "Cómo trabajamos",
         title: "De la idea a la solución en cuatro pasos",
         steps: [
             { title: "Conversamos", text: "Nos cuentas cómo funciona tu empresa y qué te gustaría mejorar." },
