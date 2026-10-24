@@ -13,7 +13,8 @@ const lazyPage = (importPage) =>
     lazy(() =>
         importPage()
             .then((module) => {
-                sessionStorage.removeItem(RELOAD_FLAG);
+                // En el prerender (Node) no hay sessionStorage
+                if (typeof window !== "undefined") sessionStorage.removeItem(RELOAD_FLAG);
                 return module;
             })
             .catch((error) => {

@@ -21,6 +21,11 @@ const structuredData = () => ({
 export default defineConfig({
     plugins: [react(), tailwindcss(), structuredData()],
 
+    // El prerender (vite build --ssr) empaqueta esta librería CommonJS para que su export default funcione en Node
+    ssr: {
+        noExternal: ["react-fast-marquee"],
+    },
+
     server: {
         port: 3500, // Puerto de salida
     },
