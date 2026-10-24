@@ -151,7 +151,7 @@ const ContainerContact = () => {
                             <button
                                 type="button"
                                 onClick={handleWhatsAppClick}
-                                className="flex-1 py-2 px-3 rounded-lg flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 text-white transition-all duration-300 hover:scale-105 shadow-lg"
+                                className="flex-1 py-2 px-3 rounded-lg flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white transition-all duration-300 hover:scale-105 shadow-lg"
                             >
                                 <Icon name="whatsapp" className="text-lg" />
                                 <span className="font-semibold text-sm">WhatsApp</span>
@@ -159,7 +159,7 @@ const ContainerContact = () => {
                             <button
                                 type="button"
                                 onClick={handleEmailClick}
-                                className="flex-1 py-2 px-3 rounded-lg flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white transition-all duration-300 hover:scale-105 shadow-lg"
+                                className="flex-1 py-2 px-3 rounded-lg flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 hover:scale-105 shadow-lg"
                             >
                                 <Icon name="envelope-regular" className="text-lg" />
                                 <span className="font-semibold text-sm">Email</span>

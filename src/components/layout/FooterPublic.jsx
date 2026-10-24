@@ -10,7 +10,7 @@ const FooterPublic = () => {
         <div className={`flex flex-col items-center justify-center w-full h-full py-4 transition-colors duration-300 ${
             darkMode ? 'bg-gray-800' : 'bg-[#25D366]'
         }`}>
-            <div className="flex flex-row items-center justify-center space-x-8 text-2xl text-white">
+            <div className={`flex flex-row items-center justify-center space-x-8 text-2xl ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 {socialLinks.map((item) => (
                     <a
                         key={item.name}
@@ -20,7 +20,7 @@ const FooterPublic = () => {
                         className={`transition-all duration-300 ${
                             darkMode
                                 ? 'hover:text-gray-400 hover:scale-125'
-                                : 'hover:text-gray-200 hover:scale-125'
+                                : 'hover:text-gray-700 hover:scale-125'
                         }`}
                         aria-label={item.name}
                     >
@@ -28,7 +28,7 @@ const FooterPublic = () => {
                     </a>
                 ))}
             </div>
-            <p className="text-lg text-white">&copy; {new Date().getFullYear()} - All Rights Reserved</p>
+            <p className={`text-lg ${darkMode ? 'text-white' : 'text-gray-900'}`}>&copy; {new Date().getFullYear()} - All Rights Reserved</p>
         </div>
     );
 };
