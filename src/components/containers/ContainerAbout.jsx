@@ -22,7 +22,7 @@ const ContainerAbout = () => {
                             </h2>
                         </div>
                         <div className="card-image flex justify-center">
-                            <img className="p-3 sm:p-4 lg:p-5 rounded-lg drop-shadow-lg max-w-full h-auto w-48 sm:w-56 lg:w-64" src="./imagenDev.png" alt="MNSLVS Solutions" />
+                            <img className="p-3 sm:p-4 lg:p-5 rounded-lg drop-shadow-lg max-w-full h-auto w-48 sm:w-56 lg:w-64" src="/imagenDev.png" alt="MNSLVS Solutions" />
                         </div>
                     </div>
 
@@ -82,7 +82,7 @@ const ContainerAbout = () => {
                             <h3 className={`text-base sm:text-lg lg:text-xl text-center font-semibold mb-3 sm:mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                                 Desarrollo Web Personalizado:
                             </h3>
-                            <img src="https://i.postimg.cc/RFmSPRQ6/dise-o.jpg" alt="Desarrollo Web" className="mb-3 sm:mb-4 rounded-md w-full h-32 sm:h-40 object-cover" />
+                            <img src="/images/servicios/diseno.webp" alt="Desarrollo Web" loading="lazy" className="mb-3 sm:mb-4 rounded-md w-full h-32 sm:h-40 object-cover" />
                             <p className={`text-xs sm:text-sm lg:text-base flex-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
                                 Creamos sitios web atractivos y funcionales que se adaptan a las necesidades específicas de tu PYME.
                             </p>
@@ -95,7 +95,7 @@ const ContainerAbout = () => {
                             <h3 className={`text-base sm:text-lg lg:text-xl text-center font-semibold mb-3 sm:mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                                 Automatización de Procesos:
                             </h3>
-                            <img src="https://i.postimg.cc/hj0SNdpC/auto.png" alt="Automatización" className="mb-3 sm:mb-4 rounded-md w-full h-32 sm:h-40 object-cover" />
+                            <img src="/images/servicios/automatizacion.webp" alt="Automatización" loading="lazy" className="mb-3 sm:mb-4 rounded-md w-full h-32 sm:h-40 object-cover" />
                             <p className={`text-xs sm:text-sm lg:text-base flex-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
                                 Implementamos soluciones que simplifican y automatizan tareas, liberando tiempo para que te concentres en hacer crecer
                                 tu negocio.
@@ -109,7 +109,7 @@ const ContainerAbout = () => {
                             <h3 className={`text-base sm:text-lg lg:text-xl text-center font-semibold mb-3 sm:mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                                 Asesoramiento Tecnológico:
                             </h3>
-                            <img src="https://i.postimg.cc/vmf8Lj9w/aseso.jpg" alt="Asesoramiento" className="mb-3 sm:mb-4 rounded-md w-full h-32 sm:h-40 object-cover" />
+                            <img src="/images/servicios/asesoria.webp" alt="Asesoramiento" loading="lazy" className="mb-3 sm:mb-4 rounded-md w-full h-32 sm:h-40 object-cover" />
                             <p className={`text-xs sm:text-sm lg:text-base flex-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
                                 Ofrecemos orientación experta sobre las últimas tendencias tecnológicas y cómo pueden beneficiar a tu PYME.
                             </p>

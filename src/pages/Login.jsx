@@ -96,7 +96,7 @@ const Login = () => {
                     <section className="w-full flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8" role="main">
                         <div className="w-full md:w-1/2 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl">
                             <img
-                                src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                                src="/images/login.webp"
                                 alt="Ilustración de login"
                                 className="w-full h-auto max-h-48 sm:max-h-64 md:max-h-full rounded-2xl filter drop-shadow-xl object-contain"
                             />
