@@ -9,6 +9,7 @@
  * 
  * ✅ Por:
  * - <Button variant="secondary" size="md">
+ * - <Button as="a" href="https://wa.me/...">  (enlace con aspecto de botón)
  * 
  * 🎨 Variantes:
  * - primary: Botón principal (verde)
@@ -35,6 +36,7 @@ const Button = forwardRef(({
   rightIcon,
   className = '',
   type = 'button',
+  as = 'button',
   ...props 
 }, ref) => {
   const { getButtonVariant } = useTheme();
@@ -65,12 +67,15 @@ const Button = forwardRef(({
     className
   ].filter(Boolean).join(' ');
   
+  // Como enlace (as="a" o Link) no lleva type ni disabled
+  const Component = as;
+  const buttonProps = as === 'button' ? { type, disabled: disabled || loading } : {};
+  
   return (
-    <button
+    <Component
       ref={ref}
-      type={type}
-      disabled={disabled || loading}
       className={baseClasses}
+      {...buttonProps}
       {...props}
     >
       {/* Icono izquierdo */}
@@ -125,7 +130,7 @@ const Button = forwardRef(({
           {rightIcon}
         </span>
       )}
-    </button>
+    </Component>
   );
 });
 
@@ -142,6 +147,7 @@ Button.propTypes = {
   rightIcon: PropTypes.node,
   className: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  as: PropTypes.elementType,
 };
 
 export default Button;
