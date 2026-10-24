@@ -9,7 +9,7 @@ const ContainerAbout = () => {
 
             <div className={`flex flex-wrap border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl flex-col w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] mx-auto animate-fade-up animate-once mt-2 mb-6 backdrop-blur-xs px-2 sm:px-4 lg:px-0`}>
                 <h1 className={`my-3 sm:my-4 lg:my-5 font-bold text-xl sm:text-2xl lg:text-3xl animate-fade animate-once text-center px-2 sm:px-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                    <Icon name="address-card-regular" /> Acerca de Nosotros
+                    <Icon name="address-card-regular" /> Acerca de MNSLVS Solutions
                 </h1>
 
                 <hr className={darkMode ? 'border-gray-700' : 'border-gray-300'} />
@@ -18,7 +18,7 @@ const ContainerAbout = () => {
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
                         <div className="card-title">
                             <h2 className={`font-semibold my-3 sm:my-4 lg:my-5 text-lg sm:text-xl lg:text-2xl animate-fade animate-once text-center px-2 sm:px-4 lg:px-5 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                                Impulsando el Éxito de las PYMES a través de la Tecnología
+                                Desarrollo web y automatización para PYMES en Santiago
                             </h2>
                         </div>
                         <div className="card-image flex justify-center">
@@ -28,10 +28,10 @@ const ContainerAbout = () => {
 
                     <div className="card-text lg:w-1/2 lg:pl-6">
                         <p className={`text-sm sm:text-base lg:text-lg animate-fade-left animate-once mx-4 sm:mx-6 lg:mx-8 text-justify leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                            Somos tu aliado estratégico en Tecnología, especialmente diseñado para potenciar el éxito de las pequeñas y medianas
-                            empresas (PYMES)!
+                            Somos tu aliado en tecnología para pequeñas y medianas empresas (PYMES) de Santiago, Chile: creamos sitios web a
+                            medida, automatizamos procesos y te asesoramos para que la tecnología trabaje por tu negocio.
                             <br /> <br /> En MNSLVS, entendemos las necesidades únicas de las PYMES y nos comprometemos a ofrecer soluciones
-                            tecnológicas efectivas y asequibles.
+                            tecnológicas efectivas y asequibles, con más experiencia en comercio, servicios y salud.
                         </p>
                     </div>
                 </div>
