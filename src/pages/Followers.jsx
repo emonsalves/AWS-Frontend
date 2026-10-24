@@ -1,8 +1,9 @@
 import { Followers } from "../features/followers";
-import { usePageTitle } from "../hooks/usePageTitle";
+import { usePageSeo } from "../hooks/usePageSeo";
+import { seo } from "../config/seo";
 
 const FollowersPage = () => {
-    usePageTitle("Followers");
+    usePageSeo(seo.followers);
     return <Followers />;
 };
 

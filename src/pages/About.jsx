@@ -2,11 +2,12 @@ import { useTheme } from '../context/ThemeContext';
 import { ContainerAbout } from "../components/containers/ContainerAbout";
 import { MarqueeAbout } from "../components/marquees/MarqueeAbout";
 import { logosMarque1, logosMarque2 } from "../config/technologies";
-import { usePageTitle } from "../hooks/usePageTitle";
+import { usePageSeo } from "../hooks/usePageSeo";
+import { seo } from "../config/seo";
 import Icon from "../components/ui/Icon";
 
 const About = () => {
-    usePageTitle("Nosotros");
+    usePageSeo(seo.about);
     const { darkMode } = useTheme();
 
     return (

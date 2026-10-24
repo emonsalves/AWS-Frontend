@@ -1,9 +1,10 @@
 import { useTheme } from "../context/ThemeContext";
-import { usePageTitle } from "../hooks/usePageTitle";
+import { usePageSeo } from "../hooks/usePageSeo";
+import { seo } from "../config/seo";
 import { HomeAudience, HomeContact, HomeHero, HomeProcess, HomeServices } from "../features/home";
 
 const Home = () => {
-    usePageTitle("Desarrollo web y automatización para PYMES en Santiago");
+    usePageSeo(seo.home);
     const { darkMode } = useTheme();
 
     return (
