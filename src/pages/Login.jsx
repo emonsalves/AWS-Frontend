@@ -5,6 +5,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { usePageTitle } from '../hooks/usePageTitle';
+import Icon from '../components/ui/Icon';
 
 const Login = () => {
     usePageTitle("Iniciar sesión");
@@ -114,7 +115,7 @@ const Login = () => {
                                     type="email"
                                     placeholder="Correo Electrónico"
                                     className="w-full"
-                                    leftIcon={<i className={`fas fa-envelope ${text.icon}`}></i>}
+                                    leftIcon={<Icon name="envelope" className={text.icon} />}
                                     value={email}
                                     onChange={handleEmailChange}
                                     error={emailError}
@@ -129,7 +130,7 @@ const Login = () => {
                                     type="password"
                                     placeholder="Contraseña"
                                     className="w-full"
-                                    leftIcon={<i className="fas fa-lock text-neutral-600 dark:text-neutral-300"></i>}
+                                    leftIcon={<Icon name="lock" className="text-neutral-600 dark:text-neutral-300" />}
                                     value={password}
                                     onChange={handlePasswordChange}
                                     error={passwordError}
@@ -169,7 +170,7 @@ const Login = () => {
                                 >
                                     {isLoading ? (
                                         <span className="flex items-center justify-center">
-                                            <i className="fas fa-spinner fa-spin mr-2"></i>
+                                            <Icon name="spinner" className="animate-spin mr-2" />
                                             Iniciando sesión...
                                         </span>
                                     ) : (

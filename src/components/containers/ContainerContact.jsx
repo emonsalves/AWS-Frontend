@@ -5,6 +5,7 @@ import { validateEmail, validatePhone } from '../../lib/validation';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
+import Icon from '../ui/Icon';
 
 const emptyForm = {
     name: '',
@@ -137,11 +138,11 @@ const ContainerContact = () => {
 
                         <div className={`text-sm ${text.secondary} space-y-1`}>
                             <p>
-                                <i className="far fa-clock mr-2" aria-hidden="true"></i>
+                                <Icon name="clock-regular" className="mr-2" />
                                 {site.businessHours}
                             </p>
                             <p>
-                                <i className="fas fa-map-marker-alt mr-2" aria-hidden="true"></i>
+                                <Icon name="location-dot" className="mr-2" />
                                 {site.location}
                             </p>
                         </div>
@@ -152,7 +153,7 @@ const ContainerContact = () => {
                                 onClick={handleWhatsAppClick}
                                 className="flex-1 py-2 px-3 rounded-lg flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 text-white transition-all duration-300 hover:scale-105 shadow-lg"
                             >
-                                <i className="fab fa-whatsapp text-lg" aria-hidden="true"></i>
+                                <Icon name="whatsapp" className="text-lg" />
                                 <span className="font-semibold text-sm">WhatsApp</span>
                             </button>
                             <button
@@ -160,7 +161,7 @@ const ContainerContact = () => {
                                 onClick={handleEmailClick}
                                 className="flex-1 py-2 px-3 rounded-lg flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white transition-all duration-300 hover:scale-105 shadow-lg"
                             >
-                                <i className="far fa-envelope text-lg" aria-hidden="true"></i>
+                                <Icon name="envelope-regular" className="text-lg" />
                                 <span className="font-semibold text-sm">Email</span>
                             </button>
                         </div>
@@ -173,7 +174,7 @@ const ContainerContact = () => {
                         <div className="text-center space-y-3" role="status">
                             <div className="flex justify-center">
                                 <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                                    <i className="fas fa-check text-green-600 dark:text-green-400 text-sm" aria-hidden="true"></i>
+                                    <Icon name="check" className="text-green-600 dark:text-green-400 text-sm" />
                                 </div>
                             </div>
                             <h2 className={`text-lg font-semibold ${text.primary}`}>¡Tu correo está listo!</h2>
@@ -215,7 +216,7 @@ const ContainerContact = () => {
                                     onChange={handleInputChange}
                                     error={errors.name}
                                     state={formData.name.trim() ? 'success' : 'default'}
-                                    leftIcon={<i className="fas fa-user"></i>}
+                                    leftIcon={<Icon name="user" />}
                                     required
                                 />
 
@@ -230,7 +231,7 @@ const ContainerContact = () => {
                                     onChange={handleInputChange}
                                     error={errors.email}
                                     state={validateEmail(formData.email) ? 'success' : 'default'}
-                                    leftIcon={<i className="fas fa-envelope"></i>}
+                                    leftIcon={<Icon name="envelope" />}
                                     required
                                 />
                             </div>
@@ -247,7 +248,7 @@ const ContainerContact = () => {
                                     onChange={handleInputChange}
                                     error={errors.phone}
                                     state={formData.phone && validatePhone(formData.phone) ? 'success' : 'default'}
-                                    leftIcon={<i className="fas fa-phone"></i>}
+                                    leftIcon={<Icon name="phone" />}
                                 />
 
                                 <Input
@@ -259,7 +260,7 @@ const ContainerContact = () => {
                                     onChange={handleInputChange}
                                     error={errors.subject}
                                     state={formData.subject.trim() ? 'success' : 'default'}
-                                    leftIcon={<i className="fas fa-tag"></i>}
+                                    leftIcon={<Icon name="tag" />}
                                     required
                                 />
                             </div>

@@ -5,6 +5,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { usePageTitle } from '../hooks/usePageTitle';
+import Icon from '../components/ui/Icon';
 
 const Recovery = () => {
     usePageTitle("Recuperar contraseña");
@@ -82,7 +83,7 @@ const Recovery = () => {
                                     <div className="space-y-3">
                                         <div className="flex justify-center">
                                             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                                                <i className="fas fa-check text-green-600 text-2xl"></i>
+                                                <Icon name="check" className="text-green-600 text-2xl" />
                                             </div>
                                         </div>
                                         <p className={`text-base leading-relaxed ${text.secondary} opacity-90`}>
@@ -105,7 +106,7 @@ const Recovery = () => {
                                             type="email"
                                             placeholder="Correo Electrónico"
                                             className="w-full"
-                                            leftIcon={<i className={`fas fa-envelope ${text.secondary}`}></i>}
+                                            leftIcon={<Icon name="envelope" className={text.secondary} />}
                                             value={email}
                                             onChange={handleEmailChange}
                                             error={emailError}
@@ -128,7 +129,7 @@ const Recovery = () => {
                                         >
                                             {isLoading ? (
                                                 <span className="flex items-center justify-center">
-                                                    <i className="fas fa-spinner fa-spin mr-2"></i>
+                                                    <Icon name="spinner" className="animate-spin mr-2" />
                                                     Enviando...
                                                 </span>
                                             ) : (
