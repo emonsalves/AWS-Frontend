@@ -1,4 +1,5 @@
 import { useTheme } from '../../context/ThemeContext';
+import Icon from '../ui/Icon';
 
 const ContainerAbout = () => {
     const { darkMode } = useTheme();
@@ -8,7 +9,7 @@ const ContainerAbout = () => {
 
             <div className={`flex flex-wrap border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl flex-col w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] mx-auto animate-fade-up animate-once mt-2 mb-6 backdrop-blur-xs px-2 sm:px-4 lg:px-0`}>
                 <h1 className={`my-3 sm:my-4 lg:my-5 font-bold text-xl sm:text-2xl lg:text-3xl animate-fade animate-once text-center px-2 sm:px-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                    <i className="fa-regular fa-address-card"></i> Acerca de Nosotros
+                    <Icon name="address-card-regular" /> Acerca de Nosotros
                 </h1>
 
                 <hr className={darkMode ? 'border-gray-700' : 'border-gray-300'} />
@@ -39,7 +40,7 @@ const ContainerAbout = () => {
             <div className={`flex flex-col md:flex-row border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] mx-auto animate-fade-up animate-once mt-4 sm:mt-6 mb-6 sm:mb-8 lg:mb-10 backdrop-blur-xs px-2 sm:px-4 lg:px-0`}>
                 <div className="flex flex-col md:w-1/2 p-3 sm:p-4 lg:p-6">
                     <h2 className={`my-3 sm:my-4 lg:my-5 font-semibold text-lg sm:text-xl lg:text-2xl animate-fade animate-once text-center px-2 sm:px-4 lg:px-5 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                        <i className="fa-solid fa-landmark-dome"></i> Nuestra Historia:
+                        <Icon name="landmark-dome" /> Nuestra Historia:
                     </h2>
 
                     <hr className={`${darkMode ? 'border-gray-700' : 'border-gray-300'} mb-4`} />
@@ -56,7 +57,7 @@ const ContainerAbout = () => {
 
                 <div className="flex flex-col md:w-1/2 p-3 sm:p-4 lg:p-6">
                     <h2 className={`my-3 sm:my-4 lg:my-5 font-semibold text-lg sm:text-xl lg:text-2xl animate-fade animate-once text-center px-2 sm:px-4 lg:px-5 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                        <i className="fa-solid fa-bullseye"></i> Nuestra Misión:
+                        <Icon name="bullseye" /> Nuestra Misión:
                     </h2>
                     <hr className={`${darkMode ? 'border-gray-700' : 'border-gray-300'} mb-4`} />
                     <p className={`text-sm sm:text-base lg:text-lg animate-fade-left animate-once mx-2 sm:mx-4 lg:mx-6 text-justify leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -69,7 +70,7 @@ const ContainerAbout = () => {
 
             <div className={`flex flex-wrap border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl flex-col w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] mx-auto animate-fade-up animate-once mt-4 sm:mt-6 mb-6 sm:mb-8 lg:mb-10 backdrop-blur-xs px-2 sm:px-4 lg:px-0`}>
                 <h2 className={`my-3 sm:my-4 lg:my-5 font-semibold text-lg sm:text-xl lg:text-2xl animate-fade animate-once text-center px-2 sm:px-4 lg:px-5 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                    <i className="fa-solid fa-users-gear"></i> Servicios Especializados para PYMES:
+                    <Icon name="users-gear" /> Servicios Especializados para PYMES:
                 </h2>
 
                 <hr className={`${darkMode ? 'border-gray-700' : 'border-gray-300'} mb-6`} />
@@ -119,7 +120,7 @@ const ContainerAbout = () => {
 
             <div className={`flex flex-wrap border ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-400 bg-gray-100'} shadow-custom-dark rounded-2xl flex-col w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] mx-auto animate-fade-up animate-once mt-6 sm:mt-8 lg:mt-10 mb-6 sm:mb-8 lg:mb-10 backdrop-blur-xs`}>
                 <h2 className={`my-3 sm:my-4 lg:my-5 font-semibold text-lg sm:text-xl lg:text-2xl animate-fade animate-once text-center px-2 sm:px-4 lg:px-5 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                    <i className="fa-solid fa-hand-holding-heart"></i> Compromiso con la Calidad y la Eficiencia:
+                    <Icon name="hand-holding-heart" /> Compromiso con la Calidad y la Eficiencia:
                 </h2>
 
                 <hr className={`${darkMode ? 'border-gray-700' : 'border-gray-300'} mb-4 sm:mb-6`} />

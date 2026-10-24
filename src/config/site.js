@@ -17,8 +17,8 @@ export const site = {
 
     // Pon la URL del perfil para mostrar el icono; un valor vacío lo oculta
     social: [
-        { name: "Facebook", icon: "fab fa-facebook", url: "" },
-        { name: "Twitter", icon: "fab fa-twitter", url: "" },
-        { name: "Instagram", icon: "fab fa-instagram", url: "" },
+        { name: "Facebook", icon: "facebook", url: "" },
+        { name: "Twitter", icon: "twitter", url: "" },
+        { name: "Instagram", icon: "instagram", url: "" },
     ],
 };

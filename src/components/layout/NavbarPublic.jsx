@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router";
 import { useTheme } from "../../context/ThemeContext";
 import { menuItems } from "../../config/navigation";
+import Icon from "../ui/Icon";
 
 const NavPublic = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,9 +42,9 @@ const NavPublic = () => {
                         aria-label={darkMode ? "Activar modo claro" : "Activar modo oscuro"}
                     >
                         {darkMode ? (
-                            <i className="fas fa-sun text-[#25D366] text-xl" aria-hidden="true"></i>
+                            <Icon name="sun" className="text-[#25D366] text-xl" />
                         ) : (
-                            <i className="fas fa-moon text-white text-xl" aria-hidden="true"></i>
+                            <Icon name="moon" className="text-white text-xl" />
                         )}
                     </button>
                 </div>
@@ -55,9 +56,9 @@ const NavPublic = () => {
                         aria-label={darkMode ? "Activar modo claro" : "Activar modo oscuro"}
                     >
                         {darkMode ? (
-                            <i className="fas fa-sun text-[#25D366] text-xl" aria-hidden="true"></i>
+                            <Icon name="sun" className="text-[#25D366] text-xl" />
                         ) : (
-                            <i className="fas fa-moon text-white text-xl" aria-hidden="true"></i>
+                            <Icon name="moon" className="text-white text-xl" />
                         )}
                     </button>
                     <button 
@@ -92,7 +93,7 @@ const NavPublic = () => {
                                     : (darkMode ? 'text-gray-300 hover:text-[#25D366]' : 'text-black hover:text-white')
                             }`}
                         >
-                            <i className="fa-solid fa-arrow-right" aria-hidden="true"></i> {item.text}
+                            <Icon name="arrow-right" /> {item.text}
                         </NavLink>
                     ))}
                 </div>

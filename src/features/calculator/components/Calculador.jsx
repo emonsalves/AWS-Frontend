@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTheme } from '../../../context/ThemeContext';
+import Icon from '../../../components/ui/Icon';
 
 const Calculador = () => {
     const [propina, setPropina] = useState('');
@@ -25,7 +26,7 @@ const Calculador = () => {
             <div className={`w-full max-w-7xl rounded-xl shadow-2xl overflow-hidden mx-4 ${darkMode ? 'bg-gray-800' : 'bg-white'} animate-fade-up animate-once`}>
                 <div className="bg-[#25D366] p-6 relative animate-fade-down animate-once">
                     <h1 className="text-white text-3xl font-bold text-center flex items-center justify-center gap-3">
-                        <i className="fa-regular fa-address-card animate-bounce animate-infinite" aria-hidden="true"></i> 
+                        <Icon name="address-card-regular" className="animate-bounce animate-infinite" /> 
                         Calculador de Cuentas
                     </h1>
                 </div>

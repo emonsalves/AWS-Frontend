@@ -59,7 +59,7 @@ Los **Componentes Base** han sido implementados exitosamente. Ahora tienes un ar
   label="Email" 
   type="email" 
   placeholder="tu@email.com"
-  leftIcon={<i className="fas fa-envelope" />}
+  leftIcon={<Icon name="envelope" />}
   helperText="Ingresa tu email personal"
 />
 ```
@@ -159,7 +159,7 @@ const ButtonExamples = () => {
       
       <Button 
         variant="danger" 
-        leftIcon={<i className="fas fa-trash" />}
+        leftIcon={<Icon name="lock" />}
       >
         Eliminar
       </Button>
@@ -183,7 +183,7 @@ const FormExamples = () => {
         label="Email"
         type="email"
         placeholder="tu@email.com"
-        leftIcon={<i className="fas fa-envelope" />}
+        leftIcon={<Icon name="envelope" />}
         error="Email inválido"
       />
       
@@ -192,7 +192,7 @@ const FormExamples = () => {
         type="tel"
         placeholder="+56 9 1234 5678"
         success="Formato correcto"
-        rightIcon={<i className="fas fa-check" />}
+        rightIcon={<Icon name="check" />}
       />
     </div>
   );

@@ -1,5 +1,6 @@
 import { useTheme } from '../../context/ThemeContext';
 import { site } from '../../config/site';
+import Icon from '../ui/Icon';
 
 const FooterPublic = () => {
     const { darkMode } = useTheme();
@@ -23,7 +24,7 @@ const FooterPublic = () => {
                         }`}
                         aria-label={item.name}
                     >
-                        <i className={item.icon} aria-hidden="true"></i>
+                        <Icon name={item.icon} />
                     </a>
                 ))}
             </div>

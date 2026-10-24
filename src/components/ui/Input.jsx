@@ -22,6 +22,7 @@
 import { useTheme } from '../../hooks/useTheme';
 import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
+import Icon from './Icon';
 
 const Input = forwardRef(({ 
   state = 'default',
@@ -111,11 +112,11 @@ const Input = forwardRef(({
         {/* Icono derecho o de estado */}
         {currentState === 'error' ? (
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-            <i className="fas fa-exclamation-circle text-red-500 dark:text-red-400" />
+            <Icon name="circle-exclamation" className="text-red-500 dark:text-red-400" />
           </div>
         ) : currentState === 'success' ? (
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-            <i className="fas fa-check-circle text-green-500 dark:text-green-400" />
+            <Icon name="circle-check" className="text-green-500 dark:text-green-400" />
           </div>
         ) : rightIcon ? (
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
