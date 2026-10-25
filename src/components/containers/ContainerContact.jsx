@@ -6,6 +6,7 @@ import { validateEmail, validatePhone } from '../../lib/validation';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import Icon from '../ui/Icon';
+import Highlight from '../illustrations/Highlight';
 
 const emptyForm = {
     name: '',
@@ -95,6 +96,8 @@ const ContainerContact = () => {
         setIsSent(false);
     };
 
+    const [titleStart, titleEnd] = contact.title.split(contact.highlight);
+
     return (
         <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 py-14 sm:px-10 sm:py-24 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
             {/* Información y contacto directo */}
@@ -105,7 +108,9 @@ const ContainerContact = () => {
                         className="anim-rise text-[40px] leading-[1.04] font-extrabold tracking-[-0.04em] text-ink sm:text-[56px] dark:text-night-text"
                         style={{ '--delay': '80ms' }}
                     >
-                        {contact.title}
+                        {titleStart}
+                        <Highlight>{contact.highlight}</Highlight>
+                        {titleEnd}
                     </h1>
                     <p className="anim-rise mt-6 text-lg text-ink-muted sm:text-xl dark:text-night-muted" style={{ '--delay': '160ms' }}>
                         {contact.intro}
