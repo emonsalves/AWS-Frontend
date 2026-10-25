@@ -3,7 +3,7 @@ import { home } from "../../../config/home";
 import { site } from "../../../config/site";
 import { whatsappUrl } from "../../../lib/contactLinks";
 import SectionTitle from "./SectionTitle";
-import ServiceVisual from "./ServiceVisual";
+import ServiceVisual from "../../../components/illustrations/ServiceVisual";
 
 const HomeServices = () => {
     const { services } = home;
