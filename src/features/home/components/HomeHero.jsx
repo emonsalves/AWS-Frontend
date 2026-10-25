@@ -2,6 +2,7 @@ import { Button, Icon } from "../../../components/ui";
 import { home } from "../../../config/home";
 import { site } from "../../../config/site";
 import { whatsappUrl } from "../../../lib/contactLinks";
+import Highlight from "../../../components/illustrations/Highlight";
 import HeroDemo from "./HeroDemo";
 
 const HomeHero = () => {
@@ -21,26 +22,7 @@ const HomeHero = () => {
                         className="anim-rise text-[42px] leading-[1.02] font-extrabold tracking-[-0.04em] text-ink sm:text-[72px] dark:text-night-text"
                     >
                         {titleStart}
-                        <span className="relative inline-block whitespace-nowrap text-primary-700 dark:text-primary-400">
-                            {hero.highlight}
-                            <svg
-                                aria-hidden="true"
-                                viewBox="0 0 220 18"
-                                preserveAspectRatio="none"
-                                className="absolute -bottom-2 left-0 h-3 w-full sm:-bottom-3 sm:h-4"
-                            >
-                                <path
-                                    d="M3 12 C 50 4, 120 3, 217 9"
-                                    pathLength="1"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="5"
-                                    strokeLinecap="round"
-                                    className="anim-draw text-primary-500"
-                                    style={{ "--delay": "700ms" }}
-                                />
-                            </svg>
-                        </span>
+                        <Highlight>{hero.highlight}</Highlight>
                     </h1>
                     <p className="anim-rise max-w-[33em] text-[17px] text-ink-muted sm:text-xl dark:text-night-muted" style={{ "--delay": "120ms" }}>
                         {hero.subtitle}
