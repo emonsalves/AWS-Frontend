@@ -1,3 +1,4 @@
+import ServiceVisual from "../../../components/illustrations/ServiceVisual";
 import { about } from "../../../config/about";
 
 const AboutServices = () => {
@@ -12,18 +13,16 @@ const AboutServices = () => {
             >
                 {services.title}
             </h2>
-            <ul className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <ul className="grid grid-cols-1 gap-5 md:grid-cols-3">
                 {services.items.map((service, index) => (
-                    <li key={service.title} data-reveal style={{ "--delay": `${index * 120}ms` }} className="group flex flex-col gap-4">
-                        <div className="overflow-hidden rounded-3xl border border-paper-line dark:border-night-line">
-                            <img
-                                src={service.image}
-                                alt=""
-                                loading="lazy"
-                                width="400"
-                                height="260"
-                                className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
+                    <li
+                        key={service.title}
+                        data-reveal
+                        style={{ "--delay": `${index * 120}ms` }}
+                        className="flex flex-col gap-5 rounded-3xl border border-paper-line bg-paper-soft p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/60 hover:shadow-custom-light dark:border-night-line dark:bg-night-soft dark:hover:border-primary-500/50 dark:hover:shadow-custom-dark"
+                    >
+                        <div className="flex min-h-48 flex-col justify-center">
+                            <ServiceVisual kind={service.visual} example={service.example} />
                         </div>
                         <h3 className="text-xl font-bold text-ink dark:text-night-text">{service.title}</h3>
                         <p className="text-ink-muted dark:text-night-muted">{service.text}</p>

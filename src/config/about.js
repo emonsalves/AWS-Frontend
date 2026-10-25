@@ -5,10 +5,21 @@
 export const about = {
     label: "Nosotros",
     title: "Desarrollo web y automatización para PYMES en Santiago",
+    highlight: "PYMES",
     intro: [
         "Somos tu aliado en tecnología para pequeñas y medianas empresas (PYMES) de Santiago, Chile: creamos sitios web a medida, automatizamos procesos y te asesoramos para que la tecnología trabaje por tu negocio.",
         "En MNSLVS entendemos las necesidades únicas de las PYMES y nos comprometemos a ofrecer soluciones tecnológicas efectivas y asequibles, con más experiencia en comercio, servicios y salud.",
     ],
+
+    sectors: {
+        title: "Donde tenemos más experiencia",
+        items: [
+            { icon: "tag", name: "Comercio", text: "Ventas, pedidos e inventario" },
+            { icon: "toolbox", name: "Servicios", text: "Agenda, cotizaciones y atención" },
+            { icon: "hand-holding-heart", name: "Salud", text: "Pacientes, horas y recordatorios" },
+        ],
+        since: "Desde 2021",
+    },
 
     history: {
         title: "Nuestra historia",
@@ -31,6 +42,7 @@ export const about = {
     mission: {
         title: "Nuestra misión",
         quote: "Empoderar a las PYMES a través de la tecnología.",
+        highlight: "tecnología",
         text: "Buscamos soluciones que no solo mejoren la eficiencia operativa, sino que también impulsen el crecimiento sostenible de nuestros clientes.",
     },
 
@@ -40,17 +52,23 @@ export const about = {
             {
                 title: "Desarrollo web personalizado",
                 text: "Creamos sitios web atractivos y funcionales que se adaptan a las necesidades específicas de tu PYME.",
-                image: "/images/servicios/diseno.webp",
+                visual: "web",
             },
             {
                 title: "Automatización de procesos",
                 text: "Implementamos soluciones que simplifican y automatizan tareas, liberando tiempo para que te concentres en hacer crecer tu negocio.",
-                image: "/images/servicios/automatizacion.webp",
+                visual: "automation",
             },
             {
                 title: "Asesoramiento tecnológico",
                 text: "Te orientamos sobre las tendencias tecnológicas que de verdad pueden beneficiar a tu PYME.",
-                image: "/images/servicios/asesoria.webp",
+                visual: "advice",
+                // Lista ilustrativa de la tarjeta: lo que conviene y lo que no
+                example: [
+                    { text: "Correo y dominio propio", keep: true },
+                    { text: "Inventario en la nube", keep: true },
+                    { text: "Software que no usas", keep: false },
+                ],
             },
         ],
     },
