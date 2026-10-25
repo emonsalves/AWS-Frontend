@@ -12,38 +12,47 @@ export const home = {
         secondaryAction: "Ver servicios",
         trustLine: "Desde 2021 ayudando a PYMES en Santiago, Chile.",
         highlight: "PYMES",
-        // Ejemplo de automatización que acompaña al título
-        example: {
-            title: "Automatización · Pedidos",
-            status: "Activa",
-            steps: [
-                { title: "Llega un pedido por WhatsApp", text: "Se registra solo, sin copiar datos" },
-                { title: "Se actualiza el inventario", text: "Adiós a la planilla compartida" },
-                { title: "El cliente recibe su confirmación", text: "Tu equipo solo revisa" },
-            ],
+        // Conversación de ejemplo que se anima junto al título: un pedido por WhatsApp que se registra solo
+        demo: {
+            label: "Ejemplo de automatización",
+            chatName: "Pedido por WhatsApp",
+            incoming: "Hola, quiero 2 cajas de café para el viernes.",
+            sheetTitle: "Planilla de pedidos",
+            row: { client: "Café Central", item: "2 cajas de café", date: "Viernes" },
+            reply: "Listo, tu pedido quedó registrado para el viernes.",
+            done: "Registrado sin copiar datos a mano",
         },
     },
 
+    stack: {
+        title: "Herramientas con las que trabajamos",
+    },
+
     services: {
-        eyebrow: "Servicios",
         title: "Qué hacemos por tu empresa",
         items: [
             {
-                icon: "toolbox",
+                visual: "web",
                 title: "Desarrollo web personalizado",
                 text: "Sitios y aplicaciones web hechos para tu negocio: rápidos, adaptados a celulares y fáciles de encontrar en Google.",
                 action: "Quiero mi sitio",
                 whatsappText: "Hola, quiero un sitio web para mi empresa.",
             },
             {
-                icon: "users-gear",
+                visual: "automation",
                 title: "Automatización de procesos",
                 text: "Convertimos tareas manuales y repetitivas en procesos automáticos: menos errores, menos planillas y más tiempo para tu equipo.",
                 action: "Automatizar mi empresa",
                 whatsappText: "Hola, quiero automatizar procesos de mi empresa.",
             },
             {
-                icon: "hand-holding-heart",
+                visual: "advice",
+                // Lista ilustrativa de la tarjeta: lo que conviene y lo que no
+                example: [
+                    { text: "Correo y dominio propio", keep: true },
+                    { text: "Inventario en la nube", keep: true },
+                    { text: "Software que no usas", keep: false },
+                ],
                 title: "Asesoramiento tecnológico",
                 text: "Te ayudamos a elegir y ordenar las herramientas que tu empresa necesita, sin gastar en lo que no vas a usar.",
                 action: "Pedir asesoría",
@@ -53,7 +62,6 @@ export const home = {
     },
 
     audience: {
-        eyebrow: "Para quién",
         title: "Pensado para PYMES que quieren crecer sin complicarse",
         intro: "Nuestra misión es empoderar a las PYMES a través de la tecnología. Tenemos más experiencia en comercio, servicios y salud.",
         listTitle: "Esto es para ti si:",
@@ -66,7 +74,6 @@ export const home = {
     },
 
     process: {
-        eyebrow: "Cómo trabajamos",
         title: "De la idea a la solución en cuatro pasos",
         steps: [
             { title: "Conversamos", text: "Nos cuentas cómo funciona tu empresa y qué te gustaría mejorar." },

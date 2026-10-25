@@ -1,4 +1,5 @@
 export { default as HomeHero } from "./components/HomeHero";
+export { default as HomeStack } from "./components/HomeStack";
 export { default as HomeServices } from "./components/HomeServices";
 export { default as HomeAudience } from "./components/HomeAudience";
 export { default as HomeProcess } from "./components/HomeProcess";

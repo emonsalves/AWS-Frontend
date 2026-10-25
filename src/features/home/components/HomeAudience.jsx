@@ -6,28 +6,39 @@ const HomeAudience = () => {
     const { audience } = home;
 
     return (
-        <section aria-labelledby="para-quien" className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-10 sm:py-24 lg:grid-cols-2 lg:items-start">
-            <div>
-                <SectionTitle id="para-quien" eyebrow={audience.eyebrow}>
-                    {audience.title}
-                </SectionTitle>
-                <p className="-mt-4 text-lg text-ink-muted dark:text-night-muted">{audience.intro}</p>
-            </div>
-            <div className="rounded-[18px] border border-paper-line p-7 dark:border-night-line">
-                <p className="mb-4 font-bold text-ink dark:text-night-text">{audience.listTitle}</p>
-                <ul className="flex flex-col gap-4">
-                    {audience.items.map((item) => (
-                        <li key={item} className="flex gap-3 text-ink-muted dark:text-night-muted">
-                            <span
-                                aria-hidden="true"
-                                className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-paper-accent text-xs text-primary-700 dark:bg-night-accent dark:text-primary-400"
+        <section aria-labelledby="para-quien" className="mx-auto max-w-6xl px-5 py-16 sm:px-10 sm:py-28">
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+                <div>
+                    <SectionTitle id="para-quien" className="mb-6">
+                        {audience.title}
+                    </SectionTitle>
+                    <p data-reveal className="text-lg text-ink-muted dark:text-night-muted">
+                        {audience.intro}
+                    </p>
+                </div>
+                <div>
+                    <p data-reveal className="mb-2 font-bold text-ink dark:text-night-text">
+                        {audience.listTitle}
+                    </p>
+                    <ul>
+                        {audience.items.map((item, index) => (
+                            <li
+                                key={item}
+                                data-reveal
+                                style={{ "--delay": `${index * 90}ms` }}
+                                className="flex gap-4 border-b border-paper-line py-5 text-lg text-ink sm:text-xl dark:border-night-line dark:text-night-text"
                             >
-                                <Icon name="check" />
-                            </span>
-                            <span>{item}</span>
-                        </li>
-                    ))}
-                </ul>
+                                <span
+                                    aria-hidden="true"
+                                    className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-500 text-xs text-primary-ink"
+                                >
+                                    <Icon name="check" />
+                                </span>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </section>
     );
