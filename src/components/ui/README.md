@@ -244,7 +244,7 @@ Ahora que tenemos los componentes base, es hora de migrar los componentes existe
 
 1. **Alta prioridad:**
    - `Login.jsx` - Formulario complejo
-   - `ContainerAbout.jsx` - Contenedor principal
+   - `features/about` - Página Nosotros
    - `LayoutPublic.jsx` - Layout base
 
 2. **Media prioridad:**

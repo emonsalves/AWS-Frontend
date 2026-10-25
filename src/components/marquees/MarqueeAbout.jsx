@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const MarqueeAbout = ({ dataLogos, direction, speed }) => {
     return (
-        <Marquee direction={direction} speed={speed} pauseOnHover className="animate-fade-up animate-once">
+        <Marquee direction={direction} speed={speed} pauseOnHover autoFill className="py-2">
             {dataLogos.map((logo) => (
                 <img
                     key={logo.value}
@@ -11,7 +11,8 @@ const MarqueeAbout = ({ dataLogos, direction, speed }) => {
                     alt={logo.name}
                     width="100"
                     height="100"
-                    className="pointer-events-[hover] w-10 md:w-12 lg:w-16 xl:w-20 hover:scale-110 hover:shadow-custom-light transition-all duration-500 ease-in-out m-3 md:mx-5 lg:mx-8 xl:mx-9 rounded-[25%] shadow-lg"
+                    loading="lazy"
+                    className="mx-6 h-10 w-10 rounded-lg opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:mx-8 sm:h-12 sm:w-12"
                 />
             ))}
         </Marquee>

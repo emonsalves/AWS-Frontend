@@ -280,6 +280,17 @@
     transform: none;
 }
 
+.js [data-reveal].reveal-line-y {
+    opacity: 1;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.js [data-reveal].reveal-line-y.is-visible {
+    transform: none;
+}
+
 /* Barra de carga entre páginas: aparece tras 200 ms para no parpadear en cargas rápidas */
 @keyframes loader-in {
     to {
