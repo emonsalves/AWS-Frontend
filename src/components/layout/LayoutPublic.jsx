@@ -1,19 +1,16 @@
 import { Outlet } from "react-router";
 import HeaderPublic from "./HeaderPublic";
 import FooterPublic from "./FooterPublic";
-import { useTheme } from '../../context/ThemeContext';
-import { useCanonical } from '../../hooks/useCanonical';
+import { useCanonical } from "../../hooks/useCanonical";
 
 function LayoutPublic() {
-    const { darkMode } = useTheme();
     useCanonical();
-    
-    
+
     return (
-        <div className={`flex flex-col min-h-screen w-full ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
+        <div className="flex min-h-screen w-full flex-col bg-paper text-ink transition-colors duration-300 dark:bg-night dark:text-night-text">
             <HeaderPublic />
-            <main className={`flex-1 w-full flex items-center justify-center pt-16 sm:pt-20`}>
-                    <Outlet />
+            <main className="flex w-full flex-1 items-center justify-center pt-[68px]">
+                <Outlet />
             </main>
             <FooterPublic />
         </div>

@@ -30,7 +30,30 @@ export const tokens = {
       700: '#15803d',        // Muy oscuro
       800: '#166534',        // Extra oscuro
       900: '#14532d',        // Máximo oscuro
-      muted: '#128C7E'       // Versión apagada
+      muted: '#128C7E',      // Versión apagada
+      ink: '#052E16'         // Texto sobre el verde de marca (contraste 8:1)
+    },
+
+    // Superficies y textos del modo claro
+    ink: {
+      DEFAULT: '#0B1210',    // Texto principal
+      muted: '#4B5853'       // Texto secundario (7:1 sobre blanco)
+    },
+    paper: {
+      DEFAULT: '#FFFFFF',    // Fondo de página
+      soft: '#F5F8F6',       // Secciones alternas y tarjetas destacadas
+      line: '#E2E8E5',       // Bordes
+      accent: '#E6F6EC'      // Fondo de iconos y etiquetas verdes
+    },
+
+    // Superficies y textos del modo oscuro
+    night: {
+      DEFAULT: '#0A0F0D',    // Fondo de página
+      soft: '#101814',       // Secciones alternas y tarjetas
+      line: '#1E2A25',       // Bordes
+      accent: '#12291D',     // Fondo de iconos y etiquetas verdes
+      text: '#F2F5F3',       // Texto principal
+      muted: '#A6B3AD'       // Texto secundario
     },
     
     // Grises semánticos - NO más gray-800, gray-700 random
@@ -95,8 +118,9 @@ export const tokens = {
   
   // 🌑 SOMBRAS
   shadows: {
-    light: '0px 0px 0px 2px rgba(6, 24, 44, 0.4), 0px 4px 6px -1px rgba(6, 24, 44, 0.65)',
-    dark: '0px 2px 8px rgba(17, 17, 26, 0.1), 0px 4px 12px rgba(17, 17, 26, 0.1)',
+    light: '0 1px 2px rgba(11, 18, 16, 0.04), 0 12px 32px -16px rgba(11, 18, 16, 0.14)',
+    dark: '0 1px 0 rgba(255, 255, 255, 0.03), 0 16px 40px -20px rgba(0, 0, 0, 0.7)',
+    brand: '0 8px 24px -8px rgba(37, 211, 102, 0.55)',
     elevated: '0px 8px 28px rgba(17, 17, 26, 0.5)',
     focus: '0 0 0 3px rgba(37, 211, 102, 0.2)'
   },
@@ -120,7 +144,7 @@ export const tokens = {
   // 📝 TIPOGRAFÍA
   typography: {
     fontFamily: {
-      sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+      sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
       mono: ['ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
     },
     fontSize: {

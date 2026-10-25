@@ -1,102 +1,125 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router";
 import { useTheme } from "../../context/ThemeContext";
-import { menuItems } from "../../config/navigation";
+import { menuAction, menuItems } from "../../config/navigation";
+import { site } from "../../config/site";
 import Icon from "../ui/Icon";
+
+const linkClasses = ({ isActive }) =>
+    `rounded-lg px-3 py-2 text-[15px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 dark:focus-visible:outline-primary-400 ${
+        isActive ? "text-ink dark:text-night-text" : "text-ink-muted hover:text-ink dark:text-night-muted dark:hover:text-night-text"
+    }`;
+
+const iconButtonClasses =
+    "flex h-11 w-11 items-center justify-center rounded-lg border border-paper-line text-ink transition-colors hover:bg-paper-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 dark:border-night-line dark:text-night-text dark:hover:bg-night-soft dark:focus-visible:outline-primary-400";
 
 const NavPublic = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { darkMode, toggleDarkMode } = useTheme();
+    const closeMenu = () => setIsMobileMenuOpen(false);
 
-    const handleMobileMenuToggle = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
+    const themeButton = (
+        <button
+            type="button"
+            onClick={toggleDarkMode}
+            className={iconButtonClasses}
+            aria-label={darkMode ? "Activar modo claro" : "Activar modo oscuro"}
+        >
+            <span className="dark:hidden">
+                <Icon name="moon" />
+            </span>
+            <span className="hidden dark:inline">
+                <Icon name="sun" />
+            </span>
+        </button>
+    );
 
     return (
-        <nav className={`${darkMode ? 'bg-gray-800' : 'bg-[#25D366]'} fixed w-full z-20 top-0 shadow-lg px-4 sm:px-6 lg:px-10 transition-colors duration-300`}>
-            <div className="flex justify-between items-center h-16 sm:h-20">
+        <nav
+            aria-label="Principal"
+            className="fixed top-0 z-20 w-full border-b border-paper-line bg-paper/85 backdrop-blur-md dark:border-night-line dark:bg-night/80"
+        >
+            <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-5 sm:px-10">
                 <Link
                     to="/"
-                    className={`flex items-center px-2 sm:px-4 py-2 ${darkMode ? 'hover:text-gray-300 text-white' : 'hover:text-gray-700 text-black'} cursor-pointer rounded-lg transition-all duration-300`}
+                    onClick={closeMenu}
+                    className="flex items-center gap-2.5 rounded-lg font-extrabold tracking-wide text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-700 dark:text-night-text dark:focus-visible:outline-primary-400"
+                    aria-label={`${site.name}, inicio`}
                 >
-                    <span className="text-lg sm:text-xl font-extrabold text-center">MNSLVS</span>
-                </Link>
-                
-                <div className="hidden md:flex md:justify-end md:items-center space-x-4">
-                    {menuItems.map((item, index) => (
-                        <NavLink
-                            key={index}
-                            to={item.path}
-                            end
-                            className={({ isActive }) => `flex items-center px-3 py-2 rounded-md text-base sm:text-lg font-extrabold transition-all duration-300 cursor-pointer
-                                ${isActive
-                                    ? (darkMode ? 'text-[#25D366]' : 'text-gray-900 underline decoration-2 underline-offset-8') 
-                                    : (darkMode ? 'text-gray-300 hover:text-[#25D366]' : 'text-black hover:underline decoration-2 underline-offset-8')}`}
-                        >
-                            {item.text}
-                        </NavLink>
-                    ))}
-                    <button
-                        onClick={toggleDarkMode}
-                        className={`w-10 h-10 flex items-center justify-center rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-primary-muted'} transition-colors`}
-                        aria-label={darkMode ? "Activar modo claro" : "Activar modo oscuro"}
+                    <span
+                        aria-hidden="true"
+                        className="flex h-[30px] w-[30px] items-center justify-center rounded-[9px] bg-primary-500 text-[15px] text-primary-ink"
                     >
-                        {darkMode ? (
-                            <Icon name="sun" className="text-[#25D366] text-xl" />
-                        ) : (
-                            <Icon name="moon" className="text-gray-900 text-xl" />
-                        )}
-                    </button>
+                        M
+                    </span>
+                    MNSLVS
+                </Link>
+
+                <div className="hidden items-center gap-3 md:flex">
+                    <ul className="flex items-center gap-1">
+                        {menuItems.map((item) => (
+                            <li key={item.path}>
+                                <NavLink to={item.path} end className={linkClasses}>
+                                    {item.text}
+                                </NavLink>
+                            </li>
+                        ))}
+                    </ul>
+                    {themeButton}
+                    <Link
+                        to={menuAction.path}
+                        className="rounded-lg bg-ink px-[18px] py-2.5 font-semibold text-paper transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 dark:bg-night-text dark:text-night dark:focus-visible:outline-primary-400"
+                    >
+                        {menuAction.text}
+                    </Link>
                 </div>
 
-                <div className="md:hidden flex items-center space-x-2">
+                <div className="flex items-center gap-2 md:hidden">
+                    {themeButton}
                     <button
-                        onClick={toggleDarkMode}
-                        className={`w-10 h-10 flex items-center justify-center rounded-full ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-primary-muted'} transition-colors`}
-                        aria-label={darkMode ? "Activar modo claro" : "Activar modo oscuro"}
-                    >
-                        {darkMode ? (
-                            <Icon name="sun" className="text-[#25D366] text-xl" />
-                        ) : (
-                            <Icon name="moon" className="text-gray-900 text-xl" />
-                        )}
-                    </button>
-                    <button 
-                        className={`mobile-menu-button text-lg sm:text-xl font-extrabold px-2 py-1 ${darkMode ? 'text-white' : 'text-black'}`} 
-                        onClick={handleMobileMenuToggle}
+                        type="button"
+                        className={iconButtonClasses}
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-expanded={isMobileMenuOpen}
                         aria-controls="menu-movil"
+                        aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
                     >
-                        MENU
+                        <Icon name={isMobileMenuOpen ? "xmark" : "bars"} className="text-lg" />
                     </button>
                 </div>
             </div>
 
             <div
                 id="menu-movil"
-                aria-hidden={!isMobileMenuOpen}
-                className={`transition-all duration-700 ${isMobileMenuOpen ? "h-screen" : "h-0 overflow-hidden"} md:hidden`}
+                hidden={!isMobileMenuOpen}
+                className="border-t border-paper-line bg-paper px-5 pt-2 pb-6 md:hidden dark:border-night-line dark:bg-night"
             >
-                <div className="pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-                    {menuItems.map((item, index) => (
-                        <NavLink
-                            key={index}
-                            to={item.path}
-                            end
-                            tabIndex={isMobileMenuOpen ? undefined : -1}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className={({ isActive }) => `text-center opacity-0 transition-opacity duration-700 px-4 py-3 rounded-md text-lg sm:text-xl font-extrabold cursor-pointer ${
-                                isMobileMenuOpen ? "opacity-100" : ""
-                            } ${
-                                isActive
-                                    ? (darkMode ? 'text-[#25D366]' : 'text-gray-900 underline decoration-2 underline-offset-8') 
-                                    : (darkMode ? 'text-gray-300 hover:text-[#25D366]' : 'text-black hover:underline decoration-2 underline-offset-8')
-                            }`}
-                        >
-                            <Icon name="arrow-right" /> {item.text}
-                        </NavLink>
+                <ul className="flex flex-col">
+                    {menuItems.map((item) => (
+                        <li key={item.path}>
+                            <NavLink
+                                to={item.path}
+                                end
+                                onClick={closeMenu}
+                                className={({ isActive }) =>
+                                    `flex min-h-12 items-center justify-between border-b border-paper-line text-lg font-semibold dark:border-night-line ${
+                                        isActive ? "text-primary-700 dark:text-primary-400" : "text-ink dark:text-night-text"
+                                    }`
+                                }
+                            >
+                                {item.text}
+                                <Icon name="arrow-right" className="text-sm opacity-60" />
+                            </NavLink>
+                        </li>
                     ))}
-                </div>
+                </ul>
+                <Link
+                    to={menuAction.path}
+                    onClick={closeMenu}
+                    className="mt-6 flex min-h-12 items-center justify-center rounded-lg bg-primary-500 font-bold text-primary-ink"
+                >
+                    {menuAction.text}
+                </Link>
             </div>
         </nav>
     );

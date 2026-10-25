@@ -1,4 +1,3 @@
-import { Card } from "../../../components/ui";
 import { home } from "../../../config/home";
 import SectionTitle from "./SectionTitle";
 
@@ -6,21 +5,21 @@ const HomeProcess = () => {
     const { process } = home;
 
     return (
-        <section aria-labelledby="como-trabajamos" className="px-4 py-12">
-            <SectionTitle id="como-trabajamos">{process.title}</SectionTitle>
-            <ol className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <section aria-labelledby="como-trabajamos" className="mx-auto max-w-6xl px-5 pb-16 sm:px-10 sm:pb-24">
+            <SectionTitle id="como-trabajamos" eyebrow={process.eyebrow}>
+                {process.title}
+            </SectionTitle>
+            <ol className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
                 {process.steps.map((step, index) => (
-                    <li key={step.title}>
-                        <Card className="h-full">
-                            <span
-                                aria-hidden="true"
-                                className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-700 font-bold text-white"
-                            >
-                                {index + 1}
-                            </span>
-                            <h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">{step.title}</h3>
-                            <p className="text-gray-700 dark:text-gray-300">{step.text}</p>
-                        </Card>
+                    <li
+                        key={step.title}
+                        className={`flex flex-col gap-2 border-t-2 pt-5 ${index === 0 ? "border-primary-500" : "border-paper-line dark:border-night-line"}`}
+                    >
+                        <span aria-hidden="true" className="text-sm font-bold text-primary-700 dark:text-primary-400">
+                            {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <h3 className="text-[19px] font-bold text-ink dark:text-night-text">{step.title}</h3>
+                        <p className="text-ink-muted dark:text-night-muted">{step.text}</p>
                     </li>
                 ))}
             </ol>

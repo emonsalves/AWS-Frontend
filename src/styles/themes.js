@@ -20,12 +20,12 @@ export const themes = {
   light: {
     // 🌅 FONDOS SEMÁNTICOS
     background: {
-      primary: 'bg-white',                    // Fondo principal
-      secondary: 'bg-neutral-50',            // Fondo secundario
+      primary: 'bg-paper',                   // Fondo principal
+      secondary: 'bg-paper-soft',            // Fondo secundario
       tertiary: 'bg-neutral-100',            // Fondo terciario
       card: 'bg-white',                      // Tarjetas/contenedores
       overlay: 'bg-white/90',                // Modales/overlays
-      accent: 'bg-primary-50',               // Fondos de acento
+      accent: 'bg-paper-accent',             // Fondos de acento
       hover: 'bg-neutral-50',                // Estados hover
       active: 'bg-neutral-100',              // Estados activos
       disabled: 'bg-neutral-100',            // Estados deshabilitados
@@ -36,11 +36,11 @@ export const themes = {
     
     // 📝 TEXTOS SEMÁNTICOS
     text: {
-      primary: 'text-neutral-900',           // Texto principal
-      secondary: 'text-neutral-600',         // Texto secundario
+      primary: 'text-ink',                   // Texto principal
+      secondary: 'text-ink-muted',           // Texto secundario
       tertiary: 'text-neutral-500',          // Texto terciario
       inverse: 'text-white',                 // Texto inverso
-      accent: 'text-primary-600',            // Texto de acento
+      accent: 'text-primary-700',            // Texto de acento
       muted: 'text-neutral-400',             // Texto apagado
       disabled: 'text-neutral-300',          // Texto deshabilitado
       success: 'text-success-700',           // Texto de éxito
@@ -53,7 +53,7 @@ export const themes = {
     
     // 🔲 BORDES SEMÁNTICOS
     border: {
-      primary: 'border-neutral-200',         // Borde principal
+      primary: 'border-paper-line',          // Borde principal
       secondary: 'border-neutral-300',       // Borde secundario
       accent: 'border-primary-200',          // Borde de acento
       focus: 'border-primary-500',           // Borde de foco
@@ -73,9 +73,9 @@ export const themes = {
       disabled: 'disabled:opacity-50 disabled:cursor-not-allowed',
       
       // Botones específicos
-      buttonPrimary: 'bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-500/20',
-      buttonSecondary: 'bg-neutral-100 text-neutral-900 hover:bg-neutral-200 focus:ring-neutral-500/20',
-      buttonGhost: 'bg-transparent text-neutral-700 hover:bg-neutral-100 focus:ring-neutral-500/20',
+      buttonPrimary: 'bg-primary-500 text-primary-ink shadow-brand hover:bg-primary-400 focus:ring-primary-700',
+      buttonSecondary: 'border border-paper-line bg-transparent text-ink hover:bg-paper-soft focus:ring-primary-700',
+      buttonGhost: 'bg-transparent text-ink hover:bg-paper-soft focus:ring-primary-700',
       buttonDanger: 'bg-error-600 text-white hover:bg-error-700 focus:ring-error-500/20'
     }
   },
@@ -83,12 +83,12 @@ export const themes = {
   dark: {
     // 🌙 FONDOS SEMÁNTICOS
     background: {
-      primary: 'bg-neutral-900',             // Fondo principal
-      secondary: 'bg-neutral-800',           // Fondo secundario
+      primary: 'bg-night',                   // Fondo principal
+      secondary: 'bg-night-soft',            // Fondo secundario
       tertiary: 'bg-neutral-700',            // Fondo terciario
-      card: 'bg-neutral-800',                // Tarjetas/contenedores
+      card: 'bg-night-soft',                 // Tarjetas/contenedores
       overlay: 'bg-neutral-900/90',          // Modales/overlays
-      accent: 'bg-primary-900/20',           // Fondos de acento
+      accent: 'bg-night-accent',             // Fondos de acento
       hover: 'bg-neutral-700',               // Estados hover
       active: 'bg-neutral-600',              // Estados activos
       disabled: 'bg-neutral-800',            // Estados deshabilitados
@@ -99,8 +99,8 @@ export const themes = {
     
     // 📝 TEXTOS SEMÁNTICOS
     text: {
-      primary: 'text-white',                 // Texto principal
-      secondary: 'text-neutral-300',         // Texto secundario
+      primary: 'text-night-text',            // Texto principal
+      secondary: 'text-night-muted',         // Texto secundario
       tertiary: 'text-neutral-400',          // Texto terciario
       inverse: 'text-neutral-900',           // Texto inverso
       accent: 'text-primary-400',            // Texto de acento
@@ -116,7 +116,7 @@ export const themes = {
     
     // 🔲 BORDES SEMÁNTICOS
     border: {
-      primary: 'border-neutral-700',         // Borde principal
+      primary: 'border-night-line',          // Borde principal
       secondary: 'border-neutral-600',       // Borde secundario
       accent: 'border-primary-700',          // Borde de acento
       focus: 'border-primary-500',           // Borde de foco
@@ -136,9 +136,9 @@ export const themes = {
       disabled: 'disabled:opacity-50 disabled:cursor-not-allowed',
       
       // Botones específicos
-      buttonPrimary: 'bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-500/30',
-      buttonSecondary: 'bg-neutral-700 text-neutral-100 hover:bg-neutral-600 focus:ring-neutral-500/30',
-      buttonGhost: 'bg-transparent text-neutral-300 hover:bg-neutral-700 focus:ring-neutral-500/30',
+      buttonPrimary: 'bg-primary-500 text-primary-ink shadow-brand hover:bg-primary-400 focus:ring-primary-400 focus:ring-offset-night',
+      buttonSecondary: 'border border-night-line bg-transparent text-night-text hover:bg-night-soft focus:ring-primary-400 focus:ring-offset-night',
+      buttonGhost: 'bg-transparent text-night-text hover:bg-night-soft focus:ring-primary-400 focus:ring-offset-night',
       buttonDanger: 'bg-error-600 text-white hover:bg-error-700 focus:ring-error-500/30'
     }
   }

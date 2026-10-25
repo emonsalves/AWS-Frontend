@@ -15,6 +15,9 @@ export default {
                 warning: tokens.colors.warning,
                 error: tokens.colors.error,
                 info: tokens.colors.info,
+                ink: tokens.colors.ink,
+                paper: tokens.colors.paper,
+                night: tokens.colors.night,
             },
             
             // Espaciado usando tokens
@@ -27,6 +30,7 @@ export default {
             boxShadow: {
                 "custom-light": tokens.shadows.light,
                 "custom-dark": tokens.shadows.dark,
+                "brand": tokens.shadows.brand,
                 "elevated": tokens.shadows.elevated,
                 "focus": tokens.shadows.focus,
             },
