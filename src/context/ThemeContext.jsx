@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, startTransition } from 'react';
 
 /**
  * ThemeContext - Contexto mejorado para manejo de themes
@@ -37,8 +37,11 @@ export const ThemeProvider = ({ children }) => {
                 initialDarkMode = systemPrefersDark;
             }
             
-            setDarkMode(initialDarkMode);
-            setIsInitialized(true);
+            // En transición: así React no descarta el HTML prerenderizado que aún se está hidratando
+            startTransition(() => {
+                setDarkMode(initialDarkMode);
+                setIsInitialized(true);
+            });
             
             // Aplicar clase al HTML
             document.documentElement.classList.toggle('dark', initialDarkMode);
