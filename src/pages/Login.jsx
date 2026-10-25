@@ -1,15 +1,14 @@
 import { Link } from 'react-router';
 import { useState } from 'react';
-import { useTheme } from '../hooks/useTheme';
-import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { usePageTitle } from '../hooks/usePageTitle';
 import Icon from '../components/ui/Icon';
+import { login } from '../config/login';
+import { LoginPreview } from '../features/auth';
 
 const Login = () => {
     usePageTitle("Iniciar sesión");
-    const { text } = useTheme();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
@@ -86,110 +85,89 @@ const Login = () => {
     const isFormValid = email && validateEmail(email) && password && password.length >= 6 && !isLoading;
 
     return (
-        <div className="w-full min-h-full flex items-center justify-center px-4 py-4">
-            <Card 
-                variant="elevated" 
-                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-xs"
-                padding="none"
+        <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 sm:px-10 sm:py-20 lg:grid-cols-2 lg:items-stretch">
+            <div className="anim-rise relative hidden overflow-hidden rounded-[28px] bg-ink p-10 text-night-text lg:flex lg:flex-col lg:justify-between lg:gap-10 dark:bg-night-soft dark:ring-1 dark:ring-night-line">
+                <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:22px_22px]"
+                />
+                <span aria-hidden="true" className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500 text-xl font-extrabold text-primary-ink">
+                    M
+                </span>
+                <LoginPreview />
+                <div className="relative">
+                    <p className="text-[40px] leading-[1.05] font-extrabold tracking-[-0.04em]">{login.panel.title}</p>
+                    <p className="mt-4 text-lg text-night-muted">{login.panel.text}</p>
+                </div>
+            </div>
+
+            <form
+                onSubmit={handleSubmit}
+                aria-label="Formulario de inicio de sesión"
+                className="anim-rise flex flex-col gap-5 rounded-[28px] border border-paper-line bg-paper-soft p-6 sm:p-10 dark:border-night-line dark:bg-night-soft"
+                style={{ '--delay': '120ms' }}
+                noValidate
             >
-                <form onSubmit={handleSubmit} aria-label="Formulario de inicio de sesión">
-                    <section className="w-full flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8" role="main">
-                        <div className="w-full md:w-1/2 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl">
-                            <img
-                                src="/images/login.webp"
-                                alt="Ilustración de login"
-                                className="w-full h-auto max-h-48 sm:max-h-64 md:max-h-full rounded-2xl filter drop-shadow-xl object-contain"
-                            />
-                        </div>
-                        <div className="w-full md:w-1/2 max-w-sm lg:max-w-md animate-fade-left animate-once space-y-3 sm:space-y-4">
-                            <div className="text-center space-y-2 sm:space-y-3">
-                                <h1 className={`text-xl sm:text-2xl md:text-3xl font-bold ${text.primary}`}>
-                                    Iniciar Sesión
-                                </h1>
-                                <p className={`text-sm sm:text-base leading-relaxed ${text.secondary} opacity-90`}>
-                                    Ingresa tus credenciales para acceder a tu cuenta
-                                </p>
-                            </div>
-                            <div className="space-y-3 sm:space-y-4">
-                                <Input
-                                    type="email"
-                                    placeholder="Correo Electrónico"
-                                    className="w-full"
-                                    leftIcon={<Icon name="envelope" className={text.icon} />}
-                                    value={email}
-                                    onChange={handleEmailChange}
-                                    error={emailError}
-                                    state={emailError ? 'error' : email && validateEmail(email) ? 'success' : 'default'}
-                                    label="Correo Electrónico"
-                                    id="email-input"
-                                    name="email"
-                                    autoComplete="email"
-                                    required
-                                />
-                                <Input
-                                    type="password"
-                                    placeholder="Contraseña"
-                                    className="w-full"
-                                    leftIcon={<Icon name="lock" className="text-neutral-600 dark:text-neutral-300" />}
-                                    value={password}
-                                    onChange={handlePasswordChange}
-                                    error={passwordError}
-                                    state={passwordError ? 'error' : password && password.length >= 6 ? 'success' : 'default'}
-                                    label="Contraseña"
-                                    id="password-input"
-                                    name="password"
-                                    autoComplete="current-password"
-                                    required
-                                />
-                            </div>
-                            <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-2 font-semibold text-sm">
-                                <label className={`flex items-center cursor-pointer ${text.secondary} hover:${text.primary} transition-colors duration-200`}>
-                                    <input
-                                        type="checkbox"
-                                        className="mr-3 w-4 h-4 rounded-sm border-2 border-neutral-300 text-primary-600 focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 transition-all duration-200"
-                                        checked={rememberMe}
-                                        onChange={(e) => setRememberMe(e.target.checked)}
-                                    />
-                                    <span className="select-none">Recordarme</span>
-                                </label>
-                                <Link 
-                                    to="/recovery" 
-                                    className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 font-medium"
-                                >
-                                    ¿Olvidaste tu contraseña?
-                                </Link>
-                            </div>
-                            <div className="text-center md:text-left mt-4 sm:mt-6">
-                                <Button
-                                    variant="primary"
-                                    size="md"
-                                    fullWidth
-                                    type="submit"
-                                    className="py-3 sm:py-3.5 text-base sm:text-lg font-semibold"
-                                    disabled={!isFormValid}
-                                >
-                                    {isLoading ? (
-                                        <span className="flex items-center justify-center">
-                                            <Icon name="spinner" className="animate-spin mr-2" />
-                                            Iniciando sesión...
-                                        </span>
-                                    ) : (
-                                        'Iniciar Sesión'
-                                    )}
-                                </Button>
-                            </div>
-                            {/* <div className={`mt-4 font-medium text-sm text-center space-y-2 ${text.secondary}`}>
-                                <div className="space-y-2">
-                                    <p>¿No tienes una cuenta?</p>
-                                    <Link to="/register" className={`${text.accent} hover:text-primary-500 transition-colors duration-200 font-medium block`}>
-                                        Crear cuenta nueva
-                                    </Link>
-                                </div>
-                            </div> */}
-                        </div>
-                    </section>
-                </form>
-            </Card>
+                <div className="mb-2">
+                    <h1 className="text-[32px] leading-tight font-extrabold tracking-[-0.03em] text-ink sm:text-4xl dark:text-night-text">Iniciar sesión</h1>
+                    <p className="mt-2 text-ink-muted dark:text-night-muted">Ingresa tus credenciales para acceder a tu cuenta.</p>
+                </div>
+                <Input
+                    type="email"
+                    placeholder="tu@email.com"
+                    leftIcon={<Icon name="envelope" />}
+                    value={email}
+                    onChange={handleEmailChange}
+                    error={emailError}
+                    state={emailError ? 'error' : email && validateEmail(email) ? 'success' : 'default'}
+                    label="Correo electrónico"
+                    id="email-input"
+                    name="email"
+                    autoComplete="email"
+                    required
+                />
+                <Input
+                    type="password"
+                    placeholder="Tu contraseña"
+                    leftIcon={<Icon name="lock" />}
+                    value={password}
+                    onChange={handlePasswordChange}
+                    error={passwordError}
+                    state={passwordError ? 'error' : password && password.length >= 6 ? 'success' : 'default'}
+                    label="Contraseña"
+                    id="password-input"
+                    name="password"
+                    autoComplete="current-password"
+                    required
+                />
+                <div className="flex flex-col items-start justify-between gap-3 text-sm font-medium sm:flex-row sm:items-center">
+                    <label className="flex cursor-pointer items-center gap-3 text-ink-muted dark:text-night-muted">
+                        <input
+                            type="checkbox"
+                            className="h-4 w-4 rounded-sm accent-primary-500"
+                            checked={rememberMe}
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                        />
+                        <span className="select-none">Recordarme</span>
+                    </label>
+                    <Link
+                        to="/recovery"
+                        className="rounded-md text-primary-700 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 dark:text-primary-400 dark:focus-visible:outline-primary-400"
+                    >
+                        ¿Olvidaste tu contraseña?
+                    </Link>
+                </div>
+                <Button variant="primary" size="lg" fullWidth type="submit" className="mt-2" disabled={!isFormValid}>
+                    {isLoading ? (
+                        <span className="flex items-center justify-center">
+                            <Icon name="spinner" className="mr-2 animate-spin" />
+                            Iniciando sesión...
+                        </span>
+                    ) : (
+                        'Iniciar sesión'
+                    )}
+                </Button>
+            </form>
         </div>
     );
 };

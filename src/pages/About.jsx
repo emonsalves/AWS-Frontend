@@ -1,23 +1,30 @@
-import { useTheme } from '../context/ThemeContext';
-import { ContainerAbout } from "../components/containers/ContainerAbout";
 import { MarqueeAbout } from "../components/marquees/MarqueeAbout";
+import { about } from "../config/about";
 import { logosMarque1, logosMarque2 } from "../config/technologies";
-import { usePageSeo } from "../hooks/usePageSeo";
 import { seo } from "../config/seo";
-import Icon from "../components/ui/Icon";
+import { usePageSeo } from "../hooks/usePageSeo";
+import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
+import { AboutCommitment, AboutIntro, AboutServices, AboutStory } from "../features/about";
 
 const About = () => {
     usePageSeo(seo.about);
-    const { darkMode } = useTheme();
+    useRevealOnScroll();
 
     return (
-        <div className="min-h-screen w-full flex flex-col items-center">
-            <ContainerAbout />
-            <h2 className={`my-5 font-semibold text-2xl animate-fade animate-once text-center m-5 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                <Icon name="toolbox" /> Conoce algunas de las Tecnologías que utilizamos:
-            </h2>
-            <MarqueeAbout direction={"left"} speed={25} dataLogos={logosMarque1} />
-            <MarqueeAbout direction={"right"} speed={25} dataLogos={logosMarque2} />
+        <div className="w-full">
+            <AboutIntro />
+            <AboutStory />
+            <AboutServices />
+            <section aria-labelledby="tecnologias" className="border-y border-paper-line py-12 dark:border-night-line">
+                <h2 id="tecnologias" className="mb-8 text-center text-sm font-medium text-ink-muted dark:text-night-muted">
+                    {about.technologies.title}
+                </h2>
+                <MarqueeAbout direction="left" speed={30} dataLogos={logosMarque1} />
+                <MarqueeAbout direction="right" speed={30} dataLogos={logosMarque2} />
+            </section>
+            <div className="pt-16 sm:pt-28">
+                <AboutCommitment />
+            </div>
         </div>
     );
 };

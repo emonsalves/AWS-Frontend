@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Icon } from "../../../components/ui";
+import { Icon } from "../ui";
 
 const bar = "h-2 rounded-full bg-paper-line dark:bg-night-line";
 const shimmer =

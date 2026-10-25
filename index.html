@@ -19,7 +19,24 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>document.documentElement.classList.add("js");</script>
+    <meta name="color-scheme" content="light dark" />
+    <style>
+        html.dark { background: #0a0f0d; }
+    </style>
+    <script>
+        // Antes de pintar: marca que hay JavaScript y aplica el tema guardado o el del sistema (sin destello claro)
+        (function () {
+            var root = document.documentElement;
+            root.classList.add("js");
+            try {
+                var saved = localStorage.getItem("darkMode");
+                var dark = saved !== null ? JSON.parse(saved) : window.matchMedia("(prefers-color-scheme: dark)").matches;
+                root.classList.toggle("dark", dark);
+            } catch (error) {
+                root.classList.remove("dark");
+            }
+        })();
+    </script>
     <title>Desarrollo web y automatización para PYMES en Santiago | MNSLVS Solutions</title>
 </head>
 

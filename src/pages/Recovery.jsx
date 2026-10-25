@@ -1,7 +1,5 @@
 import { Link } from 'react-router';
 import { useState } from 'react';
-import { useTheme } from '../hooks/useTheme';
-import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -9,7 +7,6 @@ import Icon from '../components/ui/Icon';
 
 const Recovery = () => {
     usePageTitle("Recuperar contraseña");
-    const { text } = useTheme();
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -66,119 +63,86 @@ const Recovery = () => {
     const isFormValid = email && validateEmail(email) && !isLoading;
 
     return (
-        <div className="w-full h-full flex items-center justify-center px-4 py-8">
-            <Card 
-                variant="elevated" 
-                className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once mt-8 sm:mt-12 md:mt-16 lg:mt-12 mb-6 sm:mb-8 lg:mb-10 backdrop-blur-xs"
-                padding="none"
+        <div className="mx-auto flex w-full max-w-xl px-5 py-14 sm:px-10 sm:py-20">
+            <form
+                onSubmit={handleSubmit}
+                aria-label="Formulario de recuperación de contraseña"
+                className="anim-rise flex w-full flex-col gap-5 rounded-[28px] border border-paper-line bg-paper-soft p-6 sm:p-10 dark:border-night-line dark:bg-night-soft"
+                noValidate
             >
-                <form onSubmit={handleSubmit} aria-label="Formulario de recuperación de contraseña">
-                    <section className="w-full flex flex-col-reverse md:flex-row justify-center items-center gap-6 md:gap-12 rounded-2xl p-4 sm:p-6 lg:p-8" role="main">
-                        <div className="w-full md:w-1/2 max-w-sm lg:max-w-md animate-fade-left animate-once space-y-4">
-                            <div className="text-center space-y-3">
-                                <h1 className={`text-2xl sm:text-3xl font-bold ${text.primary}`}>
-                                    {isSuccess ? 'Instrucciones Enviadas' : 'Recuperar Contraseña'}
-                                </h1>
-                                {isSuccess ? (
-                                    <div className="space-y-3">
-                                        <div className="flex justify-center">
-                                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                                                <Icon name="check" className="text-green-600 text-2xl" />
-                                            </div>
-                                        </div>
-                                        <p className={`text-base leading-relaxed ${text.secondary} opacity-90`}>
-                                            {successMessage}
-                                        </p>
-                                        <p className={`text-sm ${text.secondary} opacity-75`}>
-                                            Revisa tu bandeja de entrada y sigue las instrucciones para restablecer tu contraseña.
-                                        </p>
-                                    </div>
-                                ) : (
-                                    <p className={`text-base leading-relaxed ${text.secondary} opacity-90`}>
-                                        Ingresa tu correo electrónico y te enviaremos las instrucciones para recuperar tu contraseña.
-                                    </p>
-                                )}
-                            </div>
-                            {!isSuccess && (
-                                <>
-                                    <div className="space-y-4">
-                                        <Input
-                                            type="email"
-                                            placeholder="Correo Electrónico"
-                                            className="w-full"
-                                            leftIcon={<Icon name="envelope" className={text.secondary} />}
-                                            value={email}
-                                            onChange={handleEmailChange}
-                                            error={emailError}
-                                            state={emailError ? 'error' : email && validateEmail(email) ? 'success' : 'default'}
-                                            label="Correo Electrónico"
-                                            id="email-input"
-                                            name="email"
-                                            autoComplete="email"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="text-center md:text-left mt-6">
-                                        <Button
-                                            variant="primary"
-                                            size="md"
-                                            fullWidth
-                                            type="submit"
-                                            className="py-3.5 text-lg font-semibold"
-                                            disabled={!isFormValid}
-                                        >
-                                            {isLoading ? (
-                                                <span className="flex items-center justify-center">
-                                                    <Icon name="spinner" className="animate-spin mr-2" />
-                                                    Enviando...
-                                                </span>
-                                            ) : (
-                                                'Enviar Instrucciones'
-                                            )}
-                                        </Button>
-                                    </div>
-                                </>
+                {isSuccess && (
+                    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-500 text-xl text-primary-ink">
+                        <Icon name="check" />
+                    </span>
+                )}
+                <div>
+                    <h1 className="text-[32px] leading-tight font-extrabold tracking-[-0.03em] text-ink sm:text-4xl dark:text-night-text">
+                        {isSuccess ? 'Instrucciones enviadas' : 'Recuperar contraseña'}
+                    </h1>
+                    {isSuccess ? (
+                        <>
+                            <p className="mt-2 text-ink dark:text-night-text">{successMessage}</p>
+                            <p className="mt-2 text-sm text-ink-muted dark:text-night-muted">
+                                Revisa tu bandeja de entrada y sigue las instrucciones para restablecer tu contraseña.
+                            </p>
+                        </>
+                    ) : (
+                        <p className="mt-2 text-ink-muted dark:text-night-muted">
+                            Ingresa tu correo electrónico y te enviaremos las instrucciones para recuperar tu contraseña.
+                        </p>
+                    )}
+                </div>
+                {!isSuccess && (
+                    <>
+                        <Input
+                            type="email"
+                            placeholder="tu@email.com"
+                            leftIcon={<Icon name="envelope" />}
+                            value={email}
+                            onChange={handleEmailChange}
+                            error={emailError}
+                            state={emailError ? 'error' : email && validateEmail(email) ? 'success' : 'default'}
+                            label="Correo electrónico"
+                            id="email-input"
+                            name="email"
+                            autoComplete="email"
+                            required
+                        />
+                        <Button variant="primary" size="lg" fullWidth type="submit" disabled={!isFormValid}>
+                            {isLoading ? (
+                                <span className="flex items-center justify-center">
+                                    <Icon name="spinner" className="mr-2 animate-spin" />
+                                    Enviando...
+                                </span>
+                            ) : (
+                                'Enviar instrucciones'
                             )}
-                            <div className={`mt-4 font-medium text-sm text-center space-y-2 ${text.secondary}`}>
-                                {isSuccess ? (
-                                    <div className="space-y-2">
-                                        <p>¿No recibiste el email?</p>
-                                        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-                                            <button 
-                                                onClick={() => {
-                                                    setIsSuccess(false);
-                                                    setSuccessMessage('');
-                                                }}
-                                                className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 font-medium underline"
-                                            >
-                                                Enviar nuevamente
-                                            </button>
-                                            <span className="hidden sm:inline text-neutral-400">|</span>
-                                            <Link to="/Login" className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 font-medium">
-                                                Volver al login
-                                            </Link>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="space-y-2">
-                                        <p>¿Recordaste tu contraseña?</p>
-                                        <Link to="/Login" className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 font-medium block">
-                                            Volver al login
-                                        </Link>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                        <div className="w-full md:w-1/2 max-w-md lg:max-w-xl">
-                            <img
-                                src="/images/login.webp"
-                                alt="Ilustración de recuperación de contraseña"
-                                className="w-full h-auto rounded-2xl filter drop-shadow-xl"
-                            />
-                        </div>
-                    </section>
-                </form>
-            </Card>
+                        </Button>
+                    </>
+                )}
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-medium text-ink-muted dark:text-night-muted">
+                    {isSuccess ? (
+                        <>
+                            <span>¿No recibiste el correo?</span>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setIsSuccess(false);
+                                    setSuccessMessage('');
+                                }}
+                                className="rounded-md text-primary-700 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 dark:text-primary-400 dark:focus-visible:outline-primary-400"
+                            >
+                                Enviar nuevamente
+                            </button>
+                        </>
+                    ) : (
+                        <span>¿Recordaste tu contraseña?</span>
+                    )}
+                    <Link to="/login" className="rounded-md text-primary-700 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 dark:text-primary-400 dark:focus-visible:outline-primary-400">
+                        Volver al login
+                    </Link>
+                </div>
+            </form>
         </div>
     );
 };

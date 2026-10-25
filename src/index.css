@@ -96,6 +96,7 @@
   - [data-reveal]: aparece al entrar en pantalla (useRevealOnScroll). Solo se oculta si hay JavaScript
     (clase "js" que pone index.html), así el contenido nunca queda invisible.
   - .demo-step-*: la conversación de ejemplo de la portada, en un ciclo de 10 s.
+  - .anim-grow: barras que crecen desde la base (vista previa del panel en Login).
 */
 @keyframes rise {
     from {
@@ -144,6 +145,15 @@
     }
     to {
         box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: none;
     }
 }
 
@@ -238,6 +248,11 @@
     animation: ring 1.8s ease-out infinite;
 }
 
+.anim-grow {
+    transform-origin: bottom;
+    animation: grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms) both;
+}
+
 .demo-step-1 {
     animation: demo-1 10s ease-out infinite;
 }
@@ -278,6 +293,48 @@
 
 .js [data-reveal].reveal-line.is-visible {
     transform: none;
+}
+
+.js [data-reveal].reveal-line-y {
+    opacity: 1;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.js [data-reveal].reveal-line-y.is-visible {
+    transform: none;
+}
+
+/* Barra de carga entre páginas: aparece tras 200 ms para no parpadear en cargas rápidas */
+@keyframes loader-in {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes loader-slide {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(250%);
+    }
+}
+
+.loader-bar {
+    opacity: 0;
+    animation: loader-in 0.2s ease-out 0.2s forwards;
+}
+
+.loader-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: #25d366;
+    border-radius: 999px;
+    animation: loader-slide 1.1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /*
