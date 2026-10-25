@@ -4,6 +4,8 @@ import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { usePageTitle } from '../hooks/usePageTitle';
 import Icon from '../components/ui/Icon';
+import { login } from '../config/login';
+import { LoginPreview } from '../features/auth';
 
 const Login = () => {
     usePageTitle("Iniciar sesión");
@@ -84,7 +86,7 @@ const Login = () => {
 
     return (
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 sm:px-10 sm:py-20 lg:grid-cols-2 lg:items-stretch">
-            <div className="anim-rise relative hidden overflow-hidden rounded-[28px] bg-ink p-10 text-night-text lg:flex lg:flex-col lg:justify-between dark:bg-night-soft dark:ring-1 dark:ring-night-line">
+            <div className="anim-rise relative hidden overflow-hidden rounded-[28px] bg-ink p-10 text-night-text lg:flex lg:flex-col lg:justify-between lg:gap-10 dark:bg-night-soft dark:ring-1 dark:ring-night-line">
                 <div
                     aria-hidden="true"
                     className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:22px_22px]"
@@ -92,9 +94,10 @@ const Login = () => {
                 <span aria-hidden="true" className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500 text-xl font-extrabold text-primary-ink">
                     M
                 </span>
+                <LoginPreview />
                 <div className="relative">
-                    <p className="text-[40px] leading-[1.05] font-extrabold tracking-[-0.04em]">Tu panel de MNSLVS Solutions</p>
-                    <p className="mt-4 text-lg text-night-muted">Revisa tus proyectos y automatizaciones en un solo lugar.</p>
+                    <p className="text-[40px] leading-[1.05] font-extrabold tracking-[-0.04em]">{login.panel.title}</p>
+                    <p className="mt-4 text-lg text-night-muted">{login.panel.text}</p>
                 </div>
             </div>
 

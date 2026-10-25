@@ -96,6 +96,7 @@
   - [data-reveal]: aparece al entrar en pantalla (useRevealOnScroll). Solo se oculta si hay JavaScript
     (clase "js" que pone index.html), así el contenido nunca queda invisible.
   - .demo-step-*: la conversación de ejemplo de la portada, en un ciclo de 10 s.
+  - .anim-grow: barras que crecen desde la base (vista previa del panel en Login).
 */
 @keyframes rise {
     from {
@@ -144,6 +145,15 @@
     }
     to {
         box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: none;
     }
 }
 
@@ -236,6 +246,11 @@
 
 .anim-ring {
     animation: ring 1.8s ease-out infinite;
+}
+
+.anim-grow {
+    transform-origin: bottom;
+    animation: grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms) both;
 }
 
 .demo-step-1 {
