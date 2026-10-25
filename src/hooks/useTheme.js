@@ -92,7 +92,7 @@ export const useTheme = () => {
     
     // Helper para inputs
     getInputClasses: (state = 'default') => {
-      const baseClasses = `${currentTheme.background.primary} ${currentTheme.text.primary} ${currentTheme.border.primary}`;
+      const baseClasses = `${currentTheme.background.primary} ${currentTheme.text.primary} ${currentTheme.border.input}`;
       const states = {
         default: `${baseClasses} ${currentTheme.interactive.focus}`,
         error: `${baseClasses} ${currentTheme.border.error} focus:border-error-500`,

@@ -13,7 +13,7 @@ const HomeHero = () => {
         <section aria-labelledby="hero-titulo" className="relative overflow-hidden">
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(#E2E8E5_1px,transparent_1px)] [mask-image:linear-gradient(to_bottom,black,transparent_85%)] bg-[size:22px_22px] dark:bg-[radial-gradient(#1E2A25_1px,transparent_1px)]"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(#D5DED9_1px,transparent_1px)] [mask-image:linear-gradient(to_bottom,black,transparent_85%)] bg-[size:22px_22px] dark:bg-[radial-gradient(#1E2A25_1px,transparent_1px)]"
             />
             <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pt-14 pb-16 sm:px-10 sm:pt-24 sm:pb-24 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
                 <div className="flex flex-col items-start gap-7">

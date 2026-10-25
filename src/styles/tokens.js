@@ -37,12 +37,13 @@ export const tokens = {
     // Superficies y textos del modo claro
     ink: {
       DEFAULT: '#0B1210',    // Texto principal
-      muted: '#4B5853'       // Texto secundario (7:1 sobre blanco)
+      muted: '#3D4843'       // Texto secundario (9.5:1 sobre blanco)
     },
     paper: {
       DEFAULT: '#FFFFFF',    // Fondo de página
-      soft: '#F5F8F6',       // Secciones alternas y tarjetas destacadas
-      line: '#E2E8E5',       // Bordes
+      soft: '#EFF4F1',       // Secciones alternas y tarjetas destacadas
+      line: '#D5DED9',       // Bordes
+      field: '#8A9790',      // Borde de campos de formulario (3:1 sobre blanco)
       accent: '#E6F6EC'      // Fondo de iconos y etiquetas verdes
     },
 

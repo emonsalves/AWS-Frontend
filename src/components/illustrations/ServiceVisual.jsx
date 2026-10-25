@@ -3,7 +3,7 @@ import { Icon } from "../ui";
 
 const bar = "h-2 rounded-full bg-paper-line dark:bg-night-line";
 const shimmer =
-    "anim-shimmer bg-[linear-gradient(90deg,#E2E8E5_0%,#E6F6EC_50%,#E2E8E5_100%)] dark:bg-[linear-gradient(90deg,#1E2A25_0%,#12291D_50%,#1E2A25_100%)]";
+    "anim-shimmer bg-[linear-gradient(90deg,#D5DED9_0%,#E6F6EC_50%,#D5DED9_100%)] dark:bg-[linear-gradient(90deg,#1E2A25_0%,#12291D_50%,#1E2A25_100%)]";
 
 /** Ventana de navegador que se arma: el sitio web que construimos. */
 const WebVisual = () => (

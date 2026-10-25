@@ -54,6 +54,7 @@ export const themes = {
     // 🔲 BORDES SEMÁNTICOS
     border: {
       primary: 'border-paper-line',          // Borde principal
+      input: 'border-paper-field',           // Borde de campos de formulario
       secondary: 'border-neutral-300',       // Borde secundario
       accent: 'border-primary-200',          // Borde de acento
       focus: 'border-primary-500',           // Borde de foco
@@ -117,6 +118,7 @@ export const themes = {
     // 🔲 BORDES SEMÁNTICOS
     border: {
       primary: 'border-night-line',          // Borde principal
+      input: 'border-night-line',            // Borde de campos de formulario
       secondary: 'border-neutral-600',       // Borde secundario
       accent: 'border-primary-700',          // Borde de acento
       focus: 'border-primary-500',           // Borde de foco
