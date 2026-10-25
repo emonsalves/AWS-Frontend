@@ -5,7 +5,7 @@ import { seo } from "../config/seo";
 const Contact = () => {
     usePageSeo(seo.contact);
     return (
-        <div className="w-full min-h-full flex items-center justify-center py-2">
+        <div className="w-full">
             <ContainerContact />
         </div>
     );

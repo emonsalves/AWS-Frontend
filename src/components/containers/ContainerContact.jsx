@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useTheme } from '../../hooks/useTheme';
+import { contact } from '../../config/contact';
 import { site } from '../../config/site';
+import { mailtoUrl, whatsappUrl } from '../../lib/contactLinks';
 import { validateEmail, validatePhone } from '../../lib/validation';
-import Card from '../ui/Card';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import Icon from '../ui/Icon';
@@ -18,19 +18,9 @@ const emptyForm = {
 const MIN_MESSAGE_LENGTH = 10;
 
 const ContainerContact = () => {
-    const { text } = useTheme();
-
     const [formData, setFormData] = useState(emptyForm);
     const [errors, setErrors] = useState({});
     const [isSent, setIsSent] = useState(false);
-
-    const handleWhatsAppClick = () => {
-        window.open(`https://wa.me/${site.contact.whatsapp}`, '_blank', 'noopener,noreferrer');
-    };
-
-    const handleEmailClick = () => {
-        window.location.href = `mailto:${site.contact.email}`;
-    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -106,210 +96,207 @@ const ContainerContact = () => {
     };
 
     return (
-        <Card
-            variant="elevated"
-            className="w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-6xl mx-auto animate-fade-up animate-once backdrop-blur-xs"
-            padding="none"
-        >
-            <div className="flex flex-col lg:flex-row">
-                {/* Información y contacto directo */}
-                <div className="lg:w-1/2 p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-neutral-700 flex flex-col justify-center">
-                    <div className="space-y-4 text-center lg:text-left">
-                        <div className="flex justify-center">
-                            <img
-                                src="./contact-support.svg"
-                                alt="Soporte al Cliente"
-                                className="w-24 h-24 sm:w-28 sm:h-28 object-contain animate-fade-up animate-once"
+        <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 py-14 sm:px-10 sm:py-24 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+            {/* Información y contacto directo */}
+            <div className="flex flex-col gap-8">
+                <div>
+                    <p className="anim-rise mb-5 font-semibold text-primary-700 dark:text-primary-400">{contact.label}</p>
+                    <h1
+                        className="anim-rise text-[40px] leading-[1.04] font-extrabold tracking-[-0.04em] text-ink sm:text-[56px] dark:text-night-text"
+                        style={{ '--delay': '80ms' }}
+                    >
+                        {contact.title}
+                    </h1>
+                    <p className="anim-rise mt-6 text-lg text-ink-muted sm:text-xl dark:text-night-muted" style={{ '--delay': '160ms' }}>
+                        {contact.intro}
+                    </p>
+                </div>
+
+                <ul className="anim-rise flex flex-col gap-3" style={{ '--delay': '240ms' }}>
+                    <li>
+                        <a
+                            href={whatsappUrl(site.contact.whatsapp)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center gap-4 rounded-2xl bg-primary-500 p-5 text-primary-ink transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 dark:focus-visible:outline-primary-400"
+                        >
+                            <span className="anim-ring flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-ink text-xl text-primary-500">
+                                <Icon name="whatsapp" />
+                            </span>
+                            <span className="flex-1">
+                                <strong className="block text-lg">{contact.whatsapp.title}</strong>
+                                <span className="text-sm opacity-80">{contact.whatsapp.text}</span>
+                            </span>
+                            <Icon name="arrow-right" className="transition-transform group-hover:translate-x-1" />
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href={mailtoUrl(site.contact.email)}
+                            className="group flex items-center gap-4 rounded-2xl border border-paper-line p-5 text-ink transition-colors hover:bg-paper-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 dark:border-night-line dark:text-night-text dark:hover:bg-night-soft dark:focus-visible:outline-primary-400"
+                        >
+                            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-paper-accent text-xl text-primary-700 dark:bg-night-accent dark:text-primary-400">
+                                <Icon name="envelope" />
+                            </span>
+                            <span className="min-w-0 flex-1">
+                                <strong className="block text-lg">{contact.email.title}</strong>
+                                <span className="block truncate text-sm text-ink-muted dark:text-night-muted">{site.contact.email}</span>
+                            </span>
+                            <Icon name="arrow-right" className="transition-transform group-hover:translate-x-1" />
+                        </a>
+                    </li>
+                </ul>
+
+                <dl className="anim-rise grid gap-4 text-ink-muted sm:grid-cols-2 dark:text-night-muted" style={{ '--delay': '320ms' }}>
+                    <div className="flex items-start gap-3">
+                        <dt>
+                            <Icon name="clock-regular" className="mt-1 text-primary-700 dark:text-primary-400" />
+                            <span className="sr-only">Horario</span>
+                        </dt>
+                        <dd>{site.businessHours}</dd>
+                    </div>
+                    <div className="flex items-start gap-3">
+                        <dt>
+                            <Icon name="location-dot" className="mt-1 text-primary-700 dark:text-primary-400" />
+                            <span className="sr-only">Ubicación</span>
+                        </dt>
+                        <dd>{site.location}</dd>
+                    </div>
+                </dl>
+            </div>
+
+            {/* Formulario de contacto */}
+            <div
+                className="anim-rise rounded-[28px] border border-paper-line bg-paper-soft p-6 sm:p-8 dark:border-night-line dark:bg-night-soft"
+                style={{ '--delay': '200ms' }}
+            >
+                {isSent ? (
+                    <div className="flex h-full flex-col items-center justify-center gap-3 py-10 text-center" role="status">
+                        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-500 text-xl text-primary-ink">
+                            <Icon name="check" />
+                        </span>
+                        <h2 className="text-2xl font-extrabold text-ink dark:text-night-text">¡Tu correo está listo!</h2>
+                        <p className="text-ink-muted dark:text-night-muted">
+                            Abrimos tu aplicación de correo con el mensaje completo. Solo falta que lo envíes desde ahí.
+                        </p>
+                        <p className="text-sm text-ink-muted dark:text-night-muted">
+                            ¿No se abrió? Escríbenos a {site.contact.email} o usa WhatsApp.
+                        </p>
+                        <div className="mt-2 flex flex-col justify-center gap-2 sm:flex-row">
+                            <Button variant="secondary" size="sm" onClick={() => setIsSent(false)}>
+                                Volver a mi mensaje
+                            </Button>
+                            <Button variant="ghost" size="sm" onClick={handleNewMessage}>
+                                Escribir otro mensaje
+                            </Button>
+                        </div>
+                    </div>
+                ) : (
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-4" aria-label="Formulario de contacto" noValidate>
+                        <div className="mb-2">
+                            <h2 className="text-2xl font-extrabold text-ink dark:text-night-text">{contact.form.title}</h2>
+                            <p className="mt-1 text-sm text-ink-muted dark:text-night-muted">{contact.form.text}</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            <Input
+                                id="contact-name"
+                                label="Nombre"
+                                name="name"
+                                autoComplete="name"
+                                placeholder="Tu nombre completo"
+                                value={formData.name}
+                                onChange={handleInputChange}
+                                error={errors.name}
+                                state={formData.name.trim() ? 'success' : 'default'}
+                                leftIcon={<Icon name="user" />}
+                                required
+                            />
+
+                            <Input
+                                id="contact-email"
+                                label="Email"
+                                name="email"
+                                type="email"
+                                autoComplete="email"
+                                placeholder="tu@email.com"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                error={errors.email}
+                                state={validateEmail(formData.email) ? 'success' : 'default'}
+                                leftIcon={<Icon name="envelope" />}
+                                required
+                            />
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            <Input
+                                id="contact-phone"
+                                label="Teléfono (opcional)"
+                                name="phone"
+                                type="tel"
+                                autoComplete="tel"
+                                placeholder="+56 9 1234 5678"
+                                value={formData.phone}
+                                onChange={handleInputChange}
+                                error={errors.phone}
+                                state={formData.phone && validatePhone(formData.phone) ? 'success' : 'default'}
+                                leftIcon={<Icon name="phone" />}
+                            />
+
+                            <Input
+                                id="contact-subject"
+                                label="Asunto"
+                                name="subject"
+                                placeholder="¿En qué podemos ayudarte?"
+                                value={formData.subject}
+                                onChange={handleInputChange}
+                                error={errors.subject}
+                                state={formData.subject.trim() ? 'success' : 'default'}
+                                leftIcon={<Icon name="tag" />}
+                                required
                             />
                         </div>
 
                         <div>
-                            <h1 className={`text-lg sm:text-xl font-semibold ${text.primary} mb-3`}>
-                                Cotiza tu sitio web o automatización
-                                <br />
-                                ¡Estamos aquí para ayudarte!
-                            </h1>
-                            <p className={`text-sm ${text.secondary} leading-relaxed`}>
-                                Cuéntanos qué necesita tu PYME: desarrollo web, automatización de procesos o asesoría
-                                tecnológica. Te respondemos con una propuesta clara. Atendemos en Santiago,
-                                Chile.
-                            </p>
-                        </div>
-
-                        <div className={`text-sm ${text.secondary} space-y-1`}>
-                            <p>
-                                <Icon name="clock-regular" className="mr-2" />
-                                {site.businessHours}
-                            </p>
-                            <p>
-                                <Icon name="location-dot" className="mr-2" />
-                                {site.location}
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row gap-2">
-                            <button
-                                type="button"
-                                onClick={handleWhatsAppClick}
-                                className="flex-1 py-2 px-3 rounded-lg flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white transition-all duration-300 hover:scale-105 shadow-lg"
-                            >
-                                <Icon name="whatsapp" className="text-lg" />
-                                <span className="font-semibold text-sm">WhatsApp</span>
-                            </button>
-                            <button
-                                type="button"
-                                onClick={handleEmailClick}
-                                className="flex-1 py-2 px-3 rounded-lg flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 hover:scale-105 shadow-lg"
-                            >
-                                <Icon name="envelope-regular" className="text-lg" />
-                                <span className="font-semibold text-sm">Email</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Formulario de contacto */}
-                <div className="lg:w-1/2 p-4 sm:p-6 flex flex-col justify-center">
-                    {isSent ? (
-                        <div className="text-center space-y-3" role="status">
-                            <div className="flex justify-center">
-                                <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                                    <Icon name="check" className="text-green-600 dark:text-green-400 text-sm" />
-                                </div>
-                            </div>
-                            <h2 className={`text-lg font-semibold ${text.primary}`}>¡Tu correo está listo!</h2>
-                            <p className={`text-sm ${text.secondary}`}>
-                                Abrimos tu aplicación de correo con el mensaje completo. Solo falta que lo envíes desde
-                                ahí.
-                            </p>
-                            <p className={`text-xs ${text.secondary} opacity-75`}>
-                                ¿No se abrió? Escríbenos a {site.contact.email} o usa WhatsApp.
-                            </p>
-                            <div className="flex flex-col sm:flex-row justify-center gap-2 mt-2">
-                                <Button variant="ghost" size="sm" onClick={() => setIsSent(false)}>
-                                    Volver a mi mensaje
-                                </Button>
-                                <Button variant="ghost" size="sm" onClick={handleNewMessage}>
-                                    Escribir otro mensaje
-                                </Button>
-                            </div>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="space-y-3" aria-label="Formulario de contacto" noValidate>
-                            <div className="text-center lg:text-left mb-3">
-                                <h2 className={`text-lg sm:text-xl font-semibold ${text.primary} mb-1`}>
-                                    Envíanos un mensaje
-                                </h2>
-                                <p className={`text-sm ${text.secondary} opacity-90`}>
-                                    Completa el formulario y te responderemos a la brevedad
+                            <label htmlFor="contact-message" className="mb-2 block text-sm font-medium text-ink dark:text-night-text">
+                                Mensaje
+                            </label>
+                            <textarea
+                                id="contact-message"
+                                name="message"
+                                placeholder="Cuéntanos sobre tu proyecto o consulta..."
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                rows={4}
+                                required
+                                aria-invalid={Boolean(errors.message)}
+                                aria-describedby={errors.message ? 'contact-message-error' : undefined}
+                                className={`w-full resize-none rounded-lg border bg-paper px-4 py-3 text-ink transition-all duration-200 focus:ring-2 dark:bg-night dark:text-night-text ${
+                                    errors.message
+                                        ? 'border-red-500 focus:ring-red-500'
+                                        : formData.message.trim().length >= MIN_MESSAGE_LENGTH
+                                          ? 'border-primary-500 focus:ring-primary-500/40'
+                                          : 'border-paper-line focus:border-primary-500 focus:ring-primary-500/30 dark:border-night-line'
+                                }`}
+                            />
+                            {errors.message && (
+                                <p id="contact-message-error" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                                    {errors.message}
                                 </p>
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <Input
-                                    id="contact-name"
-                                    label="Nombre"
-                                    name="name"
-                                    autoComplete="name"
-                                    placeholder="Tu nombre completo"
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    error={errors.name}
-                                    state={formData.name.trim() ? 'success' : 'default'}
-                                    leftIcon={<Icon name="user" />}
-                                    required
-                                />
-
-                                <Input
-                                    id="contact-email"
-                                    label="Email"
-                                    name="email"
-                                    type="email"
-                                    autoComplete="email"
-                                    placeholder="tu@email.com"
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    error={errors.email}
-                                    state={validateEmail(formData.email) ? 'success' : 'default'}
-                                    leftIcon={<Icon name="envelope" />}
-                                    required
-                                />
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <Input
-                                    id="contact-phone"
-                                    label="Teléfono (opcional)"
-                                    name="phone"
-                                    type="tel"
-                                    autoComplete="tel"
-                                    placeholder="+56 9 1234 5678"
-                                    value={formData.phone}
-                                    onChange={handleInputChange}
-                                    error={errors.phone}
-                                    state={formData.phone && validatePhone(formData.phone) ? 'success' : 'default'}
-                                    leftIcon={<Icon name="phone" />}
-                                />
-
-                                <Input
-                                    id="contact-subject"
-                                    label="Asunto"
-                                    name="subject"
-                                    placeholder="¿En qué podemos ayudarte?"
-                                    value={formData.subject}
-                                    onChange={handleInputChange}
-                                    error={errors.subject}
-                                    state={formData.subject.trim() ? 'success' : 'default'}
-                                    leftIcon={<Icon name="tag" />}
-                                    required
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label htmlFor="contact-message" className={`block text-sm font-medium ${text.primary}`}>
-                                    Mensaje
-                                </label>
-                                <textarea
-                                    id="contact-message"
-                                    name="message"
-                                    placeholder="Cuéntanos sobre tu proyecto o consulta..."
-                                    value={formData.message}
-                                    onChange={handleInputChange}
-                                    rows={3}
-                                    required
-                                    aria-invalid={Boolean(errors.message)}
-                                    aria-describedby={errors.message ? 'contact-message-error' : undefined}
-                                    className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 placeholder-opacity-50 resize-none ${
-                                        errors.message
-                                            ? 'border-red-500 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-100 focus:ring-2 focus:ring-red-500'
-                                            : formData.message.trim().length >= MIN_MESSAGE_LENGTH
-                                              ? 'border-green-500 bg-green-50 dark:bg-green-900/20 text-green-900 dark:text-green-100 focus:ring-2 focus:ring-green-500'
-                                              : 'border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500'
-                                    }`}
-                                />
-                                {errors.message && (
-                                    <p id="contact-message-error" className="text-sm text-red-600 dark:text-red-400 mt-1">
-                                        {errors.message}
-                                    </p>
-                                )}
-                                <p className={`text-xs ${text.secondary} opacity-75`}>
-                                    Mínimo {MIN_MESSAGE_LENGTH} caracteres ({formData.message.trim().length}/
-                                    {MIN_MESSAGE_LENGTH})
-                                </p>
-                            </div>
-
-                            <Button variant="primary" size="md" fullWidth type="submit" className="mt-3">
-                                Enviar mensaje
-                            </Button>
-
-                            <p className={`text-xs ${text.secondary} opacity-75 text-center mt-2`}>
-                                Se abrirá tu aplicación de correo con el mensaje listo para enviar.
+                            )}
+                            <p className="mt-1 text-xs text-ink-muted dark:text-night-muted">
+                                Mínimo {MIN_MESSAGE_LENGTH} caracteres ({formData.message.trim().length}/{MIN_MESSAGE_LENGTH})
                             </p>
-                        </form>
-                    )}
-                </div>
+                        </div>
+
+                        <Button variant="primary" size="lg" fullWidth type="submit" className="mt-2">
+                            {contact.form.submit}
+                        </Button>
+                    </form>
+                )}
             </div>
-        </Card>
+        </div>
     );
 };
 
