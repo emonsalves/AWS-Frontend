@@ -85,32 +85,36 @@ const Login = () => {
     const isFormValid = email && validateEmail(email) && password && password.length >= 6 && !isLoading;
 
     return (
-        <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 sm:px-10 sm:py-20 lg:grid-cols-2 lg:items-stretch">
-            <div className="anim-rise relative hidden overflow-hidden rounded-[28px] bg-ink p-10 text-night-text lg:flex lg:flex-col lg:justify-between lg:gap-10 dark:bg-night-soft dark:ring-1 dark:ring-night-line">
+        <div className="mx-auto grid w-full max-w-5xl gap-6 px-5 py-8 sm:px-10 lg:grid-cols-[1fr_1.05fr] lg:items-stretch">
+            <div className="anim-rise relative hidden overflow-hidden rounded-[24px] bg-ink p-8 text-night-text lg:flex lg:flex-col lg:gap-6 dark:bg-night-soft dark:ring-1 dark:ring-night-line">
                 <div
                     aria-hidden="true"
                     className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:22px_22px]"
                 />
-                <span aria-hidden="true" className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500 text-xl font-extrabold text-primary-ink">
-                    M
-                </span>
-                <LoginPreview />
-                <div className="relative">
-                    <p className="text-[40px] leading-[1.05] font-extrabold tracking-[-0.04em]">{login.panel.title}</p>
-                    <p className="mt-4 text-lg text-night-muted">{login.panel.text}</p>
+                <div className="relative flex items-start gap-4">
+                    <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-500 text-lg font-extrabold text-primary-ink">
+                        M
+                    </span>
+                    <div>
+                        <p className="text-2xl leading-tight font-extrabold tracking-[-0.03em]">{login.panel.title}</p>
+                        <p className="mt-1 text-night-muted">{login.panel.text}</p>
+                    </div>
+                </div>
+                <div className="relative mt-auto">
+                    <LoginPreview />
                 </div>
             </div>
 
             <form
                 onSubmit={handleSubmit}
                 aria-label="Formulario de inicio de sesión"
-                className="anim-rise flex flex-col gap-5 rounded-[28px] border border-paper-line bg-paper-soft p-6 sm:p-10 dark:border-night-line dark:bg-night-soft"
+                className="anim-rise flex flex-col gap-4 rounded-[24px] border border-paper-line bg-paper-soft p-6 sm:p-8 dark:border-night-line dark:bg-night-soft"
                 style={{ '--delay': '120ms' }}
                 noValidate
             >
-                <div className="mb-2">
-                    <h1 className="text-[32px] leading-tight font-extrabold tracking-[-0.03em] text-ink sm:text-4xl dark:text-night-text">Iniciar sesión</h1>
-                    <p className="mt-2 text-ink-muted dark:text-night-muted">Ingresa tus credenciales para acceder a tu cuenta.</p>
+                <div className="mb-1">
+                    <h1 className="text-[28px] leading-tight font-extrabold tracking-[-0.03em] text-ink sm:text-[32px] dark:text-night-text">Iniciar sesión</h1>
+                    <p className="mt-1 text-ink-muted dark:text-night-muted">Ingresa tus credenciales para acceder a tu cuenta.</p>
                 </div>
                 <Input
                     type="email"
@@ -157,7 +161,7 @@ const Login = () => {
                         ¿Olvidaste tu contraseña?
                     </Link>
                 </div>
-                <Button variant="primary" size="lg" fullWidth type="submit" className="mt-2" disabled={!isFormValid}>
+                <Button variant="primary" fullWidth type="submit" className="mt-1" disabled={!isFormValid}>
                     {isLoading ? (
                         <span className="flex items-center justify-center">
                             <Icon name="spinner" className="mr-2 animate-spin" />
