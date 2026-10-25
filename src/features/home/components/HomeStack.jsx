@@ -16,7 +16,7 @@ const HomeStack = () => (
                     width="40"
                     height="40"
                     loading="lazy"
-                    className="mx-6 h-9 w-9 rounded-lg opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:mx-8 sm:h-10 sm:w-10"
+                    className="mx-6 h-9 w-9 rounded-lg opacity-80 grayscale dark:opacity-60 transition duration-300 hover:opacity-100 hover:grayscale-0 sm:mx-8 sm:h-10 sm:w-10"
                 />
             ))}
         </Marquee>

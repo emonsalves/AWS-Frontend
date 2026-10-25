@@ -282,7 +282,7 @@ const ContainerContact = () => {
                                         ? 'border-red-500 focus:ring-red-500'
                                         : formData.message.trim().length >= MIN_MESSAGE_LENGTH
                                           ? 'border-primary-500 focus:ring-primary-500/40'
-                                          : 'border-paper-line focus:border-primary-500 focus:ring-primary-500/30 dark:border-night-line'
+                                          : 'border-paper-field focus:border-primary-500 focus:ring-primary-500/30 dark:border-night-line'
                                 }`}
                             />
                             {errors.message && (

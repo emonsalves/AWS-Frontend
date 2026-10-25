@@ -51,7 +51,7 @@ const HeroDemo = () => {
                     </div>
                     <div className="text-right">
                         <dt className="sr-only">Entrega</dt>
-                        <dd className="font-semibold text-primary-700 dark:text-primary-400">{demo.row.date}</dd>
+                        <dd className="font-semibold text-primary-800 dark:text-primary-400">{demo.row.date}</dd>
                     </div>
                 </dl>
             </div>
